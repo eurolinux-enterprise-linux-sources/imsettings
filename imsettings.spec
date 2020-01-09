@@ -1,6 +1,6 @@
 Name:		imsettings
 Version:	0.108.0
-Release:	3.5%{?dist}
+Release:	3.6%{?dist}
 License:	LGPLv2+
 URL:		http://code.google.com/p/imsettings/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -25,6 +25,7 @@ Patch4:		imsettings-no-restart-with-exit0.patch
 Patch5:		imsettings-translation-updates.patch
 Patch6:		imsettings-fix-race-on-popen.patch
 Patch7:		imsettings-translation-updates2.patch
+Patch8:		imsettings-713433-mem-corrupt.patch
 
 Summary:	Delivery framework for general Input Method configuration
 Group:		Applications/System
@@ -113,6 +114,7 @@ This package contains a helper program to get this working on LXDE.
 %patch5 -p0 -b .5-translations
 %patch6 -p0 -b .6-popen
 %patch7 -p2 -b .7-translations2
+%patch8 -p1 -b .8-mem-currupt
 autoreconf -Im4macros -f
 
 %build
@@ -247,6 +249,9 @@ fi
 
 
 %changelog
+* Thu Jan 25 2012 Akira TAGOH <tagoh@redhat.com> - 0.108.0-3.6
+- Fix the memory corruption issue. (#713433)
+
 * Fri Dec  3 2010 Jens Petersen <petersen@redhat.com> - 0.108.0-3.5
 - only enable XIM for X locale compose for necessary locales (#616061)
   (for pt_BR, fi_FI, am_ET, el_GR, and ru_RU):

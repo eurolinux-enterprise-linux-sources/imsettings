@@ -1,0 +1,168 @@
+diff -pruN imsettings-0.108.0.orig/imsettings/imsettings-info.c imsettings-0.108.0/imsettings/imsettings-info.c
+--- imsettings-0.108.0.orig/imsettings/imsettings-info.c	2012-01-25 20:11:30.000000000 +0900
++++ imsettings-0.108.0/imsettings/imsettings-info.c	2012-01-25 20:12:32.000000000 +0900
+@@ -55,6 +55,7 @@
+ 
+ 
+ typedef struct _IMSettingsInfoPrivate {
++	volatile guint freeze_count;
+ 	gchar    *homedir;
+ 	gchar    *language;
+ 	gchar    *filename;
+@@ -811,6 +812,7 @@ imsettings_info_init(IMSettingsInfo *inf
+ 	priv->short_desc = NULL;
+ 	priv->long_desc = NULL;
+ 	priv->icon = NULL;
++	priv->freeze_count = 0;
+ }
+ 
+ /*
+@@ -841,19 +843,50 @@ imsettings_info_new_with_lang(const gcha
+ 			    NULL);
+ }
+ 
++void
++imsettings_info_freeze(const IMSettingsInfo *info)
++{
++	IMSettingsInfoPrivate *priv;
++
++	g_return_if_fail (IMSETTINGS_IS_INFO (info));
++
++	priv = IMSETTINGS_INFO_GET_PRIVATE (info);
++	g_atomic_int_inc((volatile gint *)&priv->freeze_count);
++}
++
++void
++imsettings_info_throw(const IMSettingsInfo *info)
++{
++	IMSettingsInfoPrivate *priv;
++	volatile gint i;
++
++	g_return_if_fail (IMSETTINGS_IS_INFO (info));
++
++	priv = IMSETTINGS_INFO_GET_PRIVATE (info);
++  loop:
++	i = g_atomic_int_get(&priv->freeze_count);
++	if (i == 0)
++		return;
++	if (!g_atomic_int_compare_and_exchange((volatile gint *)&priv->freeze_count, i, i - 1))
++		goto loop;
++}
++
+ #define _IMSETTINGS_DEFUNC_PROPERTY(_t_,_n_,_m_,_v_)			\
+ 	_t_								\
+ 	imsettings_info_get_ ## _n_(IMSettingsInfo *info)		\
+ 	{								\
+ 		IMSettingsInfoPrivate *priv;				\
++		volatile gint i;					\
+ 									\
+ 		g_return_val_if_fail (IMSETTINGS_IS_INFO (info), (_v_)); \
+ 									\
+ 		priv = IMSETTINGS_INFO_GET_PRIVATE (info);		\
+-		if (imsettings_info_is_script(info)) {			\
++		i = g_atomic_int_get(&priv->freeze_count);		\
++		if (i == 0 && imsettings_info_is_script(info)) {	\
++			gchar *f = g_strdup(priv->filename);		\
+ 			/* reload the configuration before referencing. */ \
+-			g_object_set(info, "filename",			\
+-				     priv->filename, NULL);		\
++			g_object_set(info, "filename", f, NULL);	\
++			g_free(f);					\
+ 		}							\
+ 									\
+ 		return priv->_m_;					\
+diff -pruN imsettings-0.108.0.orig/imsettings/imsettings-info.h imsettings-0.108.0/imsettings/imsettings-info.h
+--- imsettings-0.108.0.orig/imsettings/imsettings-info.h	2009-09-28 18:49:41.000000000 +0900
++++ imsettings-0.108.0/imsettings/imsettings-info.h	2012-01-25 20:12:32.000000000 +0900
+@@ -51,6 +51,8 @@ GType           imsettings_info_get_type
+ IMSettingsInfo *imsettings_info_new                   (const gchar          *filename);
+ IMSettingsInfo *imsettings_info_new_with_lang         (const gchar          *filename,
+ 						       const gchar          *language);
++void            imsettings_info_freeze                (const IMSettingsInfo *info);
++void            imsettings_info_throw                 (const IMSettingsInfo *info);
+ const gchar    *imsettings_info_get_language          (IMSettingsInfo       *info);
+ const gchar    *imsettings_info_get_filename          (IMSettingsInfo       *info);
+ const gchar    *imsettings_info_get_gtkimm            (IMSettingsInfo       *info);
+diff -pruN imsettings-0.108.0.orig/src/factory.c imsettings-0.108.0/src/factory.c
+--- imsettings-0.108.0.orig/src/factory.c	2012-01-25 20:11:30.000000000 +0900
++++ imsettings-0.108.0/src/factory.c	2012-01-25 20:14:01.000000000 +0900
+@@ -1007,6 +1007,7 @@ imsettings_manager_real_start_im(IMSetti
+ 		goto end;
+ 	}
+ 	xinputfile = imsettings_info_get_filename(info);
++	imsettings_info_freeze(info);
+ 
+ 	if (!_imsettings_manager_start_im_aux(imsettings, lang, module, error))
+ 		goto end;
+@@ -1041,8 +1042,10 @@ imsettings_manager_real_start_im(IMSetti
+ 
+ 	retval = TRUE;
+   end:
+-	if (info)
++	if (info) {
++		imsettings_info_throw(info);
+ 		g_object_unref(info);
++	}
+ 
+ 	return retval;
+ }
+@@ -1069,7 +1072,9 @@ _imsettings_manager_start_im_aux(IMSetti
+ 		goto end;
+ 	}
+ 	aux_prog = imsettings_info_get_aux_program(info);
++	imsettings_info_freeze(info);
+ 	aux_args = imsettings_info_get_aux_args(info);
++	imsettings_info_throw(info);
+ 	if (aux_prog) {
+ 		/* bring up an auxiliary program */
+ 		g_print("Starting AUX process for %s...", module);
+@@ -1109,7 +1114,9 @@ _imsettings_manager_start_im_main(IMSett
+ 	/* hack to allow starting none.conf and immodule only conf */
+ 	if (strcmp(module, "none") != 0 && !imsettings_info_is_immodule_only(info)) {
+ 		xim_prog = imsettings_info_get_xim_program(info);
++		imsettings_info_freeze(info);
+ 		xim_args = imsettings_info_get_xim_args(info);
++		imsettings_info_throw(info);
+ 		if (xim_prog == NULL) {
+ 			g_set_error(error, IMSETTINGS_GERROR, IMSETTINGS_GERROR_INVALID_IMM,
+ 				    _("No XIM server is available in %s"), module);
+@@ -1152,6 +1159,7 @@ imsettings_manager_real_stop_im(IMSettin
+ 		goto end;
+ 
+ 	gtkimm = imsettings_info_get_gtkimm(info);
++	imsettings_info_freeze(info);
+ 	xim = imsettings_info_get_xim(info);
+ 
+ 	/* Change the settings before killing the IM process(es) */
+@@ -1162,6 +1170,7 @@ imsettings_manager_real_stop_im(IMSettin
+ #if 0
+ 	imsettings_request_change_to(priv->qt_req, NULL, error);
+ #endif
++	imsettings_info_throw(info);
+ 
+ 	g_object_unref(info);
+ 
+diff -pruN imsettings-0.108.0.orig/utils/imsettings-info.c imsettings-0.108.0/utils/imsettings-info.c
+--- imsettings-0.108.0.orig/utils/imsettings-info.c	2009-09-28 18:49:41.000000000 +0900
++++ imsettings-0.108.0/utils/imsettings-info.c	2012-01-25 20:12:32.000000000 +0900
+@@ -88,6 +88,11 @@ main(int    argc,
+ 		g_clear_error(&error);
+ 	} else {
+ 		file = imsettings_info_get_filename(info);
++		/* the internal information has already been updated the above.
++		 * no need to update anymore.
++		 */
++		imsettings_info_freeze(info);
++
+ 		gtkimm = imsettings_info_get_gtkimm(info);
+ 		qtimm = imsettings_info_get_qtimm(info);
+ 		xim = imsettings_info_get_xim(info);
+@@ -104,6 +109,8 @@ main(int    argc,
+ 		is_xim = imsettings_info_is_xim(info);
+ 		icon = imsettings_info_get_icon_file(info);
+ 
++		imsettings_info_throw(info);
++
+ 		g_print("Xinput file: %s\n"
+ 			"GTK+ immodule: %s\n"
+ 			"Qt immodule: %s\n"
