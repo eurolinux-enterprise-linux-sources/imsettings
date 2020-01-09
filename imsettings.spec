@@ -1,6 +1,6 @@
 Name:		imsettings
 Version:	0.108.0
-Release:	3.4%{?dist}
+Release:	3.5%{?dist}
 License:	LGPLv2+
 URL:		http://code.google.com/p/imsettings/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -19,7 +19,7 @@ Source0:	http://imsettings.googlecode.com/files/%{name}-%{version}.tar.bz2
 Source1: 	imsettings-kde.sh
 Patch0:		imsettings-constraint-of-language.patch
 Patch1:		imsettings-disable-xim.patch
-Patch2:		imsettings-none.conf-gtk-xim-default.patch
+Patch2:		imsettings-xinput-xcompose.patch
 Patch3:		imsettings-fix-lxde-fail.patch
 Patch4:		imsettings-no-restart-with-exit0.patch
 Patch5:		imsettings-translation-updates.patch
@@ -107,7 +107,7 @@ This package contains a helper program to get this working on LXDE.
 %setup -q
 %patch0 -p1 -b .0-lang
 %patch1 -p1 -b .1-xim
-%patch2 -p1 -b .2-xim
+%patch2 -p1 -b .2-xcompose
 %patch3 -p0 -b .3-lxde
 %patch4 -p0 -b .4-no-restart
 %patch5 -p0 -b .5-translations
@@ -247,6 +247,12 @@ fi
 
 
 %changelog
+* Fri Dec  3 2010 Jens Petersen <petersen@redhat.com> - 0.108.0-3.5
+- only enable XIM for X locale compose for necessary locales (#616061)
+  (for pt_BR, fi_FI, am_ET, el_GR, and ru_RU):
+- drop imsettings-none.conf-gtk-xim-default.patch
+- add imsettings-xinput-xcompose.patch
+
 * Mon Jul 26 2010 Akira TAGOH <tagoh@redhat.com> - 0.108.0-3.4
 - more translations update. (#589212)
 
