@@ -1,0 +1,35 @@
+From af1791e51e3285dfa33c7d53a66254477dfc2355 Mon Sep 17 00:00:00 2001
+From: Akira TAGOH <akira@tagoh.org>
+Date: Thu, 7 Dec 2017 20:36:58 +0900
+Subject: [PATCH 50/52] Fix to detect the latest GNOME
+
+---
+ data/imsettings-target-checker.sh.in | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/data/imsettings-target-checker.sh.in b/data/imsettings-target-checker.sh.in
+index 07a207d..9f734f6 100755
+--- a/data/imsettings-target-checker.sh.in
++++ b/data/imsettings-target-checker.sh.in
+@@ -68,7 +68,7 @@ gsettings_get_bool() {
+ 	echo $exe get $schema $key
+     fi
+     ret=`$exe get $schema $key`
+-    if [ $ret == "true" ]; then
++    if [ x$ret == "xtrue" ]; then
+ 	return 0
+     else
+ 	return 1
+@@ -82,6 +82,9 @@ case $(get_desktop|tr '[A-Z]' '[a-z]') in
+ 	    if gsettings_get_bool org.gnome.settings-daemon.plugins.keyboard active; then
+ 		log "org.gnome.settings-daemon.plugins.keyboard.active is true. imsettings is going to be disabled."
+ 		exit 0
++	    elif [ -f /etc/xdg/autostart/org.gnome.SettingsDaemon.Keyboard.desktop ]; then
++		log "org.gnome.SettingsDaemon.Keyboard.desktop exists. imsettings is going to be disabled."
++		exit 0
+ 	    else
+ 		exit 1
+ 	    fi
+-- 
+2.17.1
+

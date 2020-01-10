@@ -1,0 +1,524 @@
+From e1d1ef02dbaf24261f06d095b08290f1a1ad36ae Mon Sep 17 00:00:00 2001
+From: Akira TAGOH <akira@tagoh.org>
+Date: Tue, 15 Oct 2013 13:03:50 +0900
+Subject: [PATCH 1/3] Fix for -Wformat
+
+---
+ imsettings-daemon/imsettings-server.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/imsettings-daemon/imsettings-server.c b/imsettings-daemon/imsettings-server.c
+index 79aa308..c229dd0 100644
+--- a/imsettings-daemon/imsettings-server.c
++++ b/imsettings-daemon/imsettings-server.c
+@@ -119,7 +119,7 @@ _notify_cb(IMSettingsProc *proc,
+ 	notify_notification_show(priv->notify, &err);
+ 
+ 	if (err) {
+-		g_warning(err->message);
++		g_warning("%s", err->message);
+ 		g_error_free(err);
+ 	}
+ }
+@@ -712,7 +712,7 @@ imsettings_server_cb_switch_im(IMSettingsServer  *server,
+ 		g_clear_error(error);
+ 		g_set_error(error, IMSETTINGS_GERROR, IMSETTINGS_GERROR_IM_NOT_FOUND,
+ 			    _("No such input method on your system: %s"), module);
+-		g_warning((*error)->message);
++		g_warning("%s", (*error)->message);
+ 
+ 		return FALSE;
+ 	}
+@@ -721,7 +721,7 @@ imsettings_server_cb_switch_im(IMSettingsServer  *server,
+ 	if (!*info) {
+ 		g_set_error(error, IMSETTINGS_GERROR, IMSETTINGS_GERROR_OOM,
+ 			    _("Out of memory"));
+-		g_warning((*error)->message);
++		g_warning("%s", (*error)->message);
+ 
+ 		return FALSE;
+ 	}
+@@ -746,7 +746,7 @@ imsettings_server_cb_switch_im(IMSettingsServer  *server,
+ 	} else if (match) {
+ 		g_set_error(error, IMSETTINGS_GERROR, IMSETTINGS_GERROR_NOT_TARGETED_DESKTOP,
+ 			    _("Current desktop isn't targeted by IMSettings."));
+-		g_warning((*error)->message);
++		g_warning("%s", (*error)->message);
+ 
+ 		return FALSE;
+ 	}
+@@ -1222,6 +1222,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_dbus_method_invocation_return_error(invocation,
+ 						      IMSETTINGS_GERROR,
+ 						      err->code,
++						      "%s",
+ 						      err->message);
+ 		g_error_free(err);
+ 	} else {
+-- 
+1.8.3.1
+
+From 5833b104e6a4be022c41eb111bb1e3b61b0d2322 Mon Sep 17 00:00:00 2001
+From: Akira TAGOH <akira@tagoh.org>
+Date: Wed, 16 Oct 2013 11:44:25 +0900
+Subject: [PATCH 2/3] Fix memory leaks
+
+---
+ imsettings-daemon/imsettings-server.c |   5 ++
+ imsettings/imsettings-info.c          | 127 +++++++++++++++++-----------------
+ utils/imsettings-list.c               |   1 +
+ 3 files changed, 70 insertions(+), 63 deletions(-)
+
+diff --git a/imsettings-daemon/imsettings-server.c b/imsettings-daemon/imsettings-server.c
+index c229dd0..1c52782 100644
+--- a/imsettings-daemon/imsettings-server.c
++++ b/imsettings-daemon/imsettings-server.c
+@@ -596,6 +596,8 @@ imsettings_server_cb_get_info_variants(IMSettingsServer  *server,
+ 			n = imsettings_info_get_filename(info);
+ 			if (g_strcmp0(module, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0) {
+ 				g_variant_builder_add(vb, "{sv}", module, v);
++			} else {
++				g_variant_unref(v);
+ 			}
+ 			g_object_unref(info);
+ 		}
+@@ -613,6 +615,8 @@ imsettings_server_cb_get_info_variants(IMSettingsServer  *server,
+ 			n = imsettings_info_get_filename(info);
+ 			if (g_strcmp0(module, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0) {
+ 				g_variant_builder_add(vb, "{sv}", module, v);
++			} else {
++				g_variant_unref(v);
+ 			}
+ 			g_object_unref(info);
+ 		}
+@@ -667,6 +671,7 @@ imsettings_server_cb_get_info_variant(IMSettingsServer  *server,
+ 				break;
+ 			}
+ 			g_free(conf);
++			g_variant_unref(vv);
+ 		}
+ 		g_variant_unref(v);
+ 	}
+diff --git a/imsettings/imsettings-info.c b/imsettings/imsettings-info.c
+index 33f7d74..cbbefcb 100644
+--- a/imsettings/imsettings-info.c
++++ b/imsettings/imsettings-info.c
+@@ -317,77 +317,77 @@ imsettings_info_variant_new(const gchar *filename,
+ 
+ 	G_LOCK (info);
+ 
+-	if ((fp = popen(cmd->str, "r")) != NULL) {
+-		vb = g_variant_builder_new(G_VARIANT_TYPE ("a{sv}"));
+-
+-		while (!feof(fp)) {
+-			if ((p = fgets(buffer, 255, fp)) != NULL) {
+-				gchar *key = NULL, *val = NULL;
+-				GVariant *v = NULL;
+-				GQuark q;
+-
+-				if (!_parse_param(p, &key, &val)) {
+-					g_warning("Failed to parse a line in %s: %s",
+-						  filename, p);
+-					goto bail;
+-				}
+-				q = g_quark_try_string(key);
+-				if (q == 0)
+-					goto unknown_param;
+-				for (i = 0; i < LAST_IMSETTINGS_INFO; i++) {
+-					if (__xinput_tokens[i] == q)
+-						break;
+-				}
+-				switch (i) {
+-				    case IMSETTINGS_INFO_GTK_IM_MODULE:
+-				    case IMSETTINGS_INFO_QT_IM_MODULE:
+-				    case IMSETTINGS_INFO_XIM:
+-				    case IMSETTINGS_INFO_XIM_PROGRAM:
+-				    case IMSETTINGS_INFO_XIM_ARGS:
+-				    case IMSETTINGS_INFO_PREFERENCE_PROGRAM:
+-				    case IMSETTINGS_INFO_PREFERENCE_ARGS:
+-				    case IMSETTINGS_INFO_AUXILIARY_PROGRAM:
+-				    case IMSETTINGS_INFO_AUXILIARY_ARGS:
+-				    case IMSETTINGS_INFO_SHORT_DESC:
+-				    case IMSETTINGS_INFO_LONG_DESC:
+-				    case IMSETTINGS_INFO_ICON:
+-				    case IMSETTINGS_INFO_LANG:
+-				    case IMSETTINGS_INFO_FILENAME:
+-				    case IMSETTINGS_INFO_NOT_RUN:
+-					    v = g_variant_new_string(val);
+-					    break;
+-				    case IMSETTINGS_INFO_IMSETTINGS_IGNORE_ME:
+-				    case IMSETTINGS_INFO_IMSETTINGS_IS_SCRIPT:
+-				    case IMSETTINGS_INFO_IS_XIM:
+-					    v = g_variant_new_boolean((g_ascii_strcasecmp(val, "true") == 0 ||
+-								       g_ascii_strcasecmp(val, "yes") == 0 ||
+-								       g_ascii_strcasecmp(val, "1") == 0));
+-					    break;
+-				    default:
+-				    unknown_param:
+-					    g_warning("Unknown parameter: %s = %s",
+-						      key, val);
+-					    v = NULL;
+-					    break;
+-				}
+-				if (v)
+-					g_variant_builder_add(vb, "{sv}",
+-							      key, v);
+-			  bail:
+-				g_free(key);
+-				g_free(val);
++	if ((fp = popen(cmd->str, "r")) == NULL)
++		goto error;
++
++	vb = g_variant_builder_new(G_VARIANT_TYPE ("a{sv}"));
++
++	while (!feof(fp)) {
++		if ((p = fgets(buffer, 255, fp)) != NULL) {
++			gchar *key = NULL, *val = NULL;
++			GVariant *v = NULL;
++			GQuark q;
++
++			if (!_parse_param(p, &key, &val)) {
++				g_warning("Failed to parse a line in %s: %s",
++					  filename, p);
++				goto bail;
++			}
++			q = g_quark_try_string(key);
++			if (q == 0)
++				goto unknown_param;
++			for (i = 0; i < LAST_IMSETTINGS_INFO; i++) {
++				if (__xinput_tokens[i] == q)
++					break;
+ 			}
++			switch (i) {
++			    case IMSETTINGS_INFO_GTK_IM_MODULE:
++			    case IMSETTINGS_INFO_QT_IM_MODULE:
++			    case IMSETTINGS_INFO_XIM:
++			    case IMSETTINGS_INFO_XIM_PROGRAM:
++			    case IMSETTINGS_INFO_XIM_ARGS:
++			    case IMSETTINGS_INFO_PREFERENCE_PROGRAM:
++			    case IMSETTINGS_INFO_PREFERENCE_ARGS:
++			    case IMSETTINGS_INFO_AUXILIARY_PROGRAM:
++			    case IMSETTINGS_INFO_AUXILIARY_ARGS:
++			    case IMSETTINGS_INFO_SHORT_DESC:
++			    case IMSETTINGS_INFO_LONG_DESC:
++			    case IMSETTINGS_INFO_ICON:
++			    case IMSETTINGS_INFO_LANG:
++			    case IMSETTINGS_INFO_FILENAME:
++			    case IMSETTINGS_INFO_NOT_RUN:
++				    v = g_variant_new_string(val);
++				    break;
++			    case IMSETTINGS_INFO_IMSETTINGS_IGNORE_ME:
++			    case IMSETTINGS_INFO_IMSETTINGS_IS_SCRIPT:
++			    case IMSETTINGS_INFO_IS_XIM:
++				    v = g_variant_new_boolean((g_ascii_strcasecmp(val, "true") == 0 ||
++							       g_ascii_strcasecmp(val, "yes") == 0 ||
++							       g_ascii_strcasecmp(val, "1") == 0));
++				    break;
++			    default:
++			    unknown_param:
++				    g_warning("Unknown parameter: %s = %s",
++					      key, val);
++				    v = NULL;
++				    break;
++			}
++			if (v)
++				g_variant_builder_add(vb, "{sv}",
++						      key, v);
++		  bail:
++			g_free(key);
++			g_free(val);
+ 		}
+-
+-		pclose(fp);
+ 	}
++
++	pclose(fp);
+ 	value = g_variant_builder_end(vb);
++	g_variant_builder_unref(vb);
+ 
+ 	G_UNLOCK (info);
+ 
+   error:
+-	if (vb)
+-		g_variant_builder_unref(vb);
+ 	g_string_free(cmd, TRUE);
+ 
+ 	return value;
+@@ -461,6 +461,7 @@ imsettings_info_new(GVariant *parameters)
+ 				    g_warning("Unknown parameter: %s", key);
+ 				    break;
+ 			}
++			g_variant_unref(val);
+ 		}
+ 		g_variant_iter_free(iter);
+ 	}
+diff --git a/utils/imsettings-list.c b/utils/imsettings-list.c
+index 0504224..07bc085 100644
+--- a/utils/imsettings-list.c
++++ b/utils/imsettings-list.c
+@@ -107,6 +107,7 @@ main(int    argc,
+ 		    strcmp(&key[len - slen], XINPUT_SUFFIX) == 0)
+ 			continue;
+ 		info = imsettings_info_new(vv);
++		g_variant_unref(vv);
+ 		name = imsettings_info_get_short_desc(info);
+ 		imname = imsettings_info_get_im_name(info);
+ 		subimname = imsettings_info_get_sub_im_name(info);
+-- 
+1.8.3.1
+
+From 6d2940d3b7744868b72e2b14cc8e1b70c77ce594 Mon Sep 17 00:00:00 2001
+From: Akira TAGOH <akira@tagoh.org>
+Date: Wed, 16 Oct 2013 13:24:59 +0900
+Subject: [PATCH 3/3] clean up
+
+---
+ imsettings-daemon/imsettings-server.c | 106 ++++++++++++++++------------------
+ 1 file changed, 49 insertions(+), 57 deletions(-)
+
+diff --git a/imsettings-daemon/imsettings-server.c b/imsettings-daemon/imsettings-server.c
+index 1c52782..25f45a6 100644
+--- a/imsettings-daemon/imsettings-server.c
++++ b/imsettings-daemon/imsettings-server.c
+@@ -541,6 +541,8 @@ imsettings_server_cb_get_info_variants(IMSettingsServer  *server,
+ 			v = imsettings_info_variant_new(p, lang);
+ 			g_free(p);
+ 			g_free(conf);
++			if (!v)
++				goto next;
+ 
+ 			info = imsettings_info_new(v);
+ 			if (imsettings_info_is_visible(info)) {
+@@ -591,15 +593,17 @@ imsettings_server_cb_get_info_variants(IMSettingsServer  *server,
+ 		if (g_file_test(p, G_FILE_TEST_EXISTS) &&
+ 		    !g_file_test(p, G_FILE_TEST_IS_SYMLINK)) {
+ 			v = imsettings_info_variant_new(p, lang);
+-			info = imsettings_info_new(v);
+-			module = imsettings_info_get_short_desc(info);
+-			n = imsettings_info_get_filename(info);
+-			if (g_strcmp0(module, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0) {
+-				g_variant_builder_add(vb, "{sv}", module, v);
+-			} else {
+-				g_variant_unref(v);
++			if (v) {
++				info = imsettings_info_new(v);
++				module = imsettings_info_get_short_desc(info);
++				n = imsettings_info_get_filename(info);
++				if (g_strcmp0(module, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0) {
++					g_variant_builder_add(vb, "{sv}", module, v);
++				} else {
++					g_variant_unref(v);
++				}
++				g_object_unref(info);
+ 			}
+-			g_object_unref(info);
+ 		}
+ 		g_free(p);
+ 		/* an exception to deal with the case switching back to the user specific.
+@@ -610,15 +614,17 @@ imsettings_server_cb_get_info_variants(IMSettingsServer  *server,
+ 		if (g_file_test(p, G_FILE_TEST_EXISTS) &&
+ 		    !g_file_test(p, G_FILE_TEST_IS_SYMLINK)) {
+ 			v = imsettings_info_variant_new(p, lang);
+-			info = imsettings_info_new(v);
+-			module = imsettings_info_get_short_desc(info);
+-			n = imsettings_info_get_filename(info);
+-			if (g_strcmp0(module, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0) {
+-				g_variant_builder_add(vb, "{sv}", module, v);
+-			} else {
+-				g_variant_unref(v);
++			if (v) {
++				info = imsettings_info_new(v);
++				module = imsettings_info_get_short_desc(info);
++				n = imsettings_info_get_filename(info);
++				if (g_strcmp0(module, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0) {
++					g_variant_builder_add(vb, "{sv}", module, v);
++				} else {
++					g_variant_unref(v);
++				}
++				g_object_unref(info);
+ 			}
+-			g_object_unref(info);
+ 		}
+ 		g_free(p);
+ 
+@@ -1034,43 +1040,36 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 
+ 	if (g_strcmp0(method_name, "StopService") == 0) {
+ 		g_dbus_method_invocation_return_value(invocation,
+-						      g_variant_new("(b)", TRUE));
++						      g_variant_new_boolean(TRUE));
+ 		g_signal_emit(server, signals[SIG_DISCONNECTED], 0, NULL);
+ 	} else if (g_strcmp0(method_name, "GetVersion") == 0) {
+-		value = g_variant_new("(u)",
+-				      IMSETTINGS_SETTINGS_API_VERSION);
++		value = g_variant_new_uint32(IMSETTINGS_SETTINGS_API_VERSION);
+ 	} else if (g_strcmp0(method_name, "GetInfoVariants") == 0) {
+ 		const gchar *lang;
+-		GVariant *v;
+ 
+ 		g_variant_get(parameters, "(&s)",
+ 			      &lang);
+ 
+-		v = imsettings_server_cb_get_info_variants(server, lang, &err);
+-		if (!v) {
++		value = imsettings_server_cb_get_info_variants(server, lang, &err);
++		if (!value) {
+ 			g_set_error(&err, IMSETTINGS_GERROR,
+ 				    IMSETTINGS_GERROR_IM_NOT_FOUND,
+ 				    "No IMs available");
+-		} else {
+-			value = g_variant_new_tuple(&v, 1);
+ 		}
+ 	} else if (g_strcmp0(method_name, "GetInfoVariant") == 0) {
+ 		const gchar *lang, *module;
+-		GVariant *v;
+ 
+ 		g_variant_get(parameters, "(&s&s)",
+ 			      &lang, &module);
+ 
+-		v = imsettings_server_cb_get_info_variant(server,
+-							  lang,
+-							  module,
+-							  &err);
+-		if (!v) {
++		value = imsettings_server_cb_get_info_variant(server,
++							      lang,
++							      module,
++							      &err);
++		if (!value) {
+ 			g_set_error(&err, IMSETTINGS_GERROR,
+ 				    IMSETTINGS_GERROR_IM_NOT_FOUND,
+ 				    "No such input method: %s", module);
+-		} else {
+-			value = g_variant_new_tuple(&v, 1);
+ 		}
+ 	} else if (g_strcmp0(method_name, "GetSystemIM") == 0) {
+ 		const gchar *lang;
+@@ -1079,7 +1078,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_variant_get(parameters, "(&s)", &lang);
+ 		im = imsettings_server_cb_get_system_im(server, lang, &err);
+ 		if (im) {
+-			value = g_variant_new("(s)", im);
++			value = g_variant_new_string(im);
+ 			g_free(im);
+ 		}
+ 	} else if (g_strcmp0(method_name, "GetUserIM") == 0) {
+@@ -1089,7 +1088,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_variant_get(parameters, "(&s)", &lang);
+ 		im = imsettings_server_cb_get_user_im(server, lang, &err);
+ 		if (im) {
+-			value = g_variant_new("(s)", im);
++			value = g_variant_new_string(im);
+ 			g_free(im);
+ 		}
+ 	} else if (g_strcmp0(method_name, "IsSystemDefault") == 0) {
+@@ -1099,8 +1098,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_variant_get(parameters, "(&s&s)", &lang, &module);
+ 		im = imsettings_server_cb_get_system_im(server, lang, &err);
+ 		if (im) {
+-			value = g_variant_new("(b)",
+-					      g_ascii_strcasecmp(im, module) == 0);
++			value = g_variant_new_boolean(g_ascii_strcasecmp(im, module) == 0);
+ 			g_free(im);
+ 		}
+ 	} else if (g_strcmp0(method_name, "IsUserDefault") == 0) {
+@@ -1110,8 +1108,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_variant_get(parameters, "(&s&s)", &lang, &module);
+ 		im = imsettings_server_cb_get_user_im(server, lang, &err);
+ 		if (im) {
+-			value = g_variant_new("(b)",
+-					      g_ascii_strcasecmp(im, module) == 0);
++			value = g_variant_new_boolean(g_ascii_strcasecmp(im, module) == 0);
+ 			g_free(im);
+ 		}
+ 	} else if (g_strcmp0(method_name, "IsXIM") == 0) {
+@@ -1138,8 +1135,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 				    IMSETTINGS_GERROR_OOM,
+ 				    _("Out of memory"));
+ 		} else {
+-			value = g_variant_new("(b)",
+-					      imsettings_info_is_xim(info));
++			value = g_variant_new_boolean(imsettings_info_is_xim(info));
+ 			g_object_unref(info);
+ 		}
+ 		g_variant_unref(v);
+@@ -1166,9 +1162,8 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		if (info)
+ 			g_object_unref(info);
+ 
+-		value = g_variant_new("(b)", ret);
++		value = g_variant_new_boolean(ret);
+ 	} else if (g_strcmp0(method_name, "GetActiveVariant") == 0) {
+-		GVariant *v = NULL;
+ 		gchar *f;
+ 
+ 		if (!priv->current_im ||
+@@ -1176,19 +1171,17 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 			f = g_build_filename(imsettings_server_get_xinputdir(server),
+ 					     IMSETTINGS_NONE_CONF XINPUT_SUFFIX, NULL);
+ 			if (g_file_test(f, G_FILE_TEST_EXISTS))
+-				v = imsettings_info_variant_new(f, NULL);
++				value = imsettings_info_variant_new(f, NULL);
+ 			g_free(f);
+ 		} else {
+ 			IMSettingsInfo *info = imsettings_proc_info(priv->current_im);
+ 
+-			v = imsettings_info_variant_new(imsettings_info_get_filename(info),
+-							imsettings_info_get_language(info));
++			value = imsettings_info_variant_new(imsettings_info_get_filename(info),
++							    imsettings_info_get_language(info));
+ 		}
+-		if (!v) {
++		if (!value) {
+ 			g_set_error(&err, IMSETTINGS_GERROR, IMSETTINGS_GERROR_CONFIGURATION_ERROR,
+ 				    "none.conf isn't installed.");
+-		} else {
+-			value = g_variant_new_tuple(&v, 1);
+ 		}
+ 	} else if (g_strcmp0(method_name, "LoadModule") == 0) {
+ 		const gchar *modname;
+@@ -1197,7 +1190,7 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_variant_get(parameters, "(&s)", &modname);
+ 
+ 		ret = imsettings_server_cb_load_module(server, modname);
+-		value = g_variant_new("(b)", ret);
++		value = g_variant_new_boolean(ret);
+ 	} else if (g_strcmp0(method_name, "UnloadModule") == 0) {
+ 		const gchar *modname;
+ 		gboolean ret;
+@@ -1205,17 +1198,13 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_variant_get(parameters, "(&s)", &modname);
+ 
+ 		ret = imsettings_server_cb_unload_module(server, modname);
+-		value = g_variant_new("(b)", ret);
++		value = g_variant_new_boolean(ret);
+ 	} else if (g_strcmp0(method_name, "DumpModuleSettings") == 0) {
+-		GVariant *v;
+-
+-		v = imsettings_server_cb_get_module_settings(server, &err);
+-		if (!v) {
++		value = imsettings_server_cb_get_module_settings(server, &err);
++		if (!value) {
+ 			g_set_error(&err, IMSETTINGS_GERROR,
+ 				    IMSETTINGS_GERROR_CONFIGURATION_ERROR,
+ 				    "No modules loaded");
+-		} else {
+-			value = g_variant_new_tuple(&v, 1);
+ 		}
+ 	}
+   finalize:
+@@ -1232,7 +1221,10 @@ imsettings_server_bus_method_call(GDBusConnection       *connection,
+ 		g_error_free(err);
+ 	} else {
+ 		if (value) {
+-			g_dbus_method_invocation_return_value(invocation, value);
++			GVariant *v;
++
++			v = g_variant_new_tuple(&value, 1);
++			g_dbus_method_invocation_return_value(invocation, v);
+ 		}
+ 	}
+ }
+-- 
+1.8.3.1
+

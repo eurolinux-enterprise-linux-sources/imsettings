@@ -1,6 +1,6 @@
 Name:		imsettings
 Version:	1.6.3
-Release:	1%{?dist}
+Release:	10%{?dist}
 License:	LGPLv2+
 URL:		https://tagoh.bitbucket.org/%{name}/
 BuildRequires:	desktop-file-utils
@@ -19,6 +19,12 @@ Patch0:		%{name}-constraint-of-language.patch
 Patch1:		%{name}-disable-xim.patch
 ## Fedora specific: Enable xcompose for certain languages
 Patch2:		%{name}-xinput-xcompose.patch
+Patch3:		%{name}-fix-memleak-and-crash.patch
+Patch4:		%{name}-1.6.3-translations-update.patch
+Patch5:		%{name}-imsettings-reload-locale.patch
+Patch6:		%{name}-fix-assertion-in-gio.patch
+Patch7:		%{name}-rebase-gnome.patch
+Patch8:		%{name}-fix-unbound-variable.patch
 
 Summary:	Delivery framework for general Input Method configuration
 Group:		Applications/System
@@ -173,6 +179,12 @@ This package contains a module to get this working on MATE.
 %patch0 -p1 -b .0-lang
 %patch1 -p1 -b .1-xim
 %patch2 -p1 -b .2-xcompose
+%patch3 -p1 -b .3-memleak-crash
+%patch4 -p2 -b .4-trans
+%patch5 -p1 -b .5-reload
+%patch6 -p1 -b .6-gio
+%patch7 -p1 -b .7-rebase-gnome
+%patch8 -p1 -b .8-unbound-variable
 
 %build
 %configure	\
@@ -194,6 +206,7 @@ chmod 0755 $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/50-xinput.sh
 # clean up the unnecessary files
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/imsettings/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/imsettings/libimsettings-{gconf,mateconf}.so
 %if 0%{?rhel}
 rm -f $RPM_BUILD_ROOT%{_libdir}/imsettings/libimsettings-{lxde,xfce,mate-gsettings}.so
 %endif
@@ -285,6 +298,31 @@ fi
 
 
 %changelog
+* Thu Jun 21 2018 Akira TAGOH <tagoh@redhat.com> - 1.6.3-10
+- Fix a regression imsettings can't detect GNOME running caused by GNOME rebase. (#1533772)
+- Fix unbound variable issue (#1533050)
+
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.6.3-9
+- Mass rebuild 2014-01-24
+
+* Wed Jan 22 2014 Akira TAGOH <tagoh@redhat.com> - 1.6.3-8
+- Fix untranslated strings in imsettings-reload (#1054602)
+
+* Wed Jan  8 2014 Akira TAGOH <tagoh@redhat.com> - 1.6.3-6
+- Remove the possibly unnecessary unpackaged files at the build time (#1046496)
+
+* Tue Jan  7 2014 Akira TAGOH <tagoh@redhat.com> - 1.6.3-5
+- Update translations again (#1030360)
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.6.3-4
+- Mass rebuild 2013-12-27
+
+* Fri Dec 13 2013 Akira TAGOH <tagoh@redhat.com> - 1.6.3-3
+- Update translations (#1030360)
+
+* Tue Dec  3 2013 Akira TAGOH <tagoh@redhat.com> - 1.6.3-2
+- Fix the memory leaks and crash (#1018199)
+
 * Tue Jun 11 2013 Akira TAGOH <tagoh@redhat.com> - 1.6.3-1
 - New upstream release.
 - Remove BR: docbook2X.

@@ -1,0 +1,544 @@
+--- a/imsettings-1.6.3/po/bn_IN.po	2013-12-14 09:04:46.433481559 +0530
++++ a/imsettings-1.6.3/po/bn_IN.po	2013-12-14 09:06:00.770021178 +0530
+@@ -1,27 +1,27 @@ 
+ # SOME DESCRIPTIVE TITLE.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+-#
++# 
+ # Runa Bhattacharjee <runab@fedoraproject.org>, 2008.
+ # Akira  <akira+transifex@tagoh.org>, 2011.
+ # Runa Bhattacharjee <runabh@gmail.com>, 2007.
+ # Runa Bhattacharjee <runab@redhat.com>, 2006, 2009.
+-# Runa Bhattacharjee <runab@redhat.com>, 2012. #zanata
++# sray <sray@redhat.com>, 2013. #zanata
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: imsettings\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2013-05-27 12:40+0900\n"
+-"PO-Revision-Date: 2012-11-20 06:24-0500\n"
+-"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
++"PO-Revision-Date: 2013-10-03 02:58-0400\n"
++"Last-Translator: sray <sray@redhat.com>\n"
+ "Language-Team: Bengali (India) (http://www.transifex.net/projects/p/"
+ "imsettings/team/bn_IN/)\n"
+-"Language: bn-IN\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"Language: bn-IN\n"
+ "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+-"X-Generator: Zanata 2.2.2\n"
++"X-Generator: Zanata 3.1.2\n"
+ 
+ #: ../backends/xim/loopback.c:223
+ msgid "Synchronous"
+@@ -49,7 +49,9 @@ 
+ 
+ #: ../backends/xim/main.c:157
+ msgid "Replace the running XIM server with new instance."
+-msgstr "চলমান XIM সার্ভারের পুরোনো ইনস্ট্যান্স বন্ধ করে নতুন ইনস্ট্যান্স স্থাপন করুন।"
++msgstr ""
++"চলমান XIM সার্ভারের পুরোনো ইনস্ট্যান্স বন্ধ করে নতুন ইনস্ট্যান্স স্থাপন "
++"করুন।"
+ 
+ #: ../backends/xim/main.c:158
+ msgid "Output the debugging logs"
+@@ -63,9 +65,12 @@ 
+ msgid "XIM"
+ msgstr "XIM"
+ 
+-#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+-#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+-#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
++#: ../backends/xim/main.c:187
++#: ../imsettings-daemon/main.c:141
++#: ../utils/imsettings-check.c:315
++#: ../utils/imsettings-info.c:70
++#: ../utils/imsettings-reload.c:65
++#: ../utils/imsettings-switch.c:82
+ msgid "Unknown error in parsing the command lines."
+ msgstr "কমান্ড লাইন পার্স করতে অজানা সমস্যা।"
+ 
+@@ -110,9 +115,11 @@ 
+ msgid ""
+ "Giving up to bring the process up because %s Input Method process for %s "
+ "rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
++""
+ msgstr ""
+-"প্রসেস পুনরায় আরম্ভের প্রচেষ্টা বন্ধ করা হচ্ছপ কারণ %s ইনপুট পদ্ধতিটি %s-র জন্য অতি "
+-"দ্রুত কয়েকবার বন্ধ হয়েছে। অধিক বিবরণের জন্য $XDG_CACHE_HOME/imsettings/log দেখুন।"
++"প্রসেস পুনরায় আরম্ভের প্রচেষ্টা বন্ধ করা হচ্ছপ কারণ %s ইনপুট পদ্ধতিটি %s-র "
++"জন্য অতি দ্রুত কয়েকবার বন্ধ হয়েছে। অধিক বিবরণের জন্য $XDG_CACHE_HOME/"
++"imsettings/log দেখুন।"
+ 
+ #: ../imsettings-daemon/imsettings-proc.c:304
+ #, c-format
+@@ -187,7 +194,7 @@ 
+ #: ../imsettings-daemon/imsettings-server.c:748
+ #, c-format
+ msgid "Current desktop isn't targeted by IMSettings."
+-msgstr ""
++msgstr "বর্তমান ডেস্কটপ IMSettings নির্দিষ্ট নয়।"
+ 
+ #: ../imsettings-daemon/imsettings-server.c:800
+ #, c-format
+@@ -230,10 +237,13 @@ 
+ 
+ #: ../imsettings-daemon/main.c:112
+ msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+-msgstr "সিস্টেম-ব্যাপী xinputrc  ডিরেক্টরি নির্ধারণ করুন (ডিবাগ করার উদ্দেশ্যে)"
++msgstr ""
++"সিস্টেম-ব্যাপী xinputrc  ডিরেক্টরি নির্ধারণ করুন (ডিবাগ করার উদ্দেশ্যে)"
+ 
+-#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+-#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
++#: ../imsettings-daemon/main.c:112
++#: ../imsettings-daemon/main.c:113
++#: ../imsettings-daemon/main.c:114
++#: ../imsettings-daemon/main.c:115
+ msgid "DIR"
+ msgstr "DIR"
+ 
+@@ -261,15 +271,18 @@ 
+ msgid "XSETTINGS manager isn't running"
+ msgstr "XSETTINGS manager বর্তমানে চলছে না"
+ 
+-#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
++#: ../utils/imsettings-check.c:169
++#: ../utils/imsettings-check.c:222
+ msgid "Unable to create a client instance."
+ msgstr "ক্লায়েন্ট ইনস্ট্যান্স তৈরি করতে ব্যর্থ।"
+ 
+-#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
++#: ../utils/imsettings-check.c:177
++#: ../utils/imsettings-check.c:230
+ msgid "imsettings version mismatch"
+ msgstr "imsettings সংস্করণে গরমিল"
+ 
+-#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
++#: ../utils/imsettings-check.c:190
++#: ../utils/imsettings-check.c:256
+ msgid "No modules loaded"
+ msgstr "কোনো মডিউল লোড করা হয়নি"
+ 
+@@ -303,31 +316,39 @@ 
+ msgid "Check if XSETTINGS manager is running"
+ msgstr "XSETTINGS manager চলছে কি না যাচাই করুন"
+ 
+-#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
++#: ../utils/imsettings-info.c:51
++#: ../utils/imsettings-switch.c:44
+ msgid "[Input Method name|xinput.conf]"
+ msgstr "[Input Method name|xinput.conf]"
+ 
+-#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+-#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
++#: ../utils/imsettings-info.c:76
++#: ../utils/imsettings-list.c:64
++#: ../utils/imsettings-reload.c:72
++#: ../utils/imsettings-switch.c:88
+ #, c-format
+ msgid "IMSettings is disabled on the system.\n"
+ msgstr "এই সিস্টেমের মধ্যে IMSettings নিষ্ক্রিয় করা হয়েছে।\n"
+ 
+-#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+-#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
++#: ../utils/imsettings-info.c:82
++#: ../utils/imsettings-list.c:70
++#: ../utils/imsettings-reload.c:78
++#: ../utils/imsettings-switch.c:94
+ #, c-format
+ msgid "Unable to create a client instance.\n"
+ msgstr "ক্লায়েন্ট ইনস্ট্যান্স তৈরি করতে ব্যর্থ।\n"
+ 
+-#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
++#: ../utils/imsettings-info.c:89
++#: ../utils/imsettings-list.c:77
+ #: ../utils/imsettings-switch.c:101
+ #, c-format
+ msgid ""
+ "Currently a different version of imsettings is running.\n"
+-"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
++"Running \"imsettings-reload\" may help but it will restart the Input "
++"Method\n"
+ msgstr ""
+ "বর্তমানে imsettings-র একটি ভিন্ন সংস্করণ চলছে।\n"
+-"\"imsettings-reload\"-র সঞ্চালনা সহায়ক হলেও এটি ইনপুট পদ্ধতি পুনরারম্ভ করবে\n"
++"\"imsettings-reload\"-র সঞ্চালনা সহায়ক হলেও এটি ইনপুট পদ্ধতি পুনরারম্ভ "
++"করবে\n"
+ 
+ #: ../utils/imsettings-info.c:107
+ #, c-format
+@@ -378,7 +399,7 @@ 
+ 
+ #: ../utils/imsettings-switch.c:110
+ msgid "No backend modules available"
+-msgstr ""
++msgstr "কোনো ব্যাক-এন্ড মডিউল উপলব্ধ নেই"
+ 
+ #: ../utils/imsettings-switch.c:127
+ #, c-format
+@@ -393,4 +414,4 @@ 
+ #: ../utils/imsettings-switch.c:182
+ #, c-format
+ msgid "Switched input method to %s\n"
+-msgstr ""
++msgstr "ইনপুট পদ্ধতি %s এ পাল্টানো হয়েছে\n"
+--- a/imsettings-1.6.3/po/pa.po	2013-12-14 09:04:46.432481551 +0530
++++ a/imsettings-1.6.3/po/pa.po	2013-12-14 09:06:00.771021185 +0530
+@@ -1,27 +1,27 @@ 
+ # SOME DESCRIPTIVE TITLE.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+-#
++# 
+ # A S Alam <aalam@users.sf.net>, 2007.
+ # Jaswinder Singh <jsingh@redhat.com>, 2006, 2008, 2009.
+ # Akira  <akira+transifex@tagoh.org>, 2011.
+ # A S Alam <apreet.alam@gmail.com>, 2011.
+-# jassy <jassy@fedoraproject.org>, 2012. #zanata
++# asaini <asaini@redhat.com>, 2013. #zanata
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: imsettings\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2013-05-27 12:40+0900\n"
+-"PO-Revision-Date: 2012-08-30 06:57-0400\n"
+-"Last-Translator: jassy <jassy@fedoraproject.org>\n"
++"PO-Revision-Date: 2013-10-08 08:05-0400\n"
++"Last-Translator: asaini <asaini@redhat.com>\n"
+ "Language-Team: Panjabi (Punjabi) (http://www.transifex.net/projects/p/"
+ "imsettings/team/pa/)\n"
+-"Language: pa\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"Language: pa\n"
+ "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+-"X-Generator: Zanata 2.2.2\n"
++"X-Generator: Zanata 3.1.2\n"
+ 
+ #: ../backends/xim/loopback.c:223
+ msgid "Synchronous"
+@@ -63,9 +63,12 @@ 
+ msgid "XIM"
+ msgstr "XIM"
+ 
+-#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+-#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+-#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
++#: ../backends/xim/main.c:187
++#: ../imsettings-daemon/main.c:141
++#: ../utils/imsettings-check.c:315
++#: ../utils/imsettings-info.c:70
++#: ../utils/imsettings-reload.c:65
++#: ../utils/imsettings-switch.c:82
+ msgid "Unknown error in parsing the command lines."
+ msgstr "ਕਮਾਂਡ ਲਾਈਵ ਪਾਰਸ ਕਰਨ ਵੇਲੇ ਅਣਜਾਣੀ ਗਲਤੀ।"
+ 
+@@ -110,9 +113,10 @@ 
+ msgid ""
+ "Giving up to bring the process up because %s Input Method process for %s "
+ "rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
++""
+ msgstr ""
+-"ਕਾਰਜ ਨੂੰ ਚਾਲੂ ਕਰ ਰਿਹਾ ਹੈ ਕਿਉਂਕਿ %s ਇੰਪੁੱਟ ਢੰਗ ਕਾਰਜ %s ਲਈ ਲਗਾਤਾਰ ਬਹੁਤ ਵਾਰ ਬੰਦ ਹੋ ਰਿਹਾ ਹੈ। "
+-"ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ $XDG_CACHE_HOME/imsettings/log ਵੇਖੋ।"
++"ਕਾਰਜ ਨੂੰ ਚਾਲੂ ਕਰ ਰਿਹਾ ਹੈ ਕਿਉਂਕਿ %s ਇੰਪੁੱਟ ਢੰਗ ਕਾਰਜ %s ਲਈ ਲਗਾਤਾਰ ਬਹੁਤ ਵਾਰ ਬੰਦ "
++"ਹੋ ਰਿਹਾ ਹੈ। ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ $XDG_CACHE_HOME/imsettings/log ਵੇਖੋ।"
+ 
+ #: ../imsettings-daemon/imsettings-proc.c:304
+ #, c-format
+@@ -187,7 +191,7 @@ 
+ #: ../imsettings-daemon/imsettings-server.c:748
+ #, c-format
+ msgid "Current desktop isn't targeted by IMSettings."
+-msgstr ""
++msgstr "ਮੌਜੂਦਾ ਡੈਸਕਟਾਪ IMSettings ਵਲੋਂ ਨਿਸ਼ਾਨਾ ਨਹੀਂ ਬਣਾਇਆ ਗਿਆ।"
+ 
+ #: ../imsettings-daemon/imsettings-server.c:800
+ #, c-format
+@@ -232,8 +236,10 @@ 
+ msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+ msgstr "ਸਿਸਟਮ-ਅਧਾਰਿਤ xinputrc ਡਾਇਰੈਕਟਰੀ ਸੈੰਟ ਕਰੋ (ਡੀਬੱਗਿੰਗ ਉਦੇਸ਼ ਲਈ)"
+ 
+-#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+-#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
++#: ../imsettings-daemon/main.c:112
++#: ../imsettings-daemon/main.c:113
++#: ../imsettings-daemon/main.c:114
++#: ../imsettings-daemon/main.c:115
+ msgid "DIR"
+ msgstr "DIR"
+ 
+@@ -261,15 +267,18 @@ 
+ msgid "XSETTINGS manager isn't running"
+ msgstr "XSETTINGS ਮੈਨੇਜਰ ਨਹੀਂ ਚੱਲ ਰਿਹਾ ਹੈ"
+ 
+-#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
++#: ../utils/imsettings-check.c:169
++#: ../utils/imsettings-check.c:222
+ msgid "Unable to create a client instance."
+ msgstr "ਇੱਕ ਕਲਾਂਈਟ ਉਦਾਹਰਨ ਬਣਾਉਣ ਤੋਂ ਅਸਮਰਥ।"
+ 
+-#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
++#: ../utils/imsettings-check.c:177
++#: ../utils/imsettings-check.c:230
+ msgid "imsettings version mismatch"
+ msgstr "imsettings ਵਰਜਨ ਰਲਦਾ ਨਹੀਂ"
+ 
+-#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
++#: ../utils/imsettings-check.c:190
++#: ../utils/imsettings-check.c:256
+ msgid "No modules loaded"
+ msgstr "ਕੋਈ ਮੋਡੀਊਲ ਲੋਡ ਨਹੀਂ ਕੀਤਾ"
+ 
+@@ -303,31 +312,38 @@ 
+ msgid "Check if XSETTINGS manager is running"
+ msgstr "ਵੇਖੋ ਕਿ XSETTINGS ਮੈਨੇਜਰ ਚੱਲ ਰਿਹਾ ਹੈ"
+ 
+-#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
++#: ../utils/imsettings-info.c:51
++#: ../utils/imsettings-switch.c:44
+ msgid "[Input Method name|xinput.conf]"
+ msgstr "[Input Method name|xinput.conf]"
+ 
+-#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+-#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
++#: ../utils/imsettings-info.c:76
++#: ../utils/imsettings-list.c:64
++#: ../utils/imsettings-reload.c:72
++#: ../utils/imsettings-switch.c:88
+ #, c-format
+ msgid "IMSettings is disabled on the system.\n"
+ msgstr "IMSettings ਸਿਸਟਮ ਉੱਪਰ ਅਯੋਗ ਕੀਤੀ ਹੈ।\n"
+ 
+-#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+-#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
++#: ../utils/imsettings-info.c:82
++#: ../utils/imsettings-list.c:70
++#: ../utils/imsettings-reload.c:78
++#: ../utils/imsettings-switch.c:94
+ #, c-format
+ msgid "Unable to create a client instance.\n"
+ msgstr "ਇੱਕ ਕਲਾਂਈਟ ਉਦਾਹਰਨ ਬਣਾਉਣ ਤੋਂ ਅਸਮਰਥ।\n"
+ 
+-#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
++#: ../utils/imsettings-info.c:89
++#: ../utils/imsettings-list.c:77
+ #: ../utils/imsettings-switch.c:101
+ #, c-format
+ msgid ""
+ "Currently a different version of imsettings is running.\n"
+-"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
++"Running \"imsettings-reload\" may help but it will restart the Input "
++"Method\n"
+ msgstr ""
+-"ਹੁਣ ਇੱਕ ਵੱਖਰਾ imsettings ਵਰਜਨ ਚੱਲ ਰਿਹਾ ਹੈ। \"imsettings-reload\" ਚਲਾਉਣ ਨਾਲ ਮੱਦਦ ਹੋ "
+-"ਸਕਦੀ ਹੈ ਪਰ ਇਹ ਇੰਪੁੱਟ ਢੰਗ ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰੇਗਾ\n"
++"ਹੁਣ ਇੱਕ ਵੱਖਰਾ imsettings ਵਰਜਨ ਚੱਲ ਰਿਹਾ ਹੈ। \"imsettings-reload\" ਚਲਾਉਣ ਨਾਲ "
++"ਮੱਦਦ ਹੋ ਸਕਦੀ ਹੈ ਪਰ ਇਹ ਇੰਪੁੱਟ ਢੰਗ ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰੇਗਾ\n"
+ 
+ #: ../utils/imsettings-info.c:107
+ #, c-format
+@@ -378,7 +394,7 @@ 
+ 
+ #: ../utils/imsettings-switch.c:110
+ msgid "No backend modules available"
+-msgstr ""
++msgstr "ਕੋਈ ਬੈਕ-ਐਂਡ ਮੌਡਿਊਲ ਉਪਲੱਬਧ ਨਹੀਂ"
+ 
+ #: ../utils/imsettings-switch.c:127
+ #, c-format
+@@ -393,4 +409,4 @@ 
+ #: ../utils/imsettings-switch.c:182
+ #, c-format
+ msgid "Switched input method to %s\n"
+-msgstr ""
++msgstr "ਇੰਨਪੁੱਟ ਢੰਗ ਨੂੰ %s ਵਿੱਚ ਬਦਲਿਆ\n"
+--- a/imsettings-1.6.3/po/pt_BR.po	2013-12-14 09:04:46.435481573 +0530
++++ a/imsettings-1.6.3/po/pt_BR.po	2013-12-14 09:06:00.771021185 +0530
+@@ -1,28 +1,27 @@ 
+ # SOME DESCRIPTIVE TITLE.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+-#
++# 
+ # Frederico Madeira <fred@madeira.eng.br>, 2008.
+ # Glaucia Cintra <gcintra@redhat.com>, 2008.
+ # Igor Pires Soares <igor@projetofedora.org>, 2007, 2008, 2009.
+ # Akira  <akira+transifex@tagoh.org>, 2011.
+ # Vitor Vilas Boas <vitor@vitorvilasboas.com.br>, 2009.
+-# gcintra <gcintra@fedoraproject.org>, 2012. #zanata
+-# gcintra <gcintra@fedoraproject.org>, 2013. #zanata
++# gcintra <gcintra@redhat.com>, 2013. #zanata
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: imsettings\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2013-05-27 12:40+0900\n"
+-"PO-Revision-Date: 2013-04-03 12:55-0400\n"
+-"Last-Translator: gcintra <gcintra@fedoraproject.org>\n"
++"PO-Revision-Date: 2013-09-30 08:29-0400\n"
++"Last-Translator: gcintra <gcintra@redhat.com>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+-"Language: pt-BR\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"Language: pt-BR\n"
+ "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+-"X-Generator: Zanata 2.2.2\n"
++"X-Generator: Zanata 3.1.2\n"
+ 
+ #: ../backends/xim/loopback.c:223
+ msgid "Synchronous"
+@@ -58,15 +57,19 @@ 
+ 
+ #: ../backends/xim/main.c:159
+ msgid "XIM server connects to, for debugging purpose only"
+-msgstr "A quem o servidor XIM conecta-se, somente para propósitos de depuração"
++msgstr ""
++"A quem o servidor XIM conecta-se, somente para propósitos de depuração"
+ 
+ #: ../backends/xim/main.c:159
+ msgid "XIM"
+ msgstr "XIM"
+ 
+-#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+-#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+-#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
++#: ../backends/xim/main.c:187
++#: ../imsettings-daemon/main.c:141
++#: ../utils/imsettings-check.c:315
++#: ../utils/imsettings-info.c:70
++#: ../utils/imsettings-reload.c:65
++#: ../utils/imsettings-switch.c:82
+ msgid "Unknown error in parsing the command lines."
+ msgstr "Erro desconhecido ao analisar as linhas de comando."
+ 
+@@ -111,6 +114,7 @@ 
+ msgid ""
+ "Giving up to bring the process up because %s Input Method process for %s "
+ "rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
++""
+ msgstr ""
+ "Desistindo de ativar o processo porque o processo do método de entrada %s "
+ "para o %s caiu rapidamente várias vezes. Veja o $XDG_CACHE_HOME/imsettings/"
+@@ -148,7 +152,8 @@ 
+ 
+ #: ../imsettings-daemon/imsettings-server.c:424
+ msgid "A boolean value whether the logging facility is enabled or not."
+-msgstr "Um valor booleano estando o recurso de autenticação habilitado ou não."
++msgstr ""
++"Um valor booleano estando o recurso de autenticação habilitado ou não."
+ 
+ #: ../imsettings-daemon/imsettings-server.c:429
+ #: ../imsettings-daemon/imsettings-server.c:430
+@@ -189,7 +194,7 @@ 
+ #: ../imsettings-daemon/imsettings-server.c:748
+ #, c-format
+ msgid "Current desktop isn't targeted by IMSettings."
+-msgstr ""
++msgstr "Desktop atual não é alvo do IMSettings."
+ 
+ #: ../imsettings-daemon/imsettings-server.c:800
+ #, c-format
+@@ -234,14 +239,17 @@ 
+ msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+ msgstr "Defina o diretório system-wide xinputrc (para propósito de depuração)"
+ 
+-#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+-#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
++#: ../imsettings-daemon/main.c:112
++#: ../imsettings-daemon/main.c:113
++#: ../imsettings-daemon/main.c:114
++#: ../imsettings-daemon/main.c:115
+ msgid "DIR"
+ msgstr "DIR"
+ 
+ #: ../imsettings-daemon/main.c:113
+ msgid "Set the IM configuration directory (for debugging purpose)"
+-msgstr "Defina o diretório de configuração do IM (para propósito de depuração)"
++msgstr ""
++"Defina o diretório de configuração do IM (para propósito de depuração)"
+ 
+ #: ../imsettings-daemon/main.c:114
+ msgid "Set a home directory (for debugging purpose)"
+@@ -263,15 +271,18 @@ 
+ msgid "XSETTINGS manager isn't running"
+ msgstr "O gerenciador XSETTINGS não está sendo executado"
+ 
+-#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
++#: ../utils/imsettings-check.c:169
++#: ../utils/imsettings-check.c:222
+ msgid "Unable to create a client instance."
+ msgstr "Incapaz de criar uma instância de cliente"
+ 
+-#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
++#: ../utils/imsettings-check.c:177
++#: ../utils/imsettings-check.c:230
+ msgid "imsettings version mismatch"
+ msgstr "Versão imsettings mismatch"
+ 
+-#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
++#: ../utils/imsettings-check.c:190
++#: ../utils/imsettings-check.c:256
+ msgid "No modules loaded"
+ msgstr "Nenhum módulo carregado"
+ 
+@@ -305,28 +316,35 @@ 
+ msgid "Check if XSETTINGS manager is running"
+ msgstr "Verifique se o gerenciador do XSETTINGS está sendo executado"
+ 
+-#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
++#: ../utils/imsettings-info.c:51
++#: ../utils/imsettings-switch.c:44
+ msgid "[Input Method name|xinput.conf]"
+ msgstr "[Input Method name|xinput.conf]"
+ 
+-#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+-#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
++#: ../utils/imsettings-info.c:76
++#: ../utils/imsettings-list.c:64
++#: ../utils/imsettings-reload.c:72
++#: ../utils/imsettings-switch.c:88
+ #, c-format
+ msgid "IMSettings is disabled on the system.\n"
+ msgstr "IMSettings está desativado no sistema.\n"
+ 
+-#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+-#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
++#: ../utils/imsettings-info.c:82
++#: ../utils/imsettings-list.c:70
++#: ../utils/imsettings-reload.c:78
++#: ../utils/imsettings-switch.c:94
+ #, c-format
+ msgid "Unable to create a client instance.\n"
+ msgstr "Incapaz de criar uma instância de cliente.\n"
+ 
+-#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
++#: ../utils/imsettings-info.c:89
++#: ../utils/imsettings-list.c:77
+ #: ../utils/imsettings-switch.c:101
+ #, c-format
+ msgid ""
+ "Currently a different version of imsettings is running.\n"
+-"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
++"Running \"imsettings-reload\" may help but it will restart the Input "
++"Method\n"
+ msgstr ""
+ "Atualmente uma versão diferente do imsettings está sendo executada. \n"
+ "Executar o \"imsettings-reload\" pode ajudar mas irá reiniciar o Método de "
+@@ -391,8 +409,7 @@ 
+ #: ../utils/imsettings-switch.c:140
+ #, c-format
+ msgid "Restarted %s\n"
+-msgstr ""
+-"Reiniciado%s\n"
++msgstr "Reiniciado%s\n"
+ "\n"
+ 
+ #: ../utils/imsettings-switch.c:182
