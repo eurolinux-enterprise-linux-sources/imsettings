@@ -1,0 +1,113 @@
+<!-- ##### SECTION Title ##### -->
+imsettings
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO IMSETTINGS_GLOBAL_XINPUT_CONF ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_INTERFACE_DBUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_NONE_CONF ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_PATH_DBUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_SERVICE_DBUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_SETTINGS_API_VERSION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_USER_SPECIFIC_LONG_DESC ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_USER_SPECIFIC_SHORT_DESC ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_USER_XINPUT_CONF ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_XIM_CONF ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_XIM_INTERFACE_DBUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_XIM_PATH_DBUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO IMSETTINGS_XIM_SERVICE_DBUS ##### -->
+<para>
+
+</para>
+
+
+

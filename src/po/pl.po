@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Akira  <akira+transifex@tagoh.org>, 2011.
+# Piotr Drąg <piotrdrag@gmail.com>, 2011.
+# raven <piotrdrag@gmail.com>, 2012. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: imsettings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-27 12:40+0900\n"
+"PO-Revision-Date: 2012-08-21 10:15-0400\n"
+"Last-Translator: raven <piotrdrag@gmail.com>\n"
+"Language-Team: Polish (http://www.transifex.net/projects/p/imsettings/team/"
+"pl/)\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+"X-Generator: Zanata 2.2.2\n"
+
+#: ../backends/xim/loopback.c:223
+msgid "Synchronous"
+msgstr "Synchronicznie"
+
+#: ../backends/xim/loopback.c:224
+msgid "Request to send a key event synchronously"
+msgstr "Żąda synchronicznego wysłania zdarzenia klawisza"
+
+#: ../backends/xim/main.c:155
+msgid "D-Bus address to use"
+msgstr "Adres magistrali D-Bus do użycia"
+
+#: ../backends/xim/main.c:155
+msgid "ADDRESS"
+msgstr "ADRES"
+
+#: ../backends/xim/main.c:156
+msgid "X display to use"
+msgstr "Użyty ekran X"
+
+#: ../backends/xim/main.c:156
+msgid "DISPLAY"
+msgstr "EKRAN"
+
+#: ../backends/xim/main.c:157
+msgid "Replace the running XIM server with new instance."
+msgstr "Zastępuje uruchomiony serwer XIM nowym."
+
+#: ../backends/xim/main.c:158
+msgid "Output the debugging logs"
+msgstr "Wyświetla na wyjściu dzienniki debugowania"
+
+#: ../backends/xim/main.c:159
+msgid "XIM server connects to, for debugging purpose only"
+msgstr "Serwer XIM do łączenia się, tylko do celów debugowania"
+
+#: ../backends/xim/main.c:159
+msgid "XIM"
+msgstr "XIM"
+
+#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
+msgid "Unknown error in parsing the command lines."
+msgstr "Nieznany błąd podczas przetwarzania wierszy poleceń."
+
+#: ../backends/xim/proxy.c:2972
+msgid "XIM server name"
+msgstr "Nazwa serwera XIM"
+
+#: ../backends/xim/proxy.c:2973
+msgid "The name of XIM server for the connection"
+msgstr "Nazwa serwera XIM dla połączenia"
+
+#: ../backends/xim/proxy.c:2978
+msgid "Signals for Protocol class"
+msgstr "Sygnały dla klasy protokołu"
+
+#: ../backends/xim/proxy.c:2979
+msgid "A structure of signals for Protocol class"
+msgstr "Struktura sygnałów dla klasy protokołu"
+
+#: ../imsettings/imsettings-client.c:161
+msgid "Locale"
+msgstr "Lokalizacja"
+
+#: ../imsettings/imsettings-client.c:162
+msgid "Locale to get the imsettings information"
+msgstr "Lokalizacja do uzyskania informacji o ustawieniach metody wprowadzania"
+
+#: ../imsettings-daemon/imsettings-module.c:133
+msgid "Name"
+msgstr "Nazwa"
+
+#: ../imsettings-daemon/imsettings-module.c:134
+msgid "A module name for imsettings backend"
+msgstr "Nazwa modułu dla zaplecza imsettings"
+
+#: ../imsettings-daemon/imsettings-proc.c:193
+msgid "Unable to keep Input Method running"
+msgstr "Nie można uruchomić metody wprowadzania"
+
+#: ../imsettings-daemon/imsettings-proc.c:203
+#, c-format
+msgid ""
+"Giving up to bring the process up because %s Input Method process for %s "
+"rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
+msgstr ""
+"Podniesienie procesu nie będzie próbowane, ponieważ proces metody "
+"wprowadzania %s dla %s został nieoczekiwanie zakończony zbyt wiele razy. W "
+"pliku $XDG_CACHE_HOME/imsettings/log można znaleźć więcej informacji."
+
+#: ../imsettings-daemon/imsettings-proc.c:304
+#, c-format
+msgid "[BUG] %s process is still running [pid: %d]\n"
+msgstr "[BŁĄD] proces %s jest nadal uruchomiony [PID: %d]\n"
+
+#: ../imsettings-daemon/imsettings-proc.c:448
+#, c-format
+msgid "Couldn't send a signal to the %s process successfully."
+msgstr "Nie można pomyślnie wysłać sygnału do procesu %s."
+
+#: ../imsettings-daemon/imsettings-proc.c:566
+msgid "IMSettingsInfo"
+msgstr "IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-proc.c:567
+msgid "A GObject to be a IMSettingsInfo"
+msgstr "GObject do zostania IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-server.c:417
+msgid "DBus connection"
+msgstr "Połączenie D-Bus"
+
+#: ../imsettings-daemon/imsettings-server.c:418
+msgid "A GObject to be a DBus connection"
+msgstr "GObject do zostania połączeniem D-Bus"
+
+#: ../imsettings-daemon/imsettings-server.c:423
+msgid "Logging"
+msgstr "Zapisywanie do dziennika"
+
+#: ../imsettings-daemon/imsettings-server.c:424
+msgid "A boolean value whether the logging facility is enabled or not."
+msgstr ""
+"Wartość zmiennej logicznej, czy możliwość zapisywania do dziennika jest "
+"włączona."
+
+#: ../imsettings-daemon/imsettings-server.c:429
+#: ../imsettings-daemon/imsettings-server.c:430
+msgid "Home directory"
+msgstr "Katalog domowy"
+
+#: ../imsettings-daemon/imsettings-server.c:435
+#: ../imsettings-daemon/imsettings-server.c:436
+msgid "xinputrc directory"
+msgstr "katalog xinputrc"
+
+#: ../imsettings-daemon/imsettings-server.c:441
+#: ../imsettings-daemon/imsettings-server.c:442
+msgid "xinput directory"
+msgstr "katalog xinput"
+
+#: ../imsettings-daemon/imsettings-server.c:447
+msgid "module directory"
+msgstr "katalog modułu"
+
+#: ../imsettings-daemon/imsettings-server.c:448
+msgid "IMSettings module directory"
+msgstr "katalog modułu IMSettings"
+
+#: ../imsettings-daemon/imsettings-server.c:714
+#, c-format
+msgid "No such input method on your system: %s"
+msgstr "Brak metody wprowadzania w systemie: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:723
+#: ../imsettings-daemon/imsettings-server.c:872
+#: ../imsettings-daemon/imsettings-server.c:913
+#: ../imsettings-daemon/imsettings-server.c:1134
+#, c-format
+msgid "Out of memory"
+msgstr "Brak pamięci"
+
+#: ../imsettings-daemon/imsettings-server.c:748
+#, c-format
+msgid "Current desktop isn't targeted by IMSettings."
+msgstr ""
+
+#: ../imsettings-daemon/imsettings-server.c:800
+#, c-format
+msgid "Failed to revert the backup file: %s"
+msgstr "Przywrócenie pliku tymczasowego się nie powiodło: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:813
+#, c-format
+msgid "Failed to create a backup file: %s"
+msgstr "Utworzenie pliku tymczasowego się nie powiodło: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:823
+#, c-format
+msgid "Failed to remove an user xinputrc file: %s"
+msgstr "Usunięcie pliku xinputrc się nie powiodło: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:834
+#, c-format
+msgid "Failed to create a symlink: %s"
+msgstr "Utworzenie dowiązania symbolicznego się nie powiodło: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:865
+#, c-format
+msgid "No system-wide xinputrc available"
+msgstr "Brak dostępnego systemowego pliku xinputrc"
+
+#: ../imsettings-daemon/imsettings-server.c:905
+#, c-format
+msgid "No user xinputrc nor system-wide xinputrc available"
+msgstr "Brak dostępnego systemowego pliku lub pliku użytkownika xinputrc"
+
+#: ../imsettings-daemon/imsettings-server.c:1126
+#, c-format
+msgid "No such input method: %s"
+msgstr "Brak metody wprowadzania: %s"
+
+#: ../imsettings-daemon/main.c:111
+msgid "Replace the instance of the imsettings daemon."
+msgstr "Zastępuje wystąpienie demona ustawień metod wprowadzania."
+
+#: ../imsettings-daemon/main.c:112
+msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+msgstr "Ustawia systemowy katalog xinputrc (w celu debugowania)"
+
+#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
+msgid "DIR"
+msgstr "KATALOG"
+
+#: ../imsettings-daemon/main.c:113
+msgid "Set the IM configuration directory (for debugging purpose)"
+msgstr "Ustawia katalog konfiguracji metod wprowadzania (w celu debugowania)"
+
+#: ../imsettings-daemon/main.c:114
+msgid "Set a home directory (for debugging purpose)"
+msgstr "Ustawia katalog domowy (w celu debugowania)"
+
+#: ../imsettings-daemon/main.c:115
+msgid "Set the imsettings module directory (for debugging purpose)"
+msgstr "Ustawia katalog modułu imsettings (w celu debugowania)"
+
+#: ../imsettings-daemon/main.c:116
+msgid "Do not create a log file."
+msgstr "Bez tworzenia pliku dziennika."
+
+#: ../utils/imsettings-check.c:131
+msgid "Unable to open X display"
+msgstr "Nie można otworzyć ekranu X"
+
+#: ../utils/imsettings-check.c:138
+msgid "XSETTINGS manager isn't running"
+msgstr "Menedżer XSettings nie jest uruchomiony"
+
+#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
+msgid "Unable to create a client instance."
+msgstr "Nie można utworzyć wystąpienia klienta."
+
+#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
+msgid "imsettings version mismatch"
+msgstr "Wersja imsettings się nie zgadza"
+
+#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
+msgid "No modules loaded"
+msgstr "Nie wczytano modułów"
+
+#: ../utils/imsettings-check.c:248
+msgid "Please see .imsettings.log for more details"
+msgstr "W pliku .imsettings.log znajduje się więcej informacji"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-check.c:287
+msgid "Output the detail information for the result"
+msgstr "Wyświetla szczegółowe informacje o wyniku"
+
+#: ../utils/imsettings-check.c:288
+msgid "Check if DBus is running"
+msgstr "Sprawdza, czy usługa D-Bus jest uruchomiona"
+
+#: ../utils/imsettings-check.c:289
+msgid "Check if SESSION is on line"
+msgstr "Sprawdza, czy SESJA jest uruchomiona"
+
+#: ../utils/imsettings-check.c:290
+msgid "Check if any valid modules are loaded"
+msgstr "Sprawdza, czy wczytane są prawidłowe moduły"
+
+#: ../utils/imsettings-check.c:291
+msgid "Check if all of the module settings has consistencies"
+msgstr "Sprawdza, czy wszystkie ustawienia modułów są spójne"
+
+#: ../utils/imsettings-check.c:292
+msgid "Check if XSETTINGS manager is running"
+msgstr "Sprawdza, czy menedżer XSettings jest uruchomiony"
+
+#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
+msgid "[Input Method name|xinput.conf]"
+msgstr "[Nazwa metody wprowadzania|xinput.conf]"
+
+#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
+#, c-format
+msgid "IMSettings is disabled on the system.\n"
+msgstr "Usługa IMSettings jest wyłączona w systemie.\n"
+
+#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
+#, c-format
+msgid "Unable to create a client instance.\n"
+msgstr "Nie można utworzyć wystąpienia klienta.\n"
+
+#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
+#: ../utils/imsettings-switch.c:101
+#, c-format
+msgid ""
+"Currently a different version of imsettings is running.\n"
+"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
+msgstr ""
+"Obecnie uruchomiona jest inna wersja programu imsettings.\n"
+"Wykonanie polecenia \"imsettings-reload\" może pomóc, ale ponownie uruchomi "
+"metodę wprowadzania\n"
+
+#: ../utils/imsettings-info.c:107
+#, c-format
+msgid "Unable to obtain an Input Method Information: %s\n"
+msgstr "Nie można uzyskać informacji o metodzie wprowadzania: %s\n"
+
+#: ../utils/imsettings-reload.c:44
+msgid "Force reloading imsettings-daemon (deprecated)."
+msgstr "Wymusza ponowne wczytanie usługi imsettings-daemon (przestarzałe)."
+
+#: ../utils/imsettings-reload.c:110
+#, c-format
+msgid "Reloaded.\n"
+msgstr "Uruchomiono ponownie.\n"
+
+#: ../utils/imsettings-start.desktop.in.h:1
+msgid "Input Method starter"
+msgstr "Uruchamianie metody wprowadzania"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:47
+msgid "Force restarting the IM process regardless of any errors."
+msgstr ""
+"Wymusza ponowne uruchomienie procesu metody wprowadzania, niezależnie od "
+"błędów."
+
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:49
+msgid "Do not update the user xinputrc."
+msgstr "Bez aktualizowania pliku xinputrc użytkownika."
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:51
+msgid "Shut up the extra messages."
+msgstr "Bez wyświetlania dodatkowych komunikatów."
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:53
+msgid "Restart input method"
+msgstr "Ponownie uruchamia metodę wprowadzania"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:55
+msgid "Read xinputrc to determine the input method"
+msgstr "Odczytuje plik xinputrc, aby ustalić metodę wprowadzania"
+
+#: ../utils/imsettings-switch.c:110
+msgid "No backend modules available"
+msgstr ""
+
+#: ../utils/imsettings-switch.c:127
+#, c-format
+msgid "No Input Method running to be restarted.\n"
+msgstr "Brak uruchomionej metody wprowadzania do ponownego uruchomienia.\n"
+
+#: ../utils/imsettings-switch.c:140
+#, c-format
+msgid "Restarted %s\n"
+msgstr "Uruchomiono ponownie %s\n"
+
+#: ../utils/imsettings-switch.c:182
+#, c-format
+msgid "Switched input method to %s\n"
+msgstr ""

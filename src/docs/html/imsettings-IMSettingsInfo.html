@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IMSettingsInfo</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="imsettings Documentation">
+<link rel="up" href="ch01.html" title="imsettings API References">
+<link rel="prev" href="imsettings-IMSettingsClient.html" title="IMSettingsClient">
+<link rel="next" href="imsettings-Macros.html" title="Macros">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="imsettings-IMSettingsClient.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">imsettings Documentation</th>
+<td><a accesskey="n" href="imsettings-Macros.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#imsettings-IMSettingsInfo.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#imsettings-IMSettingsInfo.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="imsettings-IMSettingsInfo"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="imsettings-IMSettingsInfo.top_of_page"></a>IMSettingsInfo</span></h2>
+<p>IMSettingsInfo — accessor class to the Input Method information.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="imsettings-IMSettingsInfo.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="imsettings-IMSettingsInfo.html#IMSettingsInfoClass" title="struct IMSettingsInfoClass">IMSettingsInfoClass</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-compare" title="imsettings_info_compare ()">imsettings_info_compare</a>             (<em class="parameter"><code>const <span class="type">IMSettingsInfo</span> *info1</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">IMSettingsInfo</span> *info2</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-aux-args" title="imsettings_info_get_aux_args ()">imsettings_info_get_aux_args</a>        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-aux-program" title="imsettings_info_get_aux_program ()">imsettings_info_get_aux_program</a>     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-filename" title="imsettings_info_get_filename ()">imsettings_info_get_filename</a>        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-gtkimm" title="imsettings_info_get_gtkimm ()">imsettings_info_get_gtkimm</a>          (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-icon-file" title="imsettings_info_get_icon_file ()">imsettings_info_get_icon_file</a>       (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-im-name" title="imsettings_info_get_im_name ()">imsettings_info_get_im_name</a>         (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-language" title="imsettings_info_get_language ()">imsettings_info_get_language</a>        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-long-desc" title="imsettings_info_get_long_desc ()">imsettings_info_get_long_desc</a>       (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-non-target" title="imsettings_info_get_non_target ()">imsettings_info_get_non_target</a>      (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-prefs-args" title="imsettings_info_get_prefs_args ()">imsettings_info_get_prefs_args</a>      (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-prefs-program" title="imsettings_info_get_prefs_program ()">imsettings_info_get_prefs_program</a>   (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-qtimm" title="imsettings_info_get_qtimm ()">imsettings_info_get_qtimm</a>           (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-short-desc" title="imsettings_info_get_short_desc ()">imsettings_info_get_short_desc</a>      (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-sub-im-name" title="imsettings_info_get_sub_im_name ()">imsettings_info_get_sub_im_name</a>     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-xim" title="imsettings_info_get_xim ()">imsettings_info_get_xim</a>             (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-xim-args" title="imsettings_info_get_xim_args ()">imsettings_info_get_xim_args</a>        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-xim-program" title="imsettings_info_get_xim_program ()">imsettings_info_get_xim_program</a>     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-immodule-only" title="imsettings_info_is_immodule_only ()">imsettings_info_is_immodule_only</a>    (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-script" title="imsettings_info_is_script ()">imsettings_info_is_script</a>           (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-system-default" title="imsettings_info_is_system_default ()">imsettings_info_is_system_default</a>   (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-user-default" title="imsettings_info_is_user_default ()">imsettings_info_is_user_default</a>     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-visible" title="imsettings_info_is_visible ()">imsettings_info_is_visible</a>          (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-xim" title="imsettings_info_is_xim ()">imsettings_info_is_xim</a>              (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);
+<span class="returnvalue">IMSettingsInfo</span> *    <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-new" title="imsettings_info_new ()">imsettings_info_new</a>                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *parameters</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *          <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-variant-new" title="imsettings_info_variant_new ()">imsettings_info_variant_new</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *language</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="imsettings-IMSettingsInfo.description"></a><h2>Description</h2>
+<p>
+IMSettingsInfo provides interfaces to access the Input Method information
+provided by the xinput configuration file.
+</p>
+<p>
+Please note that this simply holds the static snapshot information when
+one requests imsettings-daemon to obtain. that may be obsoletes if keeping
+an instance a long time.
+</p>
+</div>
+<div class="refsect1">
+<a name="imsettings-IMSettingsInfo.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="IMSettingsInfoClass"></a><h3>struct IMSettingsInfoClass</h3>
+<pre class="programlisting">struct IMSettingsInfoClass {
+	GObjectClass parent_class;
+};
+</pre>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="IMSettingsInfoClass.parent-class"></a>parent_class</code></em>;</span></p></td>
+<td>The object class structure needs to be the first
+element in the imsettings information class structure in order for
+the class mechanism to work correctly.  This allows a
+IMSettingsInfoClass pointer to be cast to a GObjectClass
+pointer.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-compare"></a><h3>imsettings_info_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_compare             (<em class="parameter"><code>const <span class="type">IMSettingsInfo</span> *info1</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">IMSettingsInfo</span> *info2</code></em>);</pre>
+<p>
+Compares two <span class="type">IMSettingsInfo</span> instance.
+This function would simply compares the result of the real value in
+the xinput configuration file. so the result of
+<a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-script" title="imsettings_info_is_script ()"><code class="function">imsettings_info_is_script()</code></a>, <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-language" title="imsettings_info_get_language ()"><code class="function">imsettings_info_get_language()</code></a>,
+<a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-filename" title="imsettings_info_get_filename ()"><code class="function">imsettings_info_get_filename()</code></a>, <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-is-xim" title="imsettings_info_is_xim ()"><code class="function">imsettings_info_is_xim()</code></a>
+<a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-im-name" title="imsettings_info_get_im_name ()"><code class="function">imsettings_info_get_im_name()</code></a> and <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-sub-im-name" title="imsettings_info_get_sub_im_name ()"><code class="function">imsettings_info_get_sub_im_name()</code></a>
+will be ignored.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info1</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span> to compare with <em class="parameter"><code>i2</code></em>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info2</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span> to compare with <em class="parameter"><code>i1</code></em>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>i1</code></em> and <em class="parameter"><code>i2</code></em> match, otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-aux-args"></a><h3>imsettings_info_get_aux_args ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_aux_args        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the arguments of the auxiliary program.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#AUXILIARY-ARGS:CAPS" title="AUXILIARY_ARGS"><code class="literal">AUXILIARY_ARGS</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it's not specified. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-aux-program"></a><h3>imsettings_info_get_aux_program ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_aux_program     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the auxiliary program name, which will be invoked by imsettings-daemon
+with the arguments from <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-aux-args" title="imsettings_info_get_aux_args ()"><code class="function">imsettings_info_get_aux_args()</code></a>.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#AUXILIARY-PROGRAM:CAPS" title="AUXILIARY_PROGRAM"><code class="literal">AUXILIARY_PROGRAM</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it's not specified. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-filename"></a><h3>imsettings_info_get_filename ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_filename        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the xinput configuration filename.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-gtkimm"></a><h3>imsettings_info_get_gtkimm ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_gtkimm          (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the GTK+ immodule name. this is same value of <a class="link" href="xinput.html#GTK-IM-MODULE:CAPS" title="GTK_IM_MODULE"><code class="literal">GTK_IM_MODULE</code></a>
+parameter in the xinput configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-icon-file"></a><h3>imsettings_info_get_icon_file ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_icon_file       (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the icon filename for the Input Method.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#ICON:CAPS" title="ICON"><code class="literal">ICON</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-im-name"></a><h3>imsettings_info_get_im_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_im_name         (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the Input Method name. this is same value of <a class="link" href="xinput.html#SHORT-DESC:CAPS" title="SHORT_DESC"><code class="literal">SHORT_DESC</code></a>
+if it doesn't contain the sub module information that is separate with ':'
+like:
+</p>
+<p>
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal"><a href="xinput.html#SHORT-DESC:CAPS">SHORT_DESC</a></span><span class="symbol">=</span><span class="normal">foo</span><span class="symbol">-</span><span class="normal">im</span><span class="symbol">:</span><span class="normal">bar</span><span class="symbol">-</span><span class="normal">subim</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-language"></a><h3>imsettings_info_get_language ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_language        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the language that <em class="parameter"><code>info</code></em> genereated by.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-long-desc"></a><h3>imsettings_info_get_long_desc ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_long_desc       (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the long description for Input Method.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#LONG-DESC:CAPS" title="LONG_DESC"><code class="literal">LONG_DESC</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it's not specified. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-non-target"></a><h3>imsettings_info_get_non_target ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_non_target      (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains non-targeted desktop session for the Input Method.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#NOT-RUN:CAPS" title="NOT_RUN"><code class="literal">NOT_RUN</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-prefs-args"></a><h3>imsettings_info_get_prefs_args ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_prefs_args      (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the arguments of the preference program.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#PREFERENCE-ARGS:CAPS" title="PREFERENCE_ARGS"><code class="literal">PREFERENCE_ARGS</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it's not specified. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-prefs-program"></a><h3>imsettings_info_get_prefs_program ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_prefs_program   (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the preference program name for the Input Method.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#PREFERENCE-PROGRAM:CAPS" title="PREFERENCE_PROGRAM"><code class="literal">PREFERENCE_PROGRAM</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it's not specified. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-qtimm"></a><h3>imsettings_info_get_qtimm ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_qtimm           (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the Qt immodule name.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#QT-IM-MODULE:CAPS" title="QT_IM_MODULE"><code class="literal">QT_IM_MODULE</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-short-desc"></a><h3>imsettings_info_get_short_desc ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_short_desc      (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the short description for Input Method.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#SHORT-DESC:CAPS" title="SHORT_DESC"><code class="literal">SHORT_DESC</code></a> parameter in the xinput
+configuration file.  If it doesn't contain, the result would be same
+to what <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-xim" title="imsettings_info_get_xim ()"><code class="function">imsettings_info_get_xim()</code></a> returns.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-sub-im-name"></a><h3>imsettings_info_get_sub_im_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_sub_im_name     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the sub Input Method name.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <a class="link" href="xinput.html#SHORT-DESC:CAPS" title="SHORT_DESC"><code class="literal">SHORT_DESC</code></a> doesn't contain any information
+for sub Input Method.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-xim"></a><h3>imsettings_info_get_xim ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_xim             (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the XIM atom that is supposed to be used with XMODIFIERS=@im=.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#XIM:CAPS" title="XIM"><code class="literal">XIM</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-xim-args"></a><h3>imsettings_info_get_xim_args ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_xim_args        (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the arguments of XIM program.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#XIM-ARGS:CAPS" title="XIM_ARGS"><code class="literal">XIM_ARGS</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it's not specified. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-get-xim-program"></a><h3>imsettings_info_get_xim_program ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       imsettings_info_get_xim_program     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Obtains the XIM program name, which will be invoked by imsettings-daemon
+with the arguments from <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-get-xim-args" title="imsettings_info_get_xim_args ()"><code class="function">imsettings_info_get_xim_args()</code></a>.
+</p>
+<p>
+This gives you same value of <a class="link" href="xinput.html#XIM-PROGRAM:CAPS" title="XIM_PROGRAM"><code class="literal">XIM_PROGRAM</code></a> parameter in the xinput
+configuration file.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a string. this shouldn't be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-is-immodule-only"></a><h3>imsettings_info_is_immodule_only ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_is_immodule_only    (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Checks whether the Input Method in <em class="parameter"><code>info</code></em> is supposed to work for
+immodule only.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it is. otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-is-script"></a><h3>imsettings_info_is_script ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_is_script           (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Checks whether the xinput configuration file is the scripting language.
+</p>
+<p>
+This is useful to see if the result may be different when the condition
+is changed.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the xinput configuration file is the scripting language.
+otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-is-system-default"></a><h3>imsettings_info_is_system_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_is_system_default   (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Checks whether the Input Method in <em class="parameter"><code>info</code></em> is the system default.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it is. otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-is-user-default"></a><h3>imsettings_info_is_user_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_is_user_default     (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Checks whether the Input Method in <em class="parameter"><code>info</code></em> is the user default.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it is. otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-is-visible"></a><h3>imsettings_info_is_visible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_is_visible          (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Checks whether the Input Method is visible.
+</p>
+<p>
+The result would be same what the xinput configuration file specifies in
+<a class="link" href="xinput.html#IMSETTINGS-IGNORE-ME:CAPS" title="IMSETTINGS_IGNORE_ME"><code class="literal">IMSETTINGS_IGNORE_ME</code></a>.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it's visible, otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-is-xim"></a><h3>imsettings_info_is_xim ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_info_is_xim              (<em class="parameter"><code><span class="type">IMSettingsInfo</span> *info</code></em>);</pre>
+<p>
+Checks whether the Input Method in <em class="parameter"><code>info</code></em> is supposed to work on XIM only.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it is, otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-new"></a><h3>imsettings_info_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">IMSettingsInfo</span> *    imsettings_info_new                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *parameters</code></em>);</pre>
+<p>
+Creates an instance of <span class="type">IMSettingsInfo</span>.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> generated by <a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-variant-new" title="imsettings_info_variant_new ()"><code class="function">imsettings_info_variant_new()</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <span class="type">IMSettingsInfo</span> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if giving an invalid <em class="parameter"><code>parameters</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-info-variant-new"></a><h3>imsettings_info_variant_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *          imsettings_info_variant_new         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *language</code></em>);</pre>
+<p>
+Generates a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> from the content of <em class="parameter"><code>filename</code></em>.
+This API is mainly used in imsettings-daemon and not supposed to
+be used in any applications.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>a filename to the xinput configuration file.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>language</code></em> :</span></p></td>
+<td>a locale being desired to work on.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> that can be converted to <span class="type">IMSettingsInfo</span> with
+<a class="link" href="imsettings-IMSettingsInfo.html#imsettings-info-new" title="imsettings_info_new ()"><code class="function">imsettings_info_new()</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

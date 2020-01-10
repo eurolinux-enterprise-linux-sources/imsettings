@@ -1,0 +1,402 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Akira TAGOH <tagoh@redhat.com>, 2006.
+# Makoto Mizukami <mmk9060@aol.com>, 2008.
+# Noriko Mizumoto <noriko@redhat.com>, 2007.
+# Hyu_gabaru Ryu_ichi <hyu_gabaru@yahoo.co.jp>, 2009.
+# Kiyoto Hashida <khashida@redhat.com>, 2008.
+# Kiyoto James Hashida <khashida@redhat.com>, 2006.
+# Akira  <akira+transifex@tagoh.org>, 2011.
+# khasida <khasida@fedoraproject.org>, 2012. #zanata
+# noriko <noriko@fedoraproject.org>, 2012. #zanata
+# noriko <noriko@fedoraproject.org>, 2013. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: imsettings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-27 12:40+0900\n"
+"PO-Revision-Date: 2013-04-08 02:12-0400\n"
+"Last-Translator: noriko <noriko@fedoraproject.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Zanata 2.2.2\n"
+
+#: ../backends/xim/loopback.c:223
+msgid "Synchronous"
+msgstr "同期"
+
+#: ../backends/xim/loopback.c:224
+msgid "Request to send a key event synchronously"
+msgstr "キーイベントを同期で送信することを要求する"
+
+#: ../backends/xim/main.c:155
+msgid "D-Bus address to use"
+msgstr "使用する D-Bus アドレス"
+
+#: ../backends/xim/main.c:155
+msgid "ADDRESS"
+msgstr "ADDRESS"
+
+#: ../backends/xim/main.c:156
+msgid "X display to use"
+msgstr "使用する X ディスプレイ"
+
+#: ../backends/xim/main.c:156
+msgid "DISPLAY"
+msgstr "DISPLAY"
+
+#: ../backends/xim/main.c:157
+msgid "Replace the running XIM server with new instance."
+msgstr "実行中の XIM サーバーを新規のインスタンスに入れ替える"
+
+#: ../backends/xim/main.c:158
+msgid "Output the debugging logs"
+msgstr "デバッグログの出力"
+
+#: ../backends/xim/main.c:159
+msgid "XIM server connects to, for debugging purpose only"
+msgstr "接続する XIM サーバー (デバッグ目的専用)"
+
+#: ../backends/xim/main.c:159
+msgid "XIM"
+msgstr "XIM"
+
+#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
+msgid "Unknown error in parsing the command lines."
+msgstr "コマンドラインの構文解析中に不明なエラー"
+
+#: ../backends/xim/proxy.c:2972
+msgid "XIM server name"
+msgstr "XIM サーバー名"
+
+#: ../backends/xim/proxy.c:2973
+msgid "The name of XIM server for the connection"
+msgstr "接続に使用する XIM サーバー名"
+
+#: ../backends/xim/proxy.c:2978
+msgid "Signals for Protocol class"
+msgstr "プロトコルクラスのシグナル"
+
+#: ../backends/xim/proxy.c:2979
+msgid "A structure of signals for Protocol class"
+msgstr "プロトコルクラスのシグナルの構造"
+
+#: ../imsettings/imsettings-client.c:161
+msgid "Locale"
+msgstr "ロケール"
+
+#: ../imsettings/imsettings-client.c:162
+msgid "Locale to get the imsettings information"
+msgstr "imsettings 情報を得るためのロケール"
+
+#: ../imsettings-daemon/imsettings-module.c:133
+msgid "Name"
+msgstr "名前"
+
+#: ../imsettings-daemon/imsettings-module.c:134
+msgid "A module name for imsettings backend"
+msgstr "imsettings バックエンドのモジュール名"
+
+#: ../imsettings-daemon/imsettings-proc.c:193
+msgid "Unable to keep Input Method running"
+msgstr "入力メソッドの実行を継続できません"
+
+#: ../imsettings-daemon/imsettings-proc.c:203
+#, c-format
+msgid ""
+"Giving up to bring the process up because %s Input Method process for %s "
+"rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
+msgstr ""
+"%s  の為の %s 入力メソッドは短時間に何回も停止したため、プロセスを立ち上げる"
+"ことを諦めます。詳細情報については、 $XDG_CACHE_HOME/imsettings/log をご覧下"
+"さい"
+
+#: ../imsettings-daemon/imsettings-proc.c:304
+#, c-format
+msgid "[BUG] %s process is still running [pid: %d]\n"
+msgstr "[BUG] %s プロセスが [pid: %d] を実行したままです\n"
+
+#: ../imsettings-daemon/imsettings-proc.c:448
+#, c-format
+msgid "Couldn't send a signal to the %s process successfully."
+msgstr "%s プロセスに正しく信号を送信できませんでした。"
+
+#: ../imsettings-daemon/imsettings-proc.c:566
+msgid "IMSettingsInfo"
+msgstr "IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-proc.c:567
+msgid "A GObject to be a IMSettingsInfo"
+msgstr "IMSettingsInfo となる GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:417
+msgid "DBus connection"
+msgstr "DBus 接続"
+
+#: ../imsettings-daemon/imsettings-server.c:418
+msgid "A GObject to be a DBus connection"
+msgstr "DBus 接続となる GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:423
+msgid "Logging"
+msgstr "ログ機能"
+
+#: ../imsettings-daemon/imsettings-server.c:424
+msgid "A boolean value whether the logging facility is enabled or not."
+msgstr "ログ機能を有効にするかどうかの boolean 値です。"
+
+#: ../imsettings-daemon/imsettings-server.c:429
+#: ../imsettings-daemon/imsettings-server.c:430
+msgid "Home directory"
+msgstr "ホームディレクトリー"
+
+#: ../imsettings-daemon/imsettings-server.c:435
+#: ../imsettings-daemon/imsettings-server.c:436
+msgid "xinputrc directory"
+msgstr "xinputrc ディレクトリー"
+
+#: ../imsettings-daemon/imsettings-server.c:441
+#: ../imsettings-daemon/imsettings-server.c:442
+msgid "xinput directory"
+msgstr "xinput ディレクトリー"
+
+#: ../imsettings-daemon/imsettings-server.c:447
+msgid "module directory"
+msgstr "モジュールディレクトリー"
+
+#: ../imsettings-daemon/imsettings-server.c:448
+msgid "IMSettings module directory"
+msgstr "IMSettings モジュールディレクトリー"
+
+#: ../imsettings-daemon/imsettings-server.c:714
+#, c-format
+msgid "No such input method on your system: %s"
+msgstr "使用中のシステム上にそのような入力メソッドはありません: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:723
+#: ../imsettings-daemon/imsettings-server.c:872
+#: ../imsettings-daemon/imsettings-server.c:913
+#: ../imsettings-daemon/imsettings-server.c:1134
+#, c-format
+msgid "Out of memory"
+msgstr "メモリー不足"
+
+#: ../imsettings-daemon/imsettings-server.c:748
+#, c-format
+msgid "Current desktop isn't targeted by IMSettings."
+msgstr "現在のデスクトップは IMSettings の対象になっていません。"
+
+#: ../imsettings-daemon/imsettings-server.c:800
+#, c-format
+msgid "Failed to revert the backup file: %s"
+msgstr "バックアップファイルの復元に失敗しました: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:813
+#, c-format
+msgid "Failed to create a backup file: %s"
+msgstr "バックアップファイルの作成に失敗しました: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:823
+#, c-format
+msgid "Failed to remove an user xinputrc file: %s"
+msgstr "ユーザーの xinputrc ファイルの削除に失敗しました: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:834
+#, c-format
+msgid "Failed to create a symlink: %s"
+msgstr "symlink の作成に失敗しました: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:865
+#, c-format
+msgid "No system-wide xinputrc available"
+msgstr "システム全体の xinputrc はありません"
+
+#: ../imsettings-daemon/imsettings-server.c:905
+#, c-format
+msgid "No user xinputrc nor system-wide xinputrc available"
+msgstr "ユーザーの xinputrc もシステム全域の xinputrc も使用出来ません"
+
+#: ../imsettings-daemon/imsettings-server.c:1126
+#, c-format
+msgid "No such input method: %s"
+msgstr "そのような入力メソッドはありません: %s"
+
+#: ../imsettings-daemon/main.c:111
+msgid "Replace the instance of the imsettings daemon."
+msgstr "imsettings デーモンのインスタンスを入れ替えます。"
+
+#: ../imsettings-daemon/main.c:112
+msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+msgstr "システム全体の xinputrc ディレクトリーのセット (デバッグ用)"
+
+#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
+msgid "DIR"
+msgstr "DIR"
+
+#: ../imsettings-daemon/main.c:113
+msgid "Set the IM configuration directory (for debugging purpose)"
+msgstr "IM 設定ディレクトリーのセット (デバッグ用)"
+
+#: ../imsettings-daemon/main.c:114
+msgid "Set a home directory (for debugging purpose)"
+msgstr "ホームディレクトリーのセット (デバッグ用)"
+
+#: ../imsettings-daemon/main.c:115
+msgid "Set the imsettings module directory (for debugging purpose)"
+msgstr "imsettings モジュールディレクトリーのセット (デバッグ用)"
+
+#: ../imsettings-daemon/main.c:116
+msgid "Do not create a log file."
+msgstr "ログファイルを作成しません。"
+
+#: ../utils/imsettings-check.c:131
+msgid "Unable to open X display"
+msgstr "X ディスプレイを開けません"
+
+#: ../utils/imsettings-check.c:138
+msgid "XSETTINGS manager isn't running"
+msgstr "XSETTINGS マネージャーが実行していません"
+
+#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
+msgid "Unable to create a client instance."
+msgstr "クライアントインスタンスを作成できません"
+
+#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
+msgid "imsettings version mismatch"
+msgstr "imsettings のバージョンが違います"
+
+#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
+msgid "No modules loaded"
+msgstr "ロードされているモジュールがありません"
+
+#: ../utils/imsettings-check.c:248
+msgid "Please see .imsettings.log for more details"
+msgstr "詳細は .imsettings.log を参照してください"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-check.c:287
+msgid "Output the detail information for the result"
+msgstr "結果の詳細情報を出力"
+
+#: ../utils/imsettings-check.c:288
+msgid "Check if DBus is running"
+msgstr "DBus が実行しているかを確認"
+
+#: ../utils/imsettings-check.c:289
+msgid "Check if SESSION is on line"
+msgstr "SESSION がオンラインかどうかを確認"
+
+#: ../utils/imsettings-check.c:290
+msgid "Check if any valid modules are loaded"
+msgstr "有効なモジュールがロードされているかを確認"
+
+#: ../utils/imsettings-check.c:291
+msgid "Check if all of the module settings has consistencies"
+msgstr "全モジュールの設定に整合性があるかを確認"
+
+#: ../utils/imsettings-check.c:292
+msgid "Check if XSETTINGS manager is running"
+msgstr "XSETTINGS マネージャーが実行しているかを確認"
+
+#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
+msgid "[Input Method name|xinput.conf]"
+msgstr "[入力メソッド名|xinput.conf]"
+
+#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
+#, c-format
+msgid "IMSettings is disabled on the system.\n"
+msgstr "IMSettings はこのシステム上では無効になっています。\n"
+
+#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
+#, c-format
+msgid "Unable to create a client instance.\n"
+msgstr "クライアントインスタンスを作成できません。\n"
+
+#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
+#: ../utils/imsettings-switch.c:101
+#, c-format
+msgid ""
+"Currently a different version of imsettings is running.\n"
+"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
+msgstr ""
+"現在、 異なるバージョンの imsettings が実行中です。\n"
+"\"imsettings-reload\" を実行すると修正できるかもしれませんが、 入力メソッドが"
+"再起動されることになります。\n"
+
+#: ../utils/imsettings-info.c:107
+#, c-format
+msgid "Unable to obtain an Input Method Information: %s\n"
+msgstr "入力メソッドの情報を取得できませんでした: %s\n"
+
+#: ../utils/imsettings-reload.c:44
+msgid "Force reloading imsettings-daemon (deprecated)."
+msgstr "強制的に imsettings-daemon を再ロードします (廃止予定)。"
+
+#: ../utils/imsettings-reload.c:110
+#, c-format
+msgid "Reloaded.\n"
+msgstr "再ロードしました。\n"
+
+#: ../utils/imsettings-start.desktop.in.h:1
+msgid "Input Method starter"
+msgstr "入力メソッドのスターター"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:47
+msgid "Force restarting the IM process regardless of any errors."
+msgstr "エラーの種類に関わらず強制的に IM プロセスを再起動します。"
+
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:49
+msgid "Do not update the user xinputrc."
+msgstr "ユーザーの xinputrc を更新しないで下さい。"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:51
+msgid "Shut up the extra messages."
+msgstr "余計なメッセージを出力させないようにします。"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:53
+msgid "Restart input method"
+msgstr "入力メソッドの再起動"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:55
+msgid "Read xinputrc to determine the input method"
+msgstr "xinputrc を読み込んで入力メソッドを確定"
+
+#: ../utils/imsettings-switch.c:110
+msgid "No backend modules available"
+msgstr "使用できるバックエンドモジュールがありません"
+
+#: ../utils/imsettings-switch.c:127
+#, c-format
+msgid "No Input Method running to be restarted.\n"
+msgstr "再起動させるべき実行中の入力メソッドがありません。\n"
+
+#: ../utils/imsettings-switch.c:140
+#, c-format
+msgid "Restarted %s\n"
+msgstr "%s を再起動しました\n"
+
+#: ../utils/imsettings-switch.c:182
+#, c-format
+msgid "Switched input method to %s\n"
+msgstr "入力メソッドを %s に切り替えました\n"

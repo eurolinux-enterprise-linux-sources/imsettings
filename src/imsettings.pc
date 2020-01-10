@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+moddir=${exec_prefix}/lib/imsettings
+
+Name: imsetting
+Description: Input Method settings library
+Version: 1.6.3
+Requires: gobject-2.0 gio-2.0
+Libs: -L${libdir} -limsettings

@@ -1,0 +1,251 @@
+IMSettings
+==============
+IMSettings is a framework that delivers Input Method
+settings and applies the changes immediately. so it will
+takes an effect without restarting applications and the
+desktop.
+
+Background
+==============
+Input Method is used to input some dozens of characters that
+can't be represented with ASCII characters, with some
+framework such as XIM and SCIM via GTK+/Qt
+immodule. particularly which to handle languages that is a
+bit complex to do the same thing with the keyboard layout
+such as XKB.  In the past, those frameworks has been applied
+through the environment variables, such as XMODIFIERS and
+GTK_IM_MODULE. and can't be influenced immediately and can't
+be without restarting the desktop because of its nature -
+it's being inherited from the parent process unless it's
+being brought up with the obvious thing from the terminal
+say.  Also, there are no such framework to bring up the
+necessary process at the run time - of course anyone could
+runs it manually though, it's totally out of focus on this
+project.
+
+Features
+============
+* Provide the information of Input Method through IMSettings
+* Provide the DBus service to start/stop process of Input
+  Method
+* Provide the way to apply Input Method to applications
+  immediately
+
+Scope
+=========
+IMSettings may helps when:
+
+* you may want to disable Input Method entirely to use
+  features on any applications, which actually can't use
+  with Input Method because of the key conflicting.
+* you may try another Input Method without closing current
+  desktop session.
+* someone may wants to borrow your desktop temporarily,
+  which uses different Input Method.
+* the appropriate Input Methods needs to be installed by
+  default regardless of you use, such as Live image.
+
+Supported Toolkits
+======================
+* GTK+
+* LXDE
+* MATE
+* Qt
+* XFCE
+* X (with IMSettings XIM server; require libgxim)
+
+Information files for Input Method
+======================================
+To make Input Methods available from IMSettings, every Input
+Methods that hopes so has to have the information file to
+let IMSettings know. those files is usually put under a
+directory where you can change the default value with
+--with-xinputdir. the filename has to contain .conf or
+something that you can also change the default value with
+--with-xinput-suffix to avoid listing every Input Methods
+that might not work for some languages. Input Methods
+doesn't support multiple languages such as XIM doesn't have
+to have .conf suffix or so. xim.conf can deals with such
+configuration files properly for appropriate languages
+according to current locale.
+
+IMSettings has some builtin configuration files to handle
+some special behavior and for convenience.
+
+* none.conf
+
+  This is a special builtin configuration file. IMSettings
+  deals with it as the state of "disabled" regardless of its
+  content.
+
+* xim.conf
+
+  This is also a special builtin configuration file to deal
+  with XIM servers. it's supposed to give you a different
+  Input Method against current locale because XIM server
+  works on the certain locales only in most cases. otherwise
+  simply applying none.conf.
+
+  To deploy your configuration file on xim.conf, please
+  note the following things:
+
+  1. no $XINPUT_SUFFIX to your configuration file. otherwise
+     it appears on the available Input Method list. that's
+     not what expected here, because it may not works for
+     some locales.
+
+  2. create a symlink or whatever to the expected locales
+     for Input Method under $XINPUT_PATH where you specify
+     with --with-xinputdir at the build time. otherwise that
+     would be /etc/X11/xinit/xinput.d.
+
+* xcompose.conf
+
+  This is available for convenience, particularly for
+  locales that GTK+'s simple immodule behaves differently
+  comparing to X11 compose table.
+
+Available parameters
+=======================
+
+The following parameters can be described as the shell
+environment variables like FOO=BAR in the information file.
+
+* AUXILIARY_PROGRAM=<string>		[optional]
+
+  An optional program that may want to bring up for Input
+  Method, such as the panel and the toolbar and so on.
+
+* AUXILIARY_ARGS=<string>		[optional]
+
+  A list of command line options for AUXILIARY_PROGRAM.
+
+* GTK_IM_MODULE=<string>		[mandatory]
+
+  GTK+ immodule name that want to use.
+
+* ICON=<string>				[optional]
+
+  An icon file to use in GUI.
+
+* IMSETTINGS_IGNORE_ME=<boolean>	[optional]
+
+  A parameter to hide Input Method from the inventory. you
+  however can still take an action against such Input Method
+  via IMSettings.
+
+* LONG_DESC=<string>			[optional]
+
+  An optional long description to explain what this Input
+  Method is.
+
+* PREFERENCE_PROGRAM=<string>		[optional]
+
+  An optional program that set up Input Method. IMSettings
+  itself do nothing on this parameter. but other tools, such
+  as im-chooser will take an action for that.
+
+* PREFERENCE_ARGS=<string>		[optional]
+
+  A list of command line options for PREFERENCE_PROGRAM.
+
+* QT_IM_MODULE=<string>			[mandatory]
+
+  Qt immodule name that want to use.
+
+* SHORT_DESC=<string>[:string]		[optional]
+
+  An optional short description to explain what this Input
+  Method is. this variable is also used for the key to do
+  something on IMSettings. e.g. to start/stop Input Method
+  and get the information and so on. so this parameter has
+  to be unique. for extra option; depends on the backends
+  supports though, this parameter is capable to tell
+  the backend a sub input method. which may be useful if
+  Input Method supports multiple engines.
+
+* XIM=<string>				[mandatory]
+
+  This variable is used for XIM. actually it looks like
+  XMODIFIERS=@im=$XIM.
+
+* XIM_PROGRAM=<string>			[mandatory]
+
+  A XIM server be brought up to communicate through XIM
+  protocol.
+
+* XIM_ARGS=<string>			[optional]
+
+  A list of command line options for XIM_PROGRAM.
+
+Other variables used in xinput.sh
+====================================
+
+* DISABLE_IMSETTINGS=<bool>
+
+  If you want to disable imsettings feature entirely, set
+  true. you'll miss the feature able to change IM on demand
+  but just need to reboot or restart the desktop after
+  changing something.
+
+* IMSETTINGS_DISABLE_DESKTOP_CHECK=<bool>
+
+  If your desktop has XSETTINGS manager support and you're
+  sure it also supports imsettings, please file a bug to
+  imsettings. and set true temporarily to ignore checking
+  the desktop.
+
+* IMSETTINGS_INTEGRATE_DESKTOP=<bool>
+
+  This affects when Input Method would be brought up. If you
+  are sure your desktop system doesn't support XDG autostart
+  mechanism, set "no". if you disable imsettings feature,
+  this won't affects anything.
+
+Processes
+============
+
+* imsettings-daemon
+
+  A DBus service that provide a imsettings facility to
+  switch IM processes and gather input methods information.
+
+* imsettings-xim
+
+  A XIM bridge between client applications and real XIM
+  server.
+
+Backend modules
+==================
+
+* libimsettings-gconf.so:
+  A GConf backend to support GNOME2 Desktop.
+
+* libimsettings-gsettings.so:
+  A GSettings backend to support GNOME3 Desktop and Cinnamon Desktop.
+
+* libimsettings-lxde.so:
+  A LXDE backend to support LXDE Desktop.
+
+* libimsettings-mateconf.so:
+  A mateconf backend to support MATE Desktop.
+
+* libimsettings-mate-gsettings.so
+  A GSettings backend to support MATE 1.5 or later.
+
+* libimsettings-qt.so:
+  A Qt backend to support Qt applications.
+
+* libimsettings-xfce.so:
+  A Xfce backend to support Xfce Desktop.
+
+* libimsettings-xim.so:
+  A XIM backend to support X applications.
+
+Logging
+==========
+
+IMSettings has the logging facility to help for debugging
+purpose mainly. Any output from IMSettings and Input Methods
+is stored into $XDG_CACHE_HOME/imsettings/log.
+

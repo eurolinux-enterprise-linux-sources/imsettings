@@ -1,0 +1,88 @@
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
+/* 
+ * rhbz_431291.c
+ * Copyright (C) 2008-2012 Red Hat, Inc. All rights reserved.
+ * 
+ * Authors:
+ *   Akira TAGOH  <tagoh@redhat.com>
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth
+ * Floor, Boston, MA  02110-1301  USA
+ */
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include <string.h>
+#include "imsettings.h"
+#include "imsettings-client.h"
+#include "main.h"
+
+#define N_(s)	s
+
+IMSettingsClient *client;
+
+/************************************************************/
+/* common functions                                         */
+/************************************************************/
+void
+setup(void)
+{
+	client = imsettings_client_new(NULL);
+}
+
+void
+teardown(void)
+{
+	imsettings_test_reload_daemons();
+
+	g_object_unref(client);
+}
+
+/************************************************************/
+/* Test cases                                               */
+/************************************************************/
+TDEF (issue) {
+	gchar *p;
+	GError *error = NULL;
+
+	imsettings_test_restart_daemons_full("rhbz_431291" G_DIR_SEPARATOR_S "case1", NULL, NULL);
+
+	g_usleep(5 * G_USEC_PER_SEC);
+
+	p = imsettings_client_get_user_im(client, NULL, &error);
+	fail_unless(p != NULL, "Unable to get current user IM: %s", error ? error->message : "unknown reason");
+	fail_unless(error == NULL, "error: %s", error ? error->message : "none");
+	fail_unless(strcmp(p, IMSETTINGS_USER_SPECIFIC_SHORT_DESC) == 0, "Unexpected current user IM: %s", p);
+
+	g_free(p);
+} TEND
+
+/************************************************************/
+Suite *
+imsettings_suite(void)
+{
+	Suite *s = suite_create("Red Hat Bugzilla");
+	TCase *tc = tcase_create("Bug#431291: https://bugzilla.redhat.com/show_bug.cgi?id=431291");
+
+	tcase_add_checked_fixture(tc, setup, teardown);
+	tcase_set_timeout(tc, 10);
+
+	T (issue);
+
+	suite_add_tcase(s, tc);
+
+	return s;
+}

@@ -1,0 +1,395 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Akira  <akira+transifex@tagoh.org>, 2011.
+# Hyunsok Oh <hoh@redhat.com>, 2010.
+# Eunju Kim <eukim@redhat.com>, 2006, 2007, 2008, 2009.
+# eukim <eukim@fedoraproject.org>, 2012. #zanata
+# eukim <eukim@fedoraproject.org>, 2013. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: imsettings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-27 12:40+0900\n"
+"PO-Revision-Date: 2013-04-04 08:51-0400\n"
+"Last-Translator: eukim <eukim@fedoraproject.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Zanata 2.2.2\n"
+
+#: ../backends/xim/loopback.c:223
+msgid "Synchronous"
+msgstr "동기식"
+
+#: ../backends/xim/loopback.c:224
+msgid "Request to send a key event synchronously"
+msgstr "키 이벤트를 동기식으로 전송할 것을 요청"
+
+#: ../backends/xim/main.c:155
+msgid "D-Bus address to use"
+msgstr "사용할 D-Bus 주소 "
+
+#: ../backends/xim/main.c:155
+msgid "ADDRESS"
+msgstr "ADDRESS"
+
+#: ../backends/xim/main.c:156
+msgid "X display to use"
+msgstr "사용할 X 디스플레이 "
+
+#: ../backends/xim/main.c:156
+msgid "DISPLAY"
+msgstr "DISPLAY"
+
+#: ../backends/xim/main.c:157
+msgid "Replace the running XIM server with new instance."
+msgstr "새 인스턴스로 실행 중인 XIM 서버를 교체합니다."
+
+#: ../backends/xim/main.c:158
+msgid "Output the debugging logs"
+msgstr "디버깅 로그 출력  "
+
+#: ../backends/xim/main.c:159
+msgid "XIM server connects to, for debugging purpose only"
+msgstr "XIM 서버 연결 (디버깅 목적 전용)  "
+
+#: ../backends/xim/main.c:159
+msgid "XIM"
+msgstr "XIM"
+
+#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
+msgid "Unknown error in parsing the command lines."
+msgstr "명령행을 구문 분석하는 도중 알려지지 않은 오류가 발생했습니다. "
+
+#: ../backends/xim/proxy.c:2972
+msgid "XIM server name"
+msgstr "XIM 서버 이름 "
+
+#: ../backends/xim/proxy.c:2973
+msgid "The name of XIM server for the connection"
+msgstr "연결 하려는 XIM 서버 이름"
+
+#: ../backends/xim/proxy.c:2978
+msgid "Signals for Protocol class"
+msgstr "프로토콜 클래스 용 신호"
+
+#: ../backends/xim/proxy.c:2979
+msgid "A structure of signals for Protocol class"
+msgstr "프로토콜 클래스 용 신호 구조"
+
+#: ../imsettings/imsettings-client.c:161
+msgid "Locale"
+msgstr "로케일 "
+
+#: ../imsettings/imsettings-client.c:162
+msgid "Locale to get the imsettings information"
+msgstr "imsettings 정보를 얻기 위한 로케일 "
+
+#: ../imsettings-daemon/imsettings-module.c:133
+msgid "Name"
+msgstr "이름 "
+
+#: ../imsettings-daemon/imsettings-module.c:134
+msgid "A module name for imsettings backend"
+msgstr "imsettings 벡엔드의 모듈 이름 "
+
+#: ../imsettings-daemon/imsettings-proc.c:193
+msgid "Unable to keep Input Method running"
+msgstr "입력 방식 실행을 유지할 수 없음  "
+
+#: ../imsettings-daemon/imsettings-proc.c:203
+#, c-format
+msgid ""
+"Giving up to bring the process up because %s Input Method process for %s "
+"rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
+msgstr ""
+"%s 입력 방식 프로세스(%s를 위한)가 여러번 중지되어 프로세스 시작을 포기합니"
+"다. 자세한 내용은 $XDG_CACHE_HOME/imsettings/log를 참조하십시오.  "
+
+#: ../imsettings-daemon/imsettings-proc.c:304
+#, c-format
+msgid "[BUG] %s process is still running [pid: %d]\n"
+msgstr "[BUG] %s 프로세스가 아직 [pid: %d]을 실행하고 있습니다\n"
+
+#: ../imsettings-daemon/imsettings-proc.c:448
+#, c-format
+msgid "Couldn't send a signal to the %s process successfully."
+msgstr "%s 프로세스로 신호를 보낼 수 없음  "
+
+#: ../imsettings-daemon/imsettings-proc.c:566
+msgid "IMSettingsInfo"
+msgstr "IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-proc.c:567
+msgid "A GObject to be a IMSettingsInfo"
+msgstr "IMSettingsInfo가 될 GObject "
+
+#: ../imsettings-daemon/imsettings-server.c:417
+msgid "DBus connection"
+msgstr "DBus 연결 "
+
+#: ../imsettings-daemon/imsettings-server.c:418
+msgid "A GObject to be a DBus connection"
+msgstr "DBus 연결이 될 GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:423
+msgid "Logging"
+msgstr "로그 기능 "
+
+#: ../imsettings-daemon/imsettings-server.c:424
+msgid "A boolean value whether the logging facility is enabled or not."
+msgstr "로그 기능이 활성화되었는지의 여부에 대한 부울 값 "
+
+#: ../imsettings-daemon/imsettings-server.c:429
+#: ../imsettings-daemon/imsettings-server.c:430
+msgid "Home directory"
+msgstr "홈 디렉토리  "
+
+#: ../imsettings-daemon/imsettings-server.c:435
+#: ../imsettings-daemon/imsettings-server.c:436
+msgid "xinputrc directory"
+msgstr "xinputrc 디렉토리  "
+
+#: ../imsettings-daemon/imsettings-server.c:441
+#: ../imsettings-daemon/imsettings-server.c:442
+msgid "xinput directory"
+msgstr "xinput 디렉토리  "
+
+#: ../imsettings-daemon/imsettings-server.c:447
+msgid "module directory"
+msgstr "모듈 디렉토리 "
+
+#: ../imsettings-daemon/imsettings-server.c:448
+msgid "IMSettings module directory"
+msgstr "IMSettings 모듈 디렉토리 "
+
+#: ../imsettings-daemon/imsettings-server.c:714
+#, c-format
+msgid "No such input method on your system: %s"
+msgstr "시스템에 없는 입력 방식: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:723
+#: ../imsettings-daemon/imsettings-server.c:872
+#: ../imsettings-daemon/imsettings-server.c:913
+#: ../imsettings-daemon/imsettings-server.c:1134
+#, c-format
+msgid "Out of memory"
+msgstr "메모리 부족 "
+
+#: ../imsettings-daemon/imsettings-server.c:748
+#, c-format
+msgid "Current desktop isn't targeted by IMSettings."
+msgstr "현재 데스크탑은 IMSettings의 대상으로 되어 있지 않습니다."
+
+#: ../imsettings-daemon/imsettings-server.c:800
+#, c-format
+msgid "Failed to revert the backup file: %s"
+msgstr "백업 파일로 되돌리기 실패: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:813
+#, c-format
+msgid "Failed to create a backup file: %s"
+msgstr "백업 파일 생성 실패: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:823
+#, c-format
+msgid "Failed to remove an user xinputrc file: %s"
+msgstr "사용자 xinputrc 파일 제거 실패: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:834
+#, c-format
+msgid "Failed to create a symlink: %s"
+msgstr "심볼릭 링크 생성 실패: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:865
+#, c-format
+msgid "No system-wide xinputrc available"
+msgstr "시스템 전역 xinputrc을 사용할 수 없음 "
+
+#: ../imsettings-daemon/imsettings-server.c:905
+#, c-format
+msgid "No user xinputrc nor system-wide xinputrc available"
+msgstr "사용자  xinputrc 또는 시스템 전역 xinputrc을 사용할 수 없음"
+
+#: ../imsettings-daemon/imsettings-server.c:1126
+#, c-format
+msgid "No such input method: %s"
+msgstr "그러한 입력 방식이 없음: %s"
+
+#: ../imsettings-daemon/main.c:111
+msgid "Replace the instance of the imsettings daemon."
+msgstr "imsettings 데몬의 인스턴스를 변경합니다. "
+
+#: ../imsettings-daemon/main.c:112
+msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+msgstr "시스템 전역 xinputrc 디렉토리 설정 (디버깅 목적) "
+
+#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
+msgid "DIR"
+msgstr "DIR"
+
+#: ../imsettings-daemon/main.c:113
+msgid "Set the IM configuration directory (for debugging purpose)"
+msgstr "IM 설정 디렉토리 구성 (디버깅 목적)"
+
+#: ../imsettings-daemon/main.c:114
+msgid "Set a home directory (for debugging purpose)"
+msgstr "홈 디렉토리 설정 (디버깅 목적)"
+
+#: ../imsettings-daemon/main.c:115
+msgid "Set the imsettings module directory (for debugging purpose)"
+msgstr "imsettings 모듈 디렉토리 설정 (디버깅 목적) "
+
+#: ../imsettings-daemon/main.c:116
+msgid "Do not create a log file."
+msgstr "로그 파일을 생성하지 않음  "
+
+#: ../utils/imsettings-check.c:131
+msgid "Unable to open X display"
+msgstr "X 디스플레이를 열 수 없음 "
+
+#: ../utils/imsettings-check.c:138
+msgid "XSETTINGS manager isn't running"
+msgstr "XSETTINGS 관리자가 실행되지 않음 "
+
+#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
+msgid "Unable to create a client instance."
+msgstr "클라이언트 인스턴스를 생성할 수 없습니다. "
+
+#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
+msgid "imsettings version mismatch"
+msgstr "imsettings 버전 불일치 "
+
+#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
+msgid "No modules loaded"
+msgstr "로딩된 모듈이 없음 "
+
+#: ../utils/imsettings-check.c:248
+msgid "Please see .imsettings.log for more details"
+msgstr "보다 자세한 내용은 .imsettings.log에서 참조하십시오 "
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-check.c:287
+msgid "Output the detail information for the result"
+msgstr "결과에 대한 자세한 정보를 출력 "
+
+#: ../utils/imsettings-check.c:288
+msgid "Check if DBus is running"
+msgstr "DBus가 실행되고 있는지를 확인 "
+
+#: ../utils/imsettings-check.c:289
+msgid "Check if SESSION is on line"
+msgstr "SESSION이 온라인 상태인지 확인"
+
+#: ../utils/imsettings-check.c:290
+msgid "Check if any valid modules are loaded"
+msgstr "유효한 모듈이 로딩되어 있는지 확인 "
+
+#: ../utils/imsettings-check.c:291
+msgid "Check if all of the module settings has consistencies"
+msgstr "모든 모듈 설정에 일관성이 있는지 확인 "
+
+#: ../utils/imsettings-check.c:292
+msgid "Check if XSETTINGS manager is running"
+msgstr "XSETTINGS 관리자가 실행되고 있는지를 확인 "
+
+#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
+msgid "[Input Method name|xinput.conf]"
+msgstr "[입력 방식 이름|xinput.conf] "
+
+#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
+#, c-format
+msgid "IMSettings is disabled on the system.\n"
+msgstr "시스템에서 IMSettings가 비활성화되어 있습니다. \n"
+
+#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
+#, c-format
+msgid "Unable to create a client instance.\n"
+msgstr "클라이언트 인스턴스를 생성할 수 없습니다.\n"
+
+#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
+#: ../utils/imsettings-switch.c:101
+#, c-format
+msgid ""
+"Currently a different version of imsettings is running.\n"
+"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
+msgstr ""
+"현재 다른 버전의 imsettings가 실행되고 있습니다. \"imsettings-reload\"를 실행"
+"하면 해결될 수 도 있지만 이로 인해 입력 방식이 다시 시작되게 됩니다\n"
+
+#: ../utils/imsettings-info.c:107
+#, c-format
+msgid "Unable to obtain an Input Method Information: %s\n"
+msgstr "입력 방식 정보를 얻을 수 없음: %s\n"
+
+#: ../utils/imsettings-reload.c:44
+msgid "Force reloading imsettings-daemon (deprecated)."
+msgstr "강제로 imsettings-daemon을 다시 로딩합니다. (사용 권장되지 않음) "
+
+#: ../utils/imsettings-reload.c:110
+#, c-format
+msgid "Reloaded.\n"
+msgstr "다시 로딩했습니다.\n"
+
+#: ../utils/imsettings-start.desktop.in.h:1
+msgid "Input Method starter"
+msgstr "입력 방식 시작기 "
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:47
+msgid "Force restarting the IM process regardless of any errors."
+msgstr "오류와 관계없이 IM 프로세스를 강제로 다시 시작함. "
+
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:49
+msgid "Do not update the user xinputrc."
+msgstr "사용자 xinputrc을 업데이트하지 않습니다."
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:51
+msgid "Shut up the extra messages."
+msgstr "불필요한 메세지를 출력하지 않도록 합니다."
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:53
+msgid "Restart input method"
+msgstr "입력 방식을 다시 시작 "
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:55
+msgid "Read xinputrc to determine the input method"
+msgstr "입력 방식을 결정하기 위해 xinputrc 읽기 "
+
+#: ../utils/imsettings-switch.c:110
+msgid "No backend modules available"
+msgstr "사용 가능한 백엔드 모듈이 없음 "
+
+#: ../utils/imsettings-switch.c:127
+#, c-format
+msgid "No Input Method running to be restarted.\n"
+msgstr "다시 시작해야 할 입력 방식이 없습니다.\n"
+
+#: ../utils/imsettings-switch.c:140
+#, c-format
+msgid "Restarted %s\n"
+msgstr "%s을 다시 시작함\n"
+
+#: ../utils/imsettings-switch.c:182
+#, c-format
+msgid "Switched input method to %s\n"
+msgstr "%s로 입력 방식을 전환\n"

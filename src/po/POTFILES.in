@@ -1,0 +1,15 @@
+backends/xim/loopback.c
+backends/xim/main.c
+backends/xim/proxy.c
+imsettings/imsettings-client.c
+imsettings/imsettings-info.c
+imsettings-daemon/imsettings-module.c
+imsettings-daemon/imsettings-proc.c
+imsettings-daemon/imsettings-server.c
+imsettings-daemon/main.c
+utils/imsettings-check.c
+utils/imsettings-info.c
+utils/imsettings-list.c
+utils/imsettings-reload.c
+utils/imsettings-start.desktop.in
+utils/imsettings-switch.c

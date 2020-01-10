@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+<!ENTITY firstname "<firstname>Akira</firstname>">
+<!ENTITY surname   "<surname>TAGOH</surname>">
+<!ENTITY email     "<email>akira@tagoh.org</email>">
+<!ENTITY section   "1">
+<!ENTITY username  "Akira TAGOH">
+<!ENTITY command   "imsettings-switch">
+<!ENTITY purpose   "Switch Input Method">
+<!ENTITY gnu       "<acronym>GNU</acronym>">
+]>
+<refentry id="&command;">
+  <refentryinfo>
+    <address>&email;</address>
+    <author>&firstname; &surname;</author>
+    <copyright>
+      <year>2013</year>
+      <holder>&username;</holder>
+    </copyright>
+    <date>Apr 10, 2013</date>
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>&command;</refentrytitle>
+    <manvolnum>&section;</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>&command;</refname>
+    <refpurpose>&purpose;</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&command;</command>
+      <arg choice="opt">
+	<option>-hnqrx</option>
+      </arg>
+      <arg choice="opt">
+	<option>--no-update</option>
+      </arg>
+      <arg choice="opt">
+	<option>--quiet</option>
+      </arg>
+      <arg choice="opt">
+	<option>--restart</option>
+      </arg>
+      <arg choice="opt">
+	<option>--read-xinputrc</option>
+      </arg>
+      <arg choice="opt">
+	<option>--help</option>
+      </arg>
+      <group>
+	<arg choice="opt">Input Method name</arg>
+	<arg choice="opt">configuration filename</arg>
+      </group>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>&command;</command> switches Input Method which is managed under imsettings. Either <replaceable>Input Method name</replaceable> or <replaceable>configuration filename</replaceable> are required unless <option>--read-xinputrc</option> option is specified to determine the target from <filename>$HOME/.config/imsettings/xinputrc</filename> or <filename>$xinputrcdir/xinputrc</filename>.
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>OPTIONS</title>
+    <para>
+      This program follows the usual &gnu; command line syntax, with long options starting with two dashes (`-'). A summary of options is included below.
+    </para>
+
+    <variablelist>
+      <varlistentry>
+	<term>
+	  <option>-n</option>
+	  <option>--no-update</option>
+	</term>
+	<listitem>
+	  <para>
+	    Do not update <filename>$HOME/imsettings/xinputrc</filename>. without this option, <command>&command;</command> will updates it with the targeted Input Method.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option>-q</option>
+	  <option>--quiet</option>
+	</term>
+	<listitem>
+	  <para>
+	    Do not show any messages except errors.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option>-r</option>
+	  <option>--restart</option>
+	</term>
+	<listitem>
+	  <para>
+	    Restart the given Input Method or one which is determined from xinputrc by <option>--read-xinputrc</option> option.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option>-x</option>
+	  <option>--read-xinputrc</option>
+	</term>
+	<listitem>
+	  <para>
+	    Determine the targeted Input Method from <filename>$HOME/imsettings/xinputrc</filename> or <filename>$xinputrcdir/xinputrc</filename> if not available.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option>-h</option>
+	  <option>--help</option>
+	</term>
+	<listitem>
+	  <para>
+	    Show summary of options
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option><replaceable>Input Method name</replaceable></option>
+	</term>
+	<listitem>
+	  <para>
+	    Switch Input Method to <replaceable>Input Method name</replaceable>.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option><replaceable>configuration filename</replaceable></option>
+	</term>
+	<listitem>
+	  <para>
+	    Switch Input Method to <replaceable>configuration filename</replaceable>.
+	  </para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
+    <title>SEE ALSO</title>
+    <para>
+      <command>imsettings-list</command>(1)
+      <command>imsettings-reload</command>(1)
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>AUTHOR</title>
+    <para>
+      This manual page was written by &username; &email;
+    </para>
+  </refsect1>
+</refentry>

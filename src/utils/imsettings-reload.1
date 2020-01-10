@@ -1,0 +1,34 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH imsettings-reload 1 "Apr 10, 2013" "" ""
+.SH NAME
+imsettings-reload \- Reload imsettings-daemon
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBimsettings-reload\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[
+\fB-h\fR
+] [
+\fB--help\fR
+]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBimsettings-reload\fR sends a request to imsettings-daemon to be restarted. this would particularly helps when the software is upgraded or something went wrong. pleaes note that this requires restarting Input Method as well.
+.SH OPTIONS
+This program follows the usual GNU command line syntax, with long options starting with two dashes (`-'). A summary of options is included below.
+.TP 
+\*(T<\fB\-h\fR\*(T> \*(T<\fB\-\-help\fR\*(T> 
+Show summary of options
+.SH AUTHOR
+This manual page was written by Akira TAGOH <\*(T<akira@tagoh.org\*(T>>

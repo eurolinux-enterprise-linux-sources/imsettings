@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XInput configuration file</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="imsettings Documentation">
+<link rel="up" href="ch02.html" title="For packagers or Input Method developers">
+<link rel="prev" href="ch02.html" title="For packagers or Input Method developers">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">imsettings Documentation</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="xinput"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">XInput configuration file</span></h2>
+<p>XInput configuration file — 
+      How to create the xinput configuration file for Input Method
+    </p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="idp8078944"></a><h2>Valid parameters for XInput configuration file</h2>
+<p>
+      The following parameters can be described as the shell environment variables like FOO=BAR in the xinput configuration file.
+    </p>
+<div class="refsect2">
+<a name="AUXILIARY-PROGRAM:CAPS"></a><h3>AUXILIARY_PROGRAM</h3>
+<pre class="programlisting">
+	AUXILIARY_PROGRAM=&lt;string&gt;
+      </pre>
+<p>
+	An optional program that may want to bring up for Input Method, such as the panel and the toolbar and so on.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="AUXILIARY-ARGS:CAPS"></a><h3>AUXILIARY_ARGS</h3>
+<pre class="programlisting">
+	AUXILIARY_ARGS=&lt;string&gt;
+      </pre>
+<p>
+	A list of command line options for <a class="link" href="xinput.html#AUXILIARY-PROGRAM:CAPS" title="AUXILIARY_PROGRAM">AUXILIARY_PROGRAM</a>.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GTK-IM-MODULE:CAPS"></a><h3>GTK_IM_MODULE</h3>
+<pre class="programlisting">
+	GTK_IM_MODULE=&lt;string&gt;
+      </pre>
+<p>
+	GTK+ immodule name that want to use.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ICON:CAPS"></a><h3>ICON</h3>
+<pre class="programlisting">
+	ICON=&lt;string&gt;
+      </pre>
+<p>
+	An icon filename to use in third-party applications for the Input Method.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="IMSETTINGS-IGNORE-ME:CAPS"></a><h3>IMSETTINGS_IGNORE_ME</h3>
+<pre class="programlisting">
+	IMSETTINGS_IGNORE_ME=&lt;boolean&gt;
+      </pre>
+<p>
+	A parameter to hide Input Method from the inventory.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="LONG-DESC:CAPS"></a><h3>LONG_DESC</h3>
+<pre class="programlisting">
+	LONG_DESC=&lt;string&gt;
+      </pre>
+<p>
+	An optional long description to explain what this Input Method is.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NOT-RUN:CAPS"></a><h3>NOT_RUN</h3>
+<pre class="programlisting">
+	NOT_RUN=&lt;string&gt;
+      </pre>
+<p>
+	A colon-separated list for desktop names where isn't expected to run Input Method on. currently only GNOME3 is supported as a value.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="PREFERENCE-PROGRAM:CAPS"></a><h3>PREFERENCE_PROGRAM</h3>
+<pre class="programlisting">
+	PREFERENCE_PROGRAM=&lt;string&gt;
+      </pre>
+<p>
+	An optional program that set up Input Method.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="PREFERENCE-ARGS:CAPS"></a><h3>PREFERENCE_ARGS</h3>
+<pre class="programlisting">
+	PREFERENCE_ARGS=&lt;string&gt;
+      </pre>
+<p>
+	A list of command line options for <a class="link" href="xinput.html#PREFERENCE-PROGRAM:CAPS" title="PREFERENCE_PROGRAM">PREFERENCE_PROGRAM</a>.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="QT-IM-MODULE:CAPS"></a><h3>QT_IM_MODULE</h3>
+<pre class="programlisting">
+	QT_IM_MODULE=&lt;string&gt;
+      </pre>
+<p>
+	Qt immodule name that want to use.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SHORT-DESC:CAPS"></a><h3>SHORT_DESC</h3>
+<pre class="programlisting">
+	SHORT_DESC=&lt;string&gt;[:string]
+      </pre>
+<p>
+	An optional short description to explain what this Input Method is.
+	This variable is also used for the key to do something on IMSettings.
+	e.g. to switch Input Method and obtain the information and so on.
+	So this parameter has to be unique.  For extra option; depending on
+	the backends support though, this parameter is capable to tell the backend
+	a sub input method, which may be useful if Input Method supports multiple engines.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="XIM:CAPS"></a><h3>XIM</h3>
+<pre class="programlisting">
+	XIM=&lt;string&gt;
+      </pre>
+<p>
+	A XIM server atom for Input Method, which is used as XMODIFIERS=@im=$XIM.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="XIM-PROGRAM:CAPS"></a><h3>XIM_PROGRAM</h3>
+<pre class="programlisting">
+	XIM_PROGRAM=&lt;string&gt;
+      </pre>
+<p>
+	A XIM server name be brought up to communicate through XIM protocol.
+      </p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="XIM-ARGS:CAPS"></a><h3>XIM_ARGS</h3>
+<pre class="programlisting">
+	XIM_ARGS=&lt;string&gt;
+      </pre>
+<p>
+	A list of command line options for <a class="link" href="xinput.html#XIM-PROGRAM:CAPS" title="XIM_PROGRAM">XIM_PROGRAM</a>.
+      </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

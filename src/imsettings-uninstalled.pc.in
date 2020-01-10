@@ -1,0 +1,6 @@
+Name: IMSettings Uninstalled
+Description: Delivery framework for general Input Method configuration
+Version: @VERSION@
+Requires: gobject-2.0 gio-2.0
+Libs: ${pcfiledir}/imsettings/libimsettings.la
+Cflags: -I${pcfiledir} -I${pcfiledir}/@srcdir@

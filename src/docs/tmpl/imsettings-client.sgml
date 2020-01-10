@@ -1,0 +1,334 @@
+<!-- ##### SECTION Title ##### -->
+IMSettingsClient
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT IMSettingsClientClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@reserved1: 
+@reserved2: 
+@reserved3: 
+@reserved4: 
+
+<!-- ##### FUNCTION imsettings_client_get_active_im_info ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_object ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_variant ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_variant_finish ##### -->
+<para>
+
+</para>
+
+@client: 
+@result: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_variant_start ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_variants ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_variants_finish ##### -->
+<para>
+
+</para>
+
+@client: 
+@result: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_info_variants_start ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_locale ##### -->
+<para>
+
+</para>
+
+@client: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_module_settings ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_system_im ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_system_im_finish ##### -->
+<para>
+
+</para>
+
+@client: 
+@result: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_system_im_start ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_user_im ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_user_im_finish ##### -->
+<para>
+
+</para>
+
+@client: 
+@result: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_user_im_start ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION imsettings_client_get_version ##### -->
+<para>
+
+</para>
+
+@client: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_im_is_system_default ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_im_is_user_default ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_im_is_xim ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_new ##### -->
+<para>
+
+</para>
+
+@locale: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_ping ##### -->
+<para>
+
+</para>
+
+@client: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_reload ##### -->
+<para>
+
+</para>
+
+@client: 
+@send_signal: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_set_locale ##### -->
+<para>
+
+</para>
+
+@client: 
+@locale: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_switch_im ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@update_xinputrc: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_switch_im_finish ##### -->
+<para>
+
+</para>
+
+@client: 
+@result: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_client_switch_im_start ##### -->
+<para>
+
+</para>
+
+@client: 
+@module: 
+@update_xinputrc: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Utilities</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="imsettings Documentation">
+<link rel="up" href="ch01.html" title="imsettings API References">
+<link rel="prev" href="imsettings-Macros.html" title="Macros">
+<link rel="next" href="ch02.html" title="For packagers or Input Method developers">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="imsettings-Macros.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">imsettings Documentation</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#imsettings-Utilities.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#imsettings-Utilities.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="imsettings-Utilities"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="imsettings-Utilities.top_of_page"></a>Utilities</span></h2>
+<p>Utilities — small utilities functions to use imsettings library.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="imsettings-Utilities.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="imsettings-Utilities.html#IMSETTINGS-GERROR:CAPS" title="IMSETTINGS_GERROR">IMSETTINGS_GERROR</a>
+enum                <a class="link" href="imsettings-Utilities.html#IMSettingsError" title="enum IMSettingsError">IMSettingsError</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="imsettings-Utilities.html#imsettings-g-error-quark" title="imsettings_g_error_quark ()">imsettings_g_error_quark</a>            (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="returnvalue">GDBusInterfaceInfo</span></a> * <a class="link" href="imsettings-Utilities.html#imsettings-get-interface-info" title="imsettings_get_interface_info ()">imsettings_get_interface_info</a>      (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="imsettings-Utilities.html#imsettings-is-enabled" title="imsettings_is_enabled ()">imsettings_is_enabled</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="imsettings-Utilities.description"></a><h2>Description</h2>
+<p>
+This section describes utilities functions that used in imsettings library.
+</p>
+</div>
+<div class="refsect1">
+<a name="imsettings-Utilities.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="IMSETTINGS-GERROR:CAPS"></a><h3>IMSETTINGS_GERROR</h3>
+<pre class="programlisting">#define IMSETTINGS_GERROR (imsettings_g_error_quark())
+</pre>
+<p>
+Error domain for imsettings. Errors in this domain will be from
+<a class="link" href="imsettings-Utilities.html#IMSettingsError" title="enum IMSettingsError"><span class="type">IMSettingsError</span></a> enumeration.  See <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for information on
+error domains.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="IMSettingsError"></a><h3>enum IMSettingsError</h3>
+<pre class="programlisting">typedef enum {
+	IMSETTINGS_GERROR_UNKNOWN,
+	IMSETTINGS_GERROR_CONFIGURATION_ERROR,
+	IMSETTINGS_GERROR_IM_NOT_FOUND,
+	IMSETTINGS_GERROR_UNABLE_TO_TRACK_IM,
+	IMSETTINGS_GERROR_OOM,
+	IMSETTINGS_GERROR_NOT_TARGETED_DESKTOP,
+} IMSettingsError;
+</pre>
+<p>
+Error codes used in imsettings.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><a name="IMSETTINGS-GERROR-UNKNOWN:CAPS"></a><span class="term"><code class="literal">IMSETTINGS_GERROR_UNKNOWN</code></span></p></td>
+<td>unknown error happened.
+</td>
+</tr>
+<tr>
+<td><p><a name="IMSETTINGS-GERROR-CONFIGURATION-ERROR:CAPS"></a><span class="term"><code class="literal">IMSETTINGS_GERROR_CONFIGURATION_ERROR</code></span></p></td>
+<td>misconfigured.
+</td>
+</tr>
+<tr>
+<td><p><a name="IMSETTINGS-GERROR-IM-NOT-FOUND:CAPS"></a><span class="term"><code class="literal">IMSETTINGS_GERROR_IM_NOT_FOUND</code></span></p></td>
+<td>the Input Method in request doesn't found.
+</td>
+</tr>
+<tr>
+<td><p><a name="IMSETTINGS-GERROR-UNABLE-TO-TRACK-IM:CAPS"></a><span class="term"><code class="literal">IMSETTINGS_GERROR_UNABLE_TO_TRACK_IM</code></span></p></td>
+<td>the Input Method isn't managed by imsettings.
+</td>
+</tr>
+<tr>
+<td><p><a name="IMSETTINGS-GERROR-OOM:CAPS"></a><span class="term"><code class="literal">IMSETTINGS_GERROR_OOM</code></span></p></td>
+<td>Out of memory occured.
+</td>
+</tr>
+<tr>
+<td><p><a name="IMSETTINGS-GERROR-NOT-TARGETED-DESKTOP:CAPS"></a><span class="term"><code class="literal">IMSETTINGS_GERROR_NOT_TARGETED_DESKTOP</code></span></p></td>
+<td>current desktop isn't targeted by Input Method.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-g-error-quark"></a><h3>imsettings_g_error_quark ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              imsettings_g_error_quark            (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-get-interface-info"></a><h3>imsettings_get_interface_info ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="returnvalue">GDBusInterfaceInfo</span></a> * imsettings_get_interface_info      (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns the <a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="type">GDBusInterfaceInfo</span></a>, if any, specifying the minimal
+interface that imsettings conforms to.
+</p>
+<p>
+See the <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxy--g-interface-info"><span class="type">"g-interface-info"</span></a> property for more details.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="type">GDBusInterfaceInfo</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.  Do not unref the returned
+object, it is owned by an instance of <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html"><span class="type">GDBusProxy</span></a>.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="imsettings-is-enabled"></a><h3>imsettings_is_enabled ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            imsettings_is_enabled               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Check if current environment are supposed to work with imsettings.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if imsettings is enabled, otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

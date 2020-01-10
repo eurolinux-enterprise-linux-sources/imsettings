@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+<!ENTITY firstname "<firstname>Akira</firstname>">
+<!ENTITY surname   "<surname>TAGOH</surname>">
+<!ENTITY email     "<email>akira@tagoh.org</email>">
+<!ENTITY section   "1">
+<!ENTITY username  "Akira TAGOH">
+<!ENTITY command   "imsettings-info">
+<!ENTITY purpose   "Display information about Input Method">
+<!ENTITY gnu       "<acronym>GNU</acronym>">
+]>
+<refentry id="&command;">
+  <refentryinfo>
+    <address>&email;</address>
+    <author>&firstname; &surname;</author>
+    <copyright>
+      <year>2013</year>
+      <holder>&username;</holder>
+    </copyright>
+    <date>Apr  9, 2013</date>
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>&command;</refentrytitle>
+    <manvolnum>&section;</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>&command;</refname>
+    <refpurpose>&purpose;</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&command;</command>
+      <arg choice="opt">
+	<option>-h</option>
+      </arg>
+      <arg choice="opt">
+	<option>--help</option>
+      </arg>
+      <group>
+	<arg choice="opt">Input Method name</arg>
+	<arg choice="opt">configuration filename</arg>
+      </group>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>&command;</command> displays Input Method information. if no explicit <replaceable>Input Method name</replaceable> or <replaceable>configuration filename</replaceable> is specified, it displays one which is currently active.
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>OPTIONS</title>
+    <para>
+      This program follows the usual &gnu; command line syntax, with long options starting with two dashes (`-'). A summary of options is included below.
+    </para>
+
+    <variablelist>
+      <varlistentry>
+	<term>
+	  <option>-h</option>
+	  <option>--help</option>
+	</term>
+	<listitem>
+	  <para>
+	    Show summary of options
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option><replaceable>Input Method name</replaceable></option>
+	</term>
+	<listitem>
+	  <para>
+	    Displays information for <replaceable>Input Method name</replaceable>.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <option><replaceable>configuration filename</replaceable></option>
+	</term>
+	<listitem>
+	  <para>
+	    Displays information for <replaceable>configuration filename</replaceable>.
+	  </para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
+    <title>SEE ALSO</title>
+    <para>
+      <command>imsettings-reload</command>(1)
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>AUTHOR</title>
+    <para>
+      This manual page was written by &username; &email;
+    </para>
+  </refsect1>
+</refentry>

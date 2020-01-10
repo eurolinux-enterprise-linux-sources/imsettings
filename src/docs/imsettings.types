@@ -1,0 +1,5 @@
+#include <imsettings/imsettings-client.h>
+#include <imsettings/imsettings-info.h>
+
+imsettings_client_get_type
+imsettings_info_get_type

@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+	  "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+]>
+<refentry id="xinput" revision="9 Feb 2011">
+  <refmeta>
+    <refentrytitle>XInput configuration file</refentrytitle>
+    <manvolnum>5</manvolnum>
+    <refmiscinfo>IMSettings Library</refmiscinfo>
+  </refmeta>
+
+  <refnamediv>
+    <refname>XInput configuration file</refname>
+    <refpurpose>
+      How to create the xinput configuration file for Input Method
+    </refpurpose>
+  </refnamediv>
+
+  <refsect1>
+    <title>Valid parameters for XInput configuration file</title>
+
+    <para>
+      The following parameters can be described as the shell environment variables like FOO=BAR in the xinput configuration file.
+    </para>
+
+    <refsect2 id="AUXILIARY-PROGRAM:CAPS">
+      <title>AUXILIARY_PROGRAM</title>
+      <indexterm zone="AUXILIARY_PROGRAM"><primary>AUXILIARY_PROGRAM</primary></indexterm>
+      <programlisting>
+	AUXILIARY_PROGRAM=&lt;string&gt;
+      </programlisting>
+      <para>
+	An optional program that may want to bring up for Input Method, such as the panel and the toolbar and so on.
+      </para>
+    </refsect2>
+
+    <refsect2 id="AUXILIARY-ARGS:CAPS">
+      <title>AUXILIARY_ARGS</title>
+      <indexterm zone="AUXILIARY_ARGS"><primary>AUXILIARY_ARGS</primary></indexterm>
+      <programlisting>
+	AUXILIARY_ARGS=&lt;string&gt;
+      </programlisting>
+      <para>
+	A list of command line options for <link linkend="AUXILIARY-PROGRAM:CAPS">AUXILIARY_PROGRAM</link>.
+      </para>
+    </refsect2>
+
+    <refsect2 id="GTK-IM-MODULE:CAPS">
+      <title>GTK_IM_MODULE</title>
+      <indexterm zone="GTK_IM_MODULE"><primary>GTK_IM_MODULE</primary></indexterm>
+      <programlisting>
+	GTK_IM_MODULE=&lt;string&gt;
+      </programlisting>
+      <para>
+	GTK+ immodule name that want to use.
+      </para>
+    </refsect2>
+
+    <refsect2 id="ICON:CAPS">
+      <title>ICON</title>
+      <indexterm zone="ICON"><primary>ICON</primary></indexterm>
+      <programlisting>
+	ICON=&lt;string&gt;
+      </programlisting>
+      <para>
+	An icon filename to use in third-party applications for the Input Method.
+      </para>
+    </refsect2>
+
+    <refsect2 id="IMSETTINGS-IGNORE-ME:CAPS">
+      <title>IMSETTINGS_IGNORE_ME</title>
+      <indexterm zone="IMSETTINGS_IGNORE_ME"><primary>IMSETTINGS_IGNORE_ME</primary></indexterm>
+      <programlisting>
+	IMSETTINGS_IGNORE_ME=&lt;boolean&gt;
+      </programlisting>
+      <para>
+	A parameter to hide Input Method from the inventory.
+      </para>
+    </refsect2>
+
+    <refsect2 id="LONG-DESC:CAPS">
+      <title>LONG_DESC</title>
+      <indexterm zone="LONG_DESC"><primary>LONG_DESC</primary></indexterm>
+      <programlisting>
+	LONG_DESC=&lt;string&gt;
+      </programlisting>
+      <para>
+	An optional long description to explain what this Input Method is.
+      </para>
+    </refsect2>
+
+    <refsect2 id="NOT-RUN:CAPS">
+      <title>NOT_RUN</title>
+      <indexterm zone="NOT_RUN"><primary>NOT_RUN</primary></indexterm>
+      <programlisting>
+	NOT_RUN=&lt;string&gt;
+      </programlisting>
+      <para>
+	A colon-separated list for desktop names where isn't expected to run Input Method on. currently only GNOME3 is supported as a value.
+      </para>
+    </refsect2>
+
+    <refsect2 id="PREFERENCE-PROGRAM:CAPS">
+      <title>PREFERENCE_PROGRAM</title>
+      <indexterm zone="PREFERENCE_PROGRAM"><primary>PREFERENCE_PROGRAM</primary></indexterm>
+      <programlisting>
+	PREFERENCE_PROGRAM=&lt;string&gt;
+      </programlisting>
+      <para>
+	An optional program that set up Input Method.
+      </para>
+    </refsect2>
+
+    <refsect2 id="PREFERENCE-ARGS:CAPS">
+      <title>PREFERENCE_ARGS</title>
+      <indexterm zone="PREFERENCE_ARGS"><primary>PREFERENCE_ARGS</primary></indexterm>
+      <programlisting>
+	PREFERENCE_ARGS=&lt;string&gt;
+      </programlisting>
+      <para>
+	A list of command line options for <link linkend="PREFERENCE-PROGRAM:CAPS">PREFERENCE_PROGRAM</link>.
+      </para>
+    </refsect2>
+
+    <refsect2 id="QT-IM-MODULE:CAPS">
+      <title>QT_IM_MODULE</title>
+      <indexterm zone="QT_IM_MODULE"><primary>QT_IM_MODULE</primary></indexterm>
+      <programlisting>
+	QT_IM_MODULE=&lt;string&gt;
+      </programlisting>
+      <para>
+	Qt immodule name that want to use.
+      </para>
+    </refsect2>
+
+    <refsect2 id="SHORT-DESC:CAPS">
+      <title>SHORT_DESC</title>
+      <indexterm zone="SHORT_DESC"><primary>SHORT_DESC</primary></indexterm>
+      <programlisting>
+	SHORT_DESC=&lt;string&gt;[:string]
+      </programlisting>
+      <para>
+	An optional short description to explain what this Input Method is.
+	This variable is also used for the key to do something on IMSettings.
+	e.g. to switch Input Method and obtain the information and so on.
+	So this parameter has to be unique.  For extra option; depending on
+	the backends support though, this parameter is capable to tell the backend
+	a sub input method, which may be useful if Input Method supports multiple engines.
+      </para>
+    </refsect2>
+
+    <refsect2 id="XIM:CAPS">
+      <title>XIM</title>
+      <indexterm zone="XIM"><primary>XIM</primary></indexterm>
+      <programlisting>
+	XIM=&lt;string&gt;
+      </programlisting>
+      <para>
+	A XIM server atom for Input Method, which is used as XMODIFIERS=@im=$XIM.
+      </para>
+    </refsect2>
+
+    <refsect2 id="XIM-PROGRAM:CAPS">
+      <title>XIM_PROGRAM</title>
+      <indexterm zone="XIM_PROGRAM"><primary>XIM_PROGRAM</primary></indexterm>
+      <programlisting>
+	XIM_PROGRAM=&lt;string&gt;
+      </programlisting>
+      <para>
+	A XIM server name be brought up to communicate through XIM protocol.
+      </para>
+    </refsect2>
+
+    <refsect2 id="XIM-ARGS:CAPS">
+      <title>XIM_ARGS</title>
+      <indexterm zone="XIM_ARGS"><primary>XIM_ARGS</primary></indexterm>
+      <programlisting>
+	XIM_ARGS=&lt;string&gt;
+      </programlisting>
+      <para>
+	A list of command line options for <link linkend="XIM-PROGRAM:CAPS">XIM_PROGRAM</link>.
+      </para>
+    </refsect2>
+
+  </refsect1>
+</refentry>

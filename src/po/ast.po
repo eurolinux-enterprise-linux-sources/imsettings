@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2011.
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2007.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-27 12:40+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 2.2.2\n"
+
+#: ../backends/xim/loopback.c:223
+msgid "Synchronous"
+msgstr "Синхронно"
+
+#: ../backends/xim/loopback.c:224
+msgid "Request to send a key event synchronously"
+msgstr "Синхронне надсилання повідомлень про події натискання клавіш"
+
+#: ../backends/xim/main.c:155
+msgid "D-Bus address to use"
+msgstr "Адреса D-Bus, яку слід використовувати"
+
+#: ../backends/xim/main.c:155
+msgid "ADDRESS"
+msgstr "АДРЕСА"
+
+#: ../backends/xim/main.c:156
+msgid "X display to use"
+msgstr "Дисплей графічного сервера, який слід використовувати"
+
+#: ../backends/xim/main.c:156
+msgid "DISPLAY"
+msgstr "ДИСПЛЕЙ"
+
+#: ../backends/xim/main.c:157
+msgid "Replace the running XIM server with new instance."
+msgstr "Замінити запущений сервер XIM новим екземпляром."
+
+#: ../backends/xim/main.c:158
+msgid "Output the debugging logs"
+msgstr "Виводити дані до діагностичних журналів"
+
+#: ../backends/xim/main.c:159
+msgid "XIM server connects to, for debugging purpose only"
+msgstr ""
+"Сервер XIM, з яким слід встановлювати з’єднання. Лише для діагностичних "
+"потреб."
+
+#: ../backends/xim/main.c:159
+msgid "XIM"
+msgstr "XIM"
+
+#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
+msgid "Unknown error in parsing the command lines."
+msgstr "Невідома помилка під час обробки рядків команди."
+
+#: ../backends/xim/proxy.c:2972
+msgid "XIM server name"
+msgstr "Назва сервера XIM"
+
+#: ../backends/xim/proxy.c:2973
+msgid "The name of XIM server for the connection"
+msgstr "Назва сервера XIM для встановлення з’єднання"
+
+#: ../backends/xim/proxy.c:2978
+msgid "Signals for Protocol class"
+msgstr "Сигнали для класу Protocol"
+
+#: ../backends/xim/proxy.c:2979
+msgid "A structure of signals for Protocol class"
+msgstr "Структура сигналів для класу Protocol"
+
+#: ../imsettings/imsettings-client.c:161
+msgid "Locale"
+msgstr "Локаль"
+
+#: ../imsettings/imsettings-client.c:162
+msgid "Locale to get the imsettings information"
+msgstr "Локаль для отримання даних щодо параметрів способу введення"
+
+#: ../imsettings-daemon/imsettings-module.c:133
+msgid "Name"
+msgstr "Назва"
+
+#: ../imsettings-daemon/imsettings-module.c:134
+msgid "A module name for imsettings backend"
+msgstr "Назва модуля сервера способів введення"
+
+#: ../imsettings-daemon/imsettings-proc.c:193
+msgid "Unable to keep Input Method running"
+msgstr "Не вдалося уникнути завершення роботи системи способів введення"
+
+#: ../imsettings-daemon/imsettings-proc.c:203
+#, c-format
+msgid ""
+"Giving up to bring the process up because %s Input Method process for %s "
+"rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
+msgstr ""
+
+#: ../imsettings-daemon/imsettings-proc.c:304
+#, c-format
+msgid "[BUG] %s process is still running [pid: %d]\n"
+msgstr "[ВАДА] роботу процесу %s не завершено [pid: %d]\n"
+
+#: ../imsettings-daemon/imsettings-proc.c:448
+#, c-format
+msgid "Couldn't send a signal to the %s process successfully."
+msgstr "Не вдалося успішно надіслати сигнал процесу %s."
+
+#: ../imsettings-daemon/imsettings-proc.c:566
+msgid "IMSettingsInfo"
+msgstr "IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-proc.c:567
+msgid "A GObject to be a IMSettingsInfo"
+msgstr "GObject, який міститиме дані IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-server.c:417
+msgid "DBus connection"
+msgstr "З’єднання DBus"
+
+#: ../imsettings-daemon/imsettings-server.c:418
+msgid "A GObject to be a DBus connection"
+msgstr "Об’єкт GObject, який відповідатиме за з’єднання DBus"
+
+#: ../imsettings-daemon/imsettings-server.c:423
+msgid "Logging"
+msgstr "Ведення журналу"
+
+#: ../imsettings-daemon/imsettings-server.c:424
+msgid "A boolean value whether the logging facility is enabled or not."
+msgstr ""
+"Логічне значення («так» або «ні»), яке визначає, чи увімкнено ведення "
+"журналу."
+
+#: ../imsettings-daemon/imsettings-server.c:429
+#: ../imsettings-daemon/imsettings-server.c:430
+msgid "Home directory"
+msgstr "Домашній каталог"
+
+#: ../imsettings-daemon/imsettings-server.c:435
+#: ../imsettings-daemon/imsettings-server.c:436
+msgid "xinputrc directory"
+msgstr "каталог xinputrc"
+
+#: ../imsettings-daemon/imsettings-server.c:441
+#: ../imsettings-daemon/imsettings-server.c:442
+msgid "xinput directory"
+msgstr "каталог xinput"
+
+#: ../imsettings-daemon/imsettings-server.c:447
+msgid "module directory"
+msgstr "каталог модулів"
+
+#: ../imsettings-daemon/imsettings-server.c:448
+msgid "IMSettings module directory"
+msgstr "Каталог модулів IMSettings"
+
+#: ../imsettings-daemon/imsettings-server.c:714
+#, c-format
+msgid "No such input method on your system: %s"
+msgstr "Такого способу введення у вашій системі немає: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:723
+#: ../imsettings-daemon/imsettings-server.c:872
+#: ../imsettings-daemon/imsettings-server.c:913
+#: ../imsettings-daemon/imsettings-server.c:1134
+#, c-format
+msgid "Out of memory"
+msgstr "Не вистачає пам'яті"
+
+#: ../imsettings-daemon/imsettings-server.c:748
+#, c-format
+msgid "Current desktop isn't targeted by IMSettings."
+msgstr ""
+
+#: ../imsettings-daemon/imsettings-server.c:800
+#, c-format
+msgid "Failed to revert the backup file: %s"
+msgstr "Не вдалося відновити файл з резервної копії: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:813
+#, c-format
+msgid "Failed to create a backup file: %s"
+msgstr "Не вдалося створити файл резервної копії: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:823
+#, fuzzy, c-format
+msgid "Failed to remove an user xinputrc file: %s"
+msgstr "Не вдалося створити файл резервної копії: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:834
+#, c-format
+msgid "Failed to create a symlink: %s"
+msgstr "Не вдалося створити символічне посилання: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:865
+#, c-format
+msgid "No system-wide xinputrc available"
+msgstr "Не знайдено загальносистемного файла xinputrc"
+
+#: ../imsettings-daemon/imsettings-server.c:905
+#, fuzzy, c-format
+msgid "No user xinputrc nor system-wide xinputrc available"
+msgstr "Не знайдено загальносистемного файла xinputrc"
+
+#: ../imsettings-daemon/imsettings-server.c:1126
+#, c-format
+msgid "No such input method: %s"
+msgstr "Такого способу введення немає: %s"
+
+#: ../imsettings-daemon/main.c:111
+msgid "Replace the instance of the imsettings daemon."
+msgstr "Замінити поточний екземпляр фонової служби imsettings."
+
+#: ../imsettings-daemon/main.c:112
+msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+msgstr "Встановити загальносистемний каталог xinputrc (з метою діагностики)"
+
+#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
+msgid "DIR"
+msgstr "КАТАЛОГ"
+
+#: ../imsettings-daemon/main.c:113
+msgid "Set the IM configuration directory (for debugging purpose)"
+msgstr "Встановити каталог налаштувань способів введення (з метою діагностики)"
+
+#: ../imsettings-daemon/main.c:114
+msgid "Set a home directory (for debugging purpose)"
+msgstr "Встановити домашній каталог (з метою діагностики)"
+
+#: ../imsettings-daemon/main.c:115
+msgid "Set the imsettings module directory (for debugging purpose)"
+msgstr "Встановити каталог модулів imsettings (з метою діагностики)"
+
+#: ../imsettings-daemon/main.c:116
+msgid "Do not create a log file."
+msgstr "Не створювати файла журналу."
+
+#: ../utils/imsettings-check.c:131
+msgid "Unable to open X display"
+msgstr "Не вдалося відкрити канал роботи з дисплеєм"
+
+#: ../utils/imsettings-check.c:138
+msgid "XSETTINGS manager isn't running"
+msgstr "Керування XSETTINGS не запущено"
+
+#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
+msgid "Unable to create a client instance."
+msgstr "Не вдалося створити екземпляр клієнтської програми."
+
+#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
+msgid "imsettings version mismatch"
+msgstr "Невідповідність версій imsettings"
+
+#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
+msgid "No modules loaded"
+msgstr "Не завантажено жодного модуля"
+
+#: ../utils/imsettings-check.c:248
+msgid "Please see .imsettings.log for more details"
+msgstr "Докладніші дані можна знайти у файлі .imsettings.log"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-check.c:287
+msgid "Output the detail information for the result"
+msgstr "Показувати докладні відомості щодо результату"
+
+#: ../utils/imsettings-check.c:288
+msgid "Check if DBus is running"
+msgstr "Перевірити, чи запущено DBus"
+
+#: ../utils/imsettings-check.c:289
+#, fuzzy
+msgid "Check if SESSION is on line"
+msgstr "Перевірити, чи запущено DBus"
+
+#: ../utils/imsettings-check.c:290
+msgid "Check if any valid modules are loaded"
+msgstr "Перевірити, чи завантажено коректні модулі"
+
+#: ../utils/imsettings-check.c:291
+msgid "Check if all of the module settings has consistencies"
+msgstr "Перевірити, чи є сумісними значення параметрів всіх модулів"
+
+#: ../utils/imsettings-check.c:292
+msgid "Check if XSETTINGS manager is running"
+msgstr "Перевірити, чи запущено керування XSETTINGS"
+
+#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
+msgid "[Input Method name|xinput.conf]"
+msgstr "[Назва способу введення|xinput.conf]"
+
+#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
+#, c-format
+msgid "IMSettings is disabled on the system.\n"
+msgstr ""
+
+#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
+#, fuzzy, c-format
+msgid "Unable to create a client instance.\n"
+msgstr "Не вдалося створити екземпляр клієнтської програми."
+
+#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
+#: ../utils/imsettings-switch.c:101
+#, c-format
+msgid ""
+"Currently a different version of imsettings is running.\n"
+"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
+msgstr ""
+"Зараз запущено іншу версію imsettings.\n"
+"Команда \"imsettings-reload\" може допомогти, але вона призведе до "
+"перезапуску системи способів введення.\n"
+
+#: ../utils/imsettings-info.c:107
+#, c-format
+msgid "Unable to obtain an Input Method Information: %s\n"
+msgstr "Не вдалося отримати дані щодо способу введення: %s\n"
+
+#: ../utils/imsettings-reload.c:44
+msgid "Force reloading imsettings-daemon (deprecated)."
+msgstr ""
+"Примусове перезавантаження фонової служби imsettings (застарілий параметр)."
+
+#: ../utils/imsettings-reload.c:110
+#, c-format
+msgid "Reloaded.\n"
+msgstr "Перезавантажено.\n"
+
+#: ../utils/imsettings-start.desktop.in.h:1
+msgid "Input Method starter"
+msgstr "Запуск системи способів введення"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:47
+msgid "Force restarting the IM process regardless of any errors."
+msgstr ""
+"Примусовий перезапуск процесу системи способів введення, незважаючи на "
+"помилки."
+
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:49
+msgid "Do not update the user xinputrc."
+msgstr ""
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:51
+msgid "Shut up the extra messages."
+msgstr "Не показувати додаткові повідомлення."
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:53
+msgid "Restart input method"
+msgstr "Перезапустити систему способів введення"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:55
+msgid "Read xinputrc to determine the input method"
+msgstr "Прочитати xinputrc для визначення способу введення"
+
+#: ../utils/imsettings-switch.c:110
+msgid "No backend modules available"
+msgstr ""
+
+#: ../utils/imsettings-switch.c:127
+#, c-format
+msgid "No Input Method running to be restarted.\n"
+msgstr ""
+"Оскільки системи способів введення не запущено, нічого перезапускати.\n"
+
+#: ../utils/imsettings-switch.c:140
+#, c-format
+msgid "Restarted %s\n"
+msgstr "Перезапущено %s\n"
+
+#: ../utils/imsettings-switch.c:182
+#, c-format
+msgid "Switched input method to %s\n"
+msgstr ""

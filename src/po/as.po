@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amitakhya Phukan <aphukan@redhat.com>, 2008, 2010.
+# Akira  <akira+transifex@tagoh.org>, 2011.
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2008.
+# Nilamdyuti Goswami <ngoswami@redhat.com>, 2012.
+# ngoswami <ngoswami@fedoraproject.org>, 2012. #zanata
+# Bijit Sarmah <bijitsarmah2@gmail.com>, 2013. #zanata
+# ngoswami <ngoswami@fedoraproject.org>, 2013. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-27 12:40+0900\n"
+"PO-Revision-Date: 2013-04-03 08:51-0400\n"
+"Last-Translator: ngoswami <ngoswami@fedoraproject.org>\n"
+"Language-Team: as_IN <kde-i18n-doc@kde.org>\n"
+"Language: as\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 2.2.2\n"
+
+#: ../backends/xim/loopback.c:223
+msgid "Synchronous"
+msgstr "সমকালীন"
+
+#: ../backends/xim/loopback.c:224
+msgid "Request to send a key event synchronously"
+msgstr "সমকালীনভাবে এটা কি'ৰ ঘটনা পঠিয়াবলৈ অনুৰোধ"
+
+#: ../backends/xim/main.c:155
+msgid "D-Bus address to use"
+msgstr "ব্যৱহাৰ কৰিব লগিয়া D-Bus ঠিকনা"
+
+#: ../backends/xim/main.c:155
+msgid "ADDRESS"
+msgstr "ADDRESS"
+
+#: ../backends/xim/main.c:156
+msgid "X display to use"
+msgstr "ব্যৱহাৰ কৰিব লগিয়া X প্ৰদৰ্শন"
+
+#: ../backends/xim/main.c:156
+msgid "DISPLAY"
+msgstr "DISPLAY"
+
+#: ../backends/xim/main.c:157
+msgid "Replace the running XIM server with new instance."
+msgstr "চলি থকা XIM চাৰ্ভাৰক নতুন উদাহৰণৰে প্ৰতিস্থাপন কৰক।"
+
+#: ../backends/xim/main.c:158
+msgid "Output the debugging logs"
+msgstr "ডিবাগৰ লগক আউটপুট কৰক"
+
+#: ../backends/xim/main.c:159
+msgid "XIM server connects to, for debugging purpose only"
+msgstr "XIM চাৰ্ভাৰে সংযোগ কৰে, অকল ডিবাগৰ সংক্ৰান্তত"
+
+#: ../backends/xim/main.c:159
+msgid "XIM"
+msgstr "XIM"
+
+#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
+msgid "Unknown error in parsing the command lines."
+msgstr "কমান্ড শাৰী বিশ্লেষণ কৰোঁতে অজ্ঞাত ত্ৰুটি।"
+
+#: ../backends/xim/proxy.c:2972
+msgid "XIM server name"
+msgstr "XIM চাৰ্ভাৰৰ নাম"
+
+#: ../backends/xim/proxy.c:2973
+msgid "The name of XIM server for the connection"
+msgstr "সংযোগৰ কাৰণে XIM চাৰ্ভাৰৰ নাম"
+
+#: ../backends/xim/proxy.c:2978
+msgid "Signals for Protocol class"
+msgstr "প্ৰটোকল শ্ৰেণীৰ বাবে সংকেতবোৰ"
+
+#: ../backends/xim/proxy.c:2979
+msgid "A structure of signals for Protocol class"
+msgstr "প্ৰটোকল শ্ৰেণীৰ বাবে সংকেতৰ এটা গঠন"
+
+#: ../imsettings/imsettings-client.c:161
+msgid "Locale"
+msgstr "স্থানীয়"
+
+#: ../imsettings/imsettings-client.c:162
+msgid "Locale to get the imsettings information"
+msgstr "imsettings তথ্য পোৱাৰ স্থানীয়"
+
+#: ../imsettings-daemon/imsettings-module.c:133
+msgid "Name"
+msgstr "নাম"
+
+#: ../imsettings-daemon/imsettings-module.c:134
+msgid "A module name for imsettings backend"
+msgstr "imsettings বেকএণ্ডৰ বাবে এটা মডিউল নাম"
+
+#: ../imsettings-daemon/imsettings-proc.c:193
+msgid "Unable to keep Input Method running"
+msgstr "ইনপুট পদ্ধতি চলাই ৰাখিবলৈ অক্ষম"
+
+#: ../imsettings-daemon/imsettings-proc.c:203
+#, c-format
+msgid ""
+"Giving up to bring the process up because %s Input Method process for %s "
+"rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
+msgstr ""
+"প্ৰক্ৰিয়া সজীৱ কৰাৰ চেষ্টা বাদ দিয়া হৈছে কাৰণ %s ৰ বাবে %s ইনপুট পদ্ধতি দ্ৰুতভাৱে "
+"বহুবাৰ অন্ত হৈছে। অধিক বিৱৰণৰ বাবে $XDG_CACHE_HOME/imsettings/log চাওক।"
+
+#: ../imsettings-daemon/imsettings-proc.c:304
+#, c-format
+msgid "[BUG] %s process is still running [pid: %d]\n"
+msgstr "[BUG] %s প্ৰক্ৰিয়া এতিয়াও চলি আছে [pid: %d]¶\n"
+
+#: ../imsettings-daemon/imsettings-proc.c:448
+#, c-format
+msgid "Couldn't send a signal to the %s process successfully."
+msgstr "%s প্ৰক্ৰিয়ালৈ সফলভাবে সংকেত পঠিয়াব পৰা নগল।"
+
+#: ../imsettings-daemon/imsettings-proc.c:566
+msgid "IMSettingsInfo"
+msgstr "IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-proc.c:567
+msgid "A GObject to be a IMSettingsInfo"
+msgstr "এটা IMSettingsInfo হবলে এটা GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:417
+msgid "DBus connection"
+msgstr "DBus সংযোগ"
+
+#: ../imsettings-daemon/imsettings-server.c:418
+msgid "A GObject to be a DBus connection"
+msgstr "এটা DBus সংযোগ হবলে এটা GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:423
+msgid "Logging"
+msgstr "লগিং"
+
+#: ../imsettings-daemon/imsettings-server.c:424
+msgid "A boolean value whether the logging facility is enabled or not."
+msgstr "লগিং সুবিধা উপলব্ধ হয় নে তাৰ এটা বুলিয়ান মান।"
+
+#: ../imsettings-daemon/imsettings-server.c:429
+#: ../imsettings-daemon/imsettings-server.c:430
+msgid "Home directory"
+msgstr "ঘৰ ডাইৰেকটৰি"
+
+#: ../imsettings-daemon/imsettings-server.c:435
+#: ../imsettings-daemon/imsettings-server.c:436
+msgid "xinputrc directory"
+msgstr "xinputrc ডাইৰেকটৰি"
+
+#: ../imsettings-daemon/imsettings-server.c:441
+#: ../imsettings-daemon/imsettings-server.c:442
+msgid "xinput directory"
+msgstr "xinput ডাইৰেকটৰি"
+
+#: ../imsettings-daemon/imsettings-server.c:447
+msgid "module directory"
+msgstr "মডিউল ডাইৰেকটৰি"
+
+#: ../imsettings-daemon/imsettings-server.c:448
+msgid "IMSettings module directory"
+msgstr "IMSettings মডিউল ডাইৰেকটৰি"
+
+#: ../imsettings-daemon/imsettings-server.c:714
+#, c-format
+msgid "No such input method on your system: %s"
+msgstr "আপোনাৰ চিস্টেমত এনে কোনো ইনপুট পদ্ধতি নাই: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:723
+#: ../imsettings-daemon/imsettings-server.c:872
+#: ../imsettings-daemon/imsettings-server.c:913
+#: ../imsettings-daemon/imsettings-server.c:1134
+#, c-format
+msgid "Out of memory"
+msgstr "মেমৰিৰ বাহিৰ"
+
+#: ../imsettings-daemon/imsettings-server.c:748
+#, c-format
+msgid "Current desktop isn't targeted by IMSettings."
+msgstr "বৰ্তমান ডেস্কটপক IMSettings এ লক্ষ্য নকৰে।"
+
+#: ../imsettings-daemon/imsettings-server.c:800
+#, c-format
+msgid "Failed to revert the backup file: %s"
+msgstr "বেকআপ ফাইল ওভতাওঁতে ব্যৰ্থ: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:813
+#, c-format
+msgid "Failed to create a backup file: %s"
+msgstr "বেকআপ ফাইল সৃষ্টি কৰিবলে ব্যৰ্থ: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:823
+#, c-format
+msgid "Failed to remove an user xinputrc file: %s"
+msgstr "এটা ব্যৱহাৰকাৰী xinputrc ফাইল আতৰাবলে ব্যৰ্থ: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:834
+#, c-format
+msgid "Failed to create a symlink: %s"
+msgstr "এটা symlink সৃষ্টি কৰিবলে ব্যৰ্থ: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:865
+#, c-format
+msgid "No system-wide xinputrc available"
+msgstr "কোনো চিস্টেম-বিস্তাৰিত xinputrc উপলব্ধ নাই"
+
+#: ../imsettings-daemon/imsettings-server.c:905
+#, c-format
+msgid "No user xinputrc nor system-wide xinputrc available"
+msgstr "কোনো ব্যৱহাৰকাৰী xinputrc অথবা চিস্টেম-বিস্তাৰিত xinputrc উপলব্ধ নাই"
+
+#: ../imsettings-daemon/imsettings-server.c:1126
+#, c-format
+msgid "No such input method: %s"
+msgstr "এনে কোনো ইনপুট পদ্ধতি নাই: %s"
+
+#: ../imsettings-daemon/main.c:111
+msgid "Replace the instance of the imsettings daemon."
+msgstr "imsettings ডিমনৰ উদাহৰণ প্ৰতিস্থাপন কৰক।"
+
+#: ../imsettings-daemon/main.c:112
+msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+msgstr "চিস্টেম-বিস্তাৰিত xinputrc ডাইৰেকটৰি সংহতি কৰক (ডিবাগ কৰাৰ বাবে)"
+
+#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
+msgid "DIR"
+msgstr "DIR"
+
+#: ../imsettings-daemon/main.c:113
+msgid "Set the IM configuration directory (for debugging purpose)"
+msgstr "IM সংৰূপ ডাইৰেকটৰি সংহতি কৰক (ডিবাগ কৰাৰ বাবে)"
+
+#: ../imsettings-daemon/main.c:114
+msgid "Set a home directory (for debugging purpose)"
+msgstr "এটা ঘৰ ডাইৰেকটৰি সংহতি কৰক (ডিবাগ কৰাৰ বাবে)"
+
+#: ../imsettings-daemon/main.c:115
+msgid "Set the imsettings module directory (for debugging purpose)"
+msgstr "imsettings মডিউল ডাইৰেকটৰি সংহতি কৰক (ডিবাগ কৰাৰ বাবে)"
+
+#: ../imsettings-daemon/main.c:116
+msgid "Do not create a log file."
+msgstr "এটা লগ ফাইল সৃষ্টি নকৰিব।"
+
+#: ../utils/imsettings-check.c:131
+msgid "Unable to open X display"
+msgstr "X প্ৰদৰ্শন খোলিবলে অক্ষম"
+
+#: ../utils/imsettings-check.c:138
+msgid "XSETTINGS manager isn't running"
+msgstr "XSETTINGS ব্যৱস্থাপক চলি থকা নাই"
+
+#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
+msgid "Unable to create a client instance."
+msgstr "এটা ক্লাএন্ট উদাহৰণ সৃষ্টি কৰিবলে অক্ষম।"
+
+#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
+msgid "imsettings version mismatch"
+msgstr "imsettings সংস্কৰণ অমিল"
+
+#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
+msgid "No modules loaded"
+msgstr "কোনো মডিউল ল'ড কৰা হোৱা নাই"
+
+#: ../utils/imsettings-check.c:248
+msgid "Please see .imsettings.log for more details"
+msgstr "অধিক বিৱৰণৰ বাবে .imsettings.log চাওক"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-check.c:287
+msgid "Output the detail information for the result"
+msgstr "ফলাফলৰ বাবে বিৱৰিত তথ্য আউটপুট কৰক"
+
+#: ../utils/imsettings-check.c:288
+msgid "Check if DBus is running"
+msgstr "DBus চলি আছে নে নীৰিক্ষণ কৰক"
+
+#: ../utils/imsettings-check.c:289
+msgid "Check if SESSION is on line"
+msgstr "SESSION অনলাইন নে নীৰিক্ষণ কৰক"
+
+#: ../utils/imsettings-check.c:290
+msgid "Check if any valid modules are loaded"
+msgstr "কোনো বৈধ মডিউল ল'ড কৰা হৈছে নে নীৰিক্ষণ কৰক"
+
+#: ../utils/imsettings-check.c:291
+msgid "Check if all of the module settings has consistencies"
+msgstr "সকলো মডিউলৰ সংগত হয় নে নীৰিক্ষণ কৰক"
+
+#: ../utils/imsettings-check.c:292
+msgid "Check if XSETTINGS manager is running"
+msgstr "XSETTINGS ব্যৱস্থাপক চলি আছে নে নীৰিক্ষণ কৰক"
+
+#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
+msgid "[Input Method name|xinput.conf]"
+msgstr "[Input Method name|xinput.conf]"
+
+#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
+#, c-format
+msgid "IMSettings is disabled on the system.\n"
+msgstr "IMSettings চিস্টেমত অসামৰ্থবান কৰা আছে।\n"
+
+#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
+#, c-format
+msgid "Unable to create a client instance.\n"
+msgstr "এটা ক্লাএন্ট উদাহৰণ সৃষ্টি কৰিবলে অক্ষম।\n"
+
+#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
+#: ../utils/imsettings-switch.c:101
+#, c-format
+msgid ""
+"Currently a different version of imsettings is running.\n"
+"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
+msgstr ""
+"বৰ্তমানে imsettings ৰ এটা অন্য সংস্কৰণ চলি আছে।¶\n"
+"\"imsettings-reload\" চলালে সহায় হব পাৰে কিন্তু ই ইনপুট পদ্ধতি পুনৰাম্ভ কৰিব¶\n"
+
+#: ../utils/imsettings-info.c:107
+#, c-format
+msgid "Unable to obtain an Input Method Information: %s\n"
+msgstr "এটা ইনপুট পদ্ধতি তথ্য প্ৰাপ্ত কৰিবলে অক্ষম: %s¶\n"
+
+#: ../utils/imsettings-reload.c:44
+msgid "Force reloading imsettings-daemon (deprecated)."
+msgstr "imsettings-daemon পুনৰল'ড কৰা বলৱৎ কৰক (স্খলিত)।"
+
+#: ../utils/imsettings-reload.c:110
+#, c-format
+msgid "Reloaded.\n"
+msgstr "পুনৰ ল'ড কৰা হল।\n"
+
+#: ../utils/imsettings-start.desktop.in.h:1
+msgid "Input Method starter"
+msgstr "ইনপুট পদ্ধতি আৰম্ভক"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:47
+msgid "Force restarting the IM process regardless of any errors."
+msgstr "কোনো ভুল নহোৱা স্বত্বেও IM প্ৰক্ৰিয়া বলবৎ ভাবে পুনাৰম্ভ কৰক।"
+
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:49
+msgid "Do not update the user xinputrc."
+msgstr "ব্যৱহাৰকাৰী xinputrc আপডেইট নকৰিব।"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:51
+msgid "Shut up the extra messages."
+msgstr "অতিৰিক্ত বাৰ্তাসমূহ বন্ধ কৰক।"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:53
+msgid "Restart input method"
+msgstr "ইনপুট পদ্ধতি পুনাৰম্ভ কৰক"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:55
+msgid "Read xinputrc to determine the input method"
+msgstr "ইনপুট পদ্ধতি নিৰ্ধাৰণ কৰিবলে xinputrc পঢ়ক"
+
+#: ../utils/imsettings-switch.c:110
+msgid "No backend modules available"
+msgstr "কোনো বেকএণ্ড মডিউল উপলব্ধ নাই"
+
+#: ../utils/imsettings-switch.c:127
+#, c-format
+msgid "No Input Method running to be restarted.\n"
+msgstr "পুনাৰম্ভ কৰিবলে কোনো ইনপুট পদ্ধতি চলি থকা নাই।\n"
+
+#: ../utils/imsettings-switch.c:140
+#, c-format
+msgid "Restarted %s\n"
+msgstr "%s পুনাৰম্ভ কৰা হল\n"
+
+#: ../utils/imsettings-switch.c:182
+#, c-format
+msgid "Switched input method to %s\n"
+msgstr "ইনপুট পদ্ধতি %s লে পৰিবৰ্তন কৰা হৈছে\n"

@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Felix <ifelix@redhat.com>, 2006.
+# Akira  <akira+transifex@tagoh.org>, 2011.
+# Shantha kumar <shkumar@redhat.com>, 2012. #zanata
+# Shantha kumar <shkumar@redhat.com>, 2013. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-27 12:40+0900\n"
+"PO-Revision-Date: 2013-04-04 06:47-0400\n"
+"Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
+"Language-Team: Tamil <>\n"
+"Language: ta-IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 2.2.2\n"
+
+#: ../backends/xim/loopback.c:223
+msgid "Synchronous"
+msgstr "ஒத்திசைத்தல்"
+
+#: ../backends/xim/loopback.c:224
+msgid "Request to send a key event synchronously"
+msgstr "ஒரு விசை நிகழ்வை ஒத்திசைவாக அனுப்ப விண்ணப்பிக்கவும்"
+
+#: ../backends/xim/main.c:155
+msgid "D-Bus address to use"
+msgstr "பயன்படுத்த வேண்டிய D-Bus முகவரி"
+
+#: ../backends/xim/main.c:155
+msgid "ADDRESS"
+msgstr "ADDRESS"
+
+#: ../backends/xim/main.c:156
+msgid "X display to use"
+msgstr "பயன்படுத்தி X காட்சி"
+
+#: ../backends/xim/main.c:156
+msgid "DISPLAY"
+msgstr "DISPLAY"
+
+#: ../backends/xim/main.c:157
+msgid "Replace the running XIM server with new instance."
+msgstr "புதிய நிகழ்வுடன் இயங்கும் XIM சேவையகத்தை மாற்றவும்"
+
+#: ../backends/xim/main.c:158
+msgid "Output the debugging logs"
+msgstr "பிழைத்திருத்த பதிவுகளை வெளிப்பாடு செய்"
+
+#: ../backends/xim/main.c:159
+msgid "XIM server connects to, for debugging purpose only"
+msgstr "XIM சேவையகம் இணைக்க, பிழைத்திருத்த நோக்கத்திற்கு மட்டும்"
+
+#: ../backends/xim/main.c:159
+msgid "XIM"
+msgstr "XIM"
+
+#: ../backends/xim/main.c:187 ../imsettings-daemon/main.c:141
+#: ../utils/imsettings-check.c:315 ../utils/imsettings-info.c:70
+#: ../utils/imsettings-reload.c:65 ../utils/imsettings-switch.c:82
+msgid "Unknown error in parsing the command lines."
+msgstr "கட்டளை வரிகளை பகுக்கும் போது தெரியாத பிழை."
+
+#: ../backends/xim/proxy.c:2972
+msgid "XIM server name"
+msgstr "XIM சேவையக பெயர்"
+
+#: ../backends/xim/proxy.c:2973
+msgid "The name of XIM server for the connection"
+msgstr "இணைக்க வேண்டிய XIM சேவையக பெயர்"
+
+#: ../backends/xim/proxy.c:2978
+msgid "Signals for Protocol class"
+msgstr "நெறிமுறை வகுப்புக்கான சிக்னல்கள்"
+
+#: ../backends/xim/proxy.c:2979
+msgid "A structure of signals for Protocol class"
+msgstr "நெறிமுறை வகுப்புக்கான சிக்னல்களின் ஒரு வடிவம்"
+
+#: ../imsettings/imsettings-client.c:161
+msgid "Locale"
+msgstr "மொழி"
+
+#: ../imsettings/imsettings-client.c:162
+msgid "Locale to get the imsettings information"
+msgstr "imsettings தகவலை பெறும் மொழி"
+
+#: ../imsettings-daemon/imsettings-module.c:133
+msgid "Name"
+msgstr "பெயர்"
+
+#: ../imsettings-daemon/imsettings-module.c:134
+msgid "A module name for imsettings backend"
+msgstr "imsettings பின்புல முறைமைக்கான ஒரு தொகுதிக்கூறுப் பெயர்"
+
+#: ../imsettings-daemon/imsettings-proc.c:193
+msgid "Unable to keep Input Method running"
+msgstr "உள்ளீடு முறை இயங்குவதை வைத்திருக்க முடியவில்லை"
+
+#: ../imsettings-daemon/imsettings-proc.c:203
+#, c-format
+msgid ""
+"Giving up to bring the process up because %s Input Method process for %s "
+"rapidly died many times. See $XDG_CACHE_HOME/imsettings/log for more details."
+msgstr ""
+"செயலாக்கத்தை முன்னுக்குக் கொண்டுவரும் முயற்சியைக் கைவிடுகிறது ஏனெனில் %s க்கான %s உள்ளீடு "
+"முறை செயலாக்கமானது பல முறை துரிதமாக முடிவுற்றது. மேலும் விவரங்களுக்கு "
+"$XDG_CACHE_HOME/imsettings/log ஐக் காணவும்."
+
+#: ../imsettings-daemon/imsettings-proc.c:304
+#, c-format
+msgid "[BUG] %s process is still running [pid: %d]\n"
+msgstr "[BUG] %s செயலாக்கம் இன்னும் இயங்கிக்கொண்டுள்ளது [pid: %d]\n"
+
+#: ../imsettings-daemon/imsettings-proc.c:448
+#, c-format
+msgid "Couldn't send a signal to the %s process successfully."
+msgstr "ஒரு சிக்னலை %s செயலுக்கு அனுப்ப முடியவில்லை."
+
+#: ../imsettings-daemon/imsettings-proc.c:566
+msgid "IMSettingsInfo"
+msgstr "IMSettingsInfo"
+
+#: ../imsettings-daemon/imsettings-proc.c:567
+msgid "A GObject to be a IMSettingsInfo"
+msgstr "IMSettingsInfo வாக இருக்கக்கூடிய ஒரு GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:417
+msgid "DBus connection"
+msgstr "DBus இணைப்பு"
+
+#: ../imsettings-daemon/imsettings-server.c:418
+msgid "A GObject to be a DBus connection"
+msgstr "DBus இணைப்பாக இருக்க வேண்டிய GObject"
+
+#: ../imsettings-daemon/imsettings-server.c:423
+msgid "Logging"
+msgstr "பதிவுசெய்கிறது"
+
+#: ../imsettings-daemon/imsettings-server.c:424
+msgid "A boolean value whether the logging facility is enabled or not."
+msgstr ""
+"பதிவு செய்தல் வசதி செயல்படுத்தப்பட்டுள்ளதா இல்லையா என்பதைக் குறிக்கும் ஒரு பூலியன் மதிப்பு."
+
+#: ../imsettings-daemon/imsettings-server.c:429
+#: ../imsettings-daemon/imsettings-server.c:430
+msgid "Home directory"
+msgstr "இல்ல அடைவு"
+
+#: ../imsettings-daemon/imsettings-server.c:435
+#: ../imsettings-daemon/imsettings-server.c:436
+msgid "xinputrc directory"
+msgstr "xinputrc அடைவு"
+
+#: ../imsettings-daemon/imsettings-server.c:441
+#: ../imsettings-daemon/imsettings-server.c:442
+msgid "xinput directory"
+msgstr "xinput அடைவு"
+
+#: ../imsettings-daemon/imsettings-server.c:447
+msgid "module directory"
+msgstr "தொகுதிக்கூறு கோப்பகம்"
+
+#: ../imsettings-daemon/imsettings-server.c:448
+msgid "IMSettings module directory"
+msgstr "IMSettings தொகுதிக்கூறு கோப்பகம்"
+
+#: ../imsettings-daemon/imsettings-server.c:714
+#, c-format
+msgid "No such input method on your system: %s"
+msgstr "உங்கள் கணினியில் இதுபோன்ற உள்ளீடு முறை இல்லை: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:723
+#: ../imsettings-daemon/imsettings-server.c:872
+#: ../imsettings-daemon/imsettings-server.c:913
+#: ../imsettings-daemon/imsettings-server.c:1134
+#, c-format
+msgid "Out of memory"
+msgstr "நினைவகம் இல்லை"
+
+#: ../imsettings-daemon/imsettings-server.c:748
+#, c-format
+msgid "Current desktop isn't targeted by IMSettings."
+msgstr "IMSettings தற்போதைய டெஸ்க்டாப்பை இலக்காகக் கொள்ளவில்லை."
+
+#: ../imsettings-daemon/imsettings-server.c:800
+#, c-format
+msgid "Failed to revert the backup file: %s"
+msgstr "பின்சேமிப்பு கோப்பினை திரும்ப எடுக்க முடியவில்லை: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:813
+#, c-format
+msgid "Failed to create a backup file: %s"
+msgstr "ஒரு பின் சேமிப்பு கோப்பினை உருவாக்க முடியவில்லை: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:823
+#, c-format
+msgid "Failed to remove an user xinputrc file: %s"
+msgstr "பயனர் xinputrc கோப்பை நீக்குவதில் தோல்வி: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:834
+#, c-format
+msgid "Failed to create a symlink: %s"
+msgstr "symlink ஐ உருவாக்குவதில் தோல்வி: %s"
+
+#: ../imsettings-daemon/imsettings-server.c:865
+#, c-format
+msgid "No system-wide xinputrc available"
+msgstr "கணினி அளவிலான xinputrc இல்லை"
+
+#: ../imsettings-daemon/imsettings-server.c:905
+#, c-format
+msgid "No user xinputrc nor system-wide xinputrc available"
+msgstr "பயனர் xinputrc அல்லது கணினி அளவிலான xinputrc ஆகிய இரண்டுமே இல்லை"
+
+#: ../imsettings-daemon/imsettings-server.c:1126
+#, c-format
+msgid "No such input method: %s"
+msgstr "இதுபோன்ற உள்ளீடு முறை இல்லை: %s"
+
+#: ../imsettings-daemon/main.c:111
+msgid "Replace the instance of the imsettings daemon."
+msgstr "imsettings டெமானின் நேர்வை இடமாற்று."
+
+#: ../imsettings-daemon/main.c:112
+msgid "Set the system-wide xinputrc directory (for debugging purpose)"
+msgstr "கணினி அளவிலான xinputrc கோப்பகத்தை அமை (வழுநீக்கல் தேவைக்காக)"
+
+#: ../imsettings-daemon/main.c:112 ../imsettings-daemon/main.c:113
+#: ../imsettings-daemon/main.c:114 ../imsettings-daemon/main.c:115
+msgid "DIR"
+msgstr "DIR"
+
+#: ../imsettings-daemon/main.c:113
+msgid "Set the IM configuration directory (for debugging purpose)"
+msgstr "IM அமைவாக்க கோப்பகத்தை அமை (வழுநீக்கல் தேவைக்காக)"
+
+#: ../imsettings-daemon/main.c:114
+msgid "Set a home directory (for debugging purpose)"
+msgstr "இல்லக் கோப்பகத்தை அமை (வழுநீக்கல் தேவைக்காக)"
+
+#: ../imsettings-daemon/main.c:115
+msgid "Set the imsettings module directory (for debugging purpose)"
+msgstr "imsettings தொகுதிக்கூறு கோப்பகத்தை அமை (வழுநீக்கல் தேவைக்காக)"
+
+#: ../imsettings-daemon/main.c:116
+msgid "Do not create a log file."
+msgstr "ஒரு பதிவு கோப்பினை உருவாக்க வேண்டாம்."
+
+#: ../utils/imsettings-check.c:131
+msgid "Unable to open X display"
+msgstr "X திரையைத் திறக்க முடியவில்லை"
+
+#: ../utils/imsettings-check.c:138
+msgid "XSETTINGS manager isn't running"
+msgstr "XSETTINGS நிர்வாகி இயங்கவில்லை"
+
+#: ../utils/imsettings-check.c:169 ../utils/imsettings-check.c:222
+msgid "Unable to create a client instance."
+msgstr "கிளையன்ட் நேர்வை உருவாக்க முடியவில்லை."
+
+#: ../utils/imsettings-check.c:177 ../utils/imsettings-check.c:230
+msgid "imsettings version mismatch"
+msgstr "imsettings பதிப்பு பொருந்தவில்லை"
+
+#: ../utils/imsettings-check.c:190 ../utils/imsettings-check.c:256
+msgid "No modules loaded"
+msgstr "தொகுதிக்கூறுகள் ஏற்றப்படவில்லை"
+
+#: ../utils/imsettings-check.c:248
+msgid "Please see .imsettings.log for more details"
+msgstr "மேலும் விவரங்களுக்கு .imsettings.log ஐக் காணவும்"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-check.c:287
+msgid "Output the detail information for the result"
+msgstr "முடிவுக்கான விவரமான தகவலை வெளியிடு"
+
+#: ../utils/imsettings-check.c:288
+msgid "Check if DBus is running"
+msgstr "DBus இயங்குகிறதா எனப் பார்"
+
+#: ../utils/imsettings-check.c:289
+msgid "Check if SESSION is on line"
+msgstr "SESSION ஆன்லைனில் உள்ளதா எனப் பார்"
+
+#: ../utils/imsettings-check.c:290
+msgid "Check if any valid modules are loaded"
+msgstr "செல்லுபடியான தொகுதிக்கூறுகள் ஏதேனும் ஏற்றப்பட்டுள்ளதா எனப் பார்"
+
+#: ../utils/imsettings-check.c:291
+msgid "Check if all of the module settings has consistencies"
+msgstr "அனைத்து தொகுதிக்கூறு அமைப்புகளும் இசைவாக உள்ளனவா எனப் பார்"
+
+#: ../utils/imsettings-check.c:292
+msgid "Check if XSETTINGS manager is running"
+msgstr "XSETTINGS நிர்வாகி இயங்குகிறதா எனப் பார்"
+
+#: ../utils/imsettings-info.c:51 ../utils/imsettings-switch.c:44
+msgid "[Input Method name|xinput.conf]"
+msgstr "[உள்ளீடு முறை பெயர்|xinput.conf]"
+
+#: ../utils/imsettings-info.c:76 ../utils/imsettings-list.c:64
+#: ../utils/imsettings-reload.c:72 ../utils/imsettings-switch.c:88
+#, c-format
+msgid "IMSettings is disabled on the system.\n"
+msgstr "கணினியில் IMSettings முடக்கப்பட்டுள்ளது.\n"
+
+#: ../utils/imsettings-info.c:82 ../utils/imsettings-list.c:70
+#: ../utils/imsettings-reload.c:78 ../utils/imsettings-switch.c:94
+#, c-format
+msgid "Unable to create a client instance.\n"
+msgstr "கிளையன்ட் நேர்வை உருவாக்க முடியவில்லை.\n"
+
+#: ../utils/imsettings-info.c:89 ../utils/imsettings-list.c:77
+#: ../utils/imsettings-switch.c:101
+#, c-format
+msgid ""
+"Currently a different version of imsettings is running.\n"
+"Running \"imsettings-reload\" may help but it will restart the Input Method\n"
+msgstr ""
+"தற்போது imsettings இன் வேறொரு பதிப்பு இயங்கிக்கொண்டுள்ளது.\n"
+"\"imsettings-reload\" ஐ இயக்குவது உதவலாம், ஆனால் அது உள்ளீடு முறையை மறுதுவக்கம் "
+"செய்யும்\n"
+
+#: ../utils/imsettings-info.c:107
+#, c-format
+msgid "Unable to obtain an Input Method Information: %s\n"
+msgstr "உள்ளீடு முறை தகவலைப் பெற முடியவில்லை: %s\n"
+
+#: ../utils/imsettings-reload.c:44
+msgid "Force reloading imsettings-daemon (deprecated)."
+msgstr "imsettings-daemon ஐ பலவந்தமாக மீளேற்று (வழக்கொழிந்தது)."
+
+#: ../utils/imsettings-reload.c:110
+#, c-format
+msgid "Reloaded.\n"
+msgstr "மீளேற்றப்பட்டது.\n"
+
+#: ../utils/imsettings-start.desktop.in.h:1
+msgid "Input Method starter"
+msgstr "உள்ளீடு முறை துவக்கி"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:47
+msgid "Force restarting the IM process regardless of any errors."
+msgstr "ஏதாவது பிழைகள் இல்லையெனில் IM செயலை கட்டாயமாக மறுதுவக்குகிறது."
+
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:49
+msgid "Do not update the user xinputrc."
+msgstr "பயனர் xinputrc ஐ புதுப்பிக்க வேண்டாம்."
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:51
+msgid "Shut up the extra messages."
+msgstr "கூடுதல் செய்திகளை நிறுத்து"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:53
+msgid "Restart input method"
+msgstr "உள்ளீடு முறையை மறுதுவக்கு"
+
+# For translators: this is a translation for the command-line option.
+#. For translators: this is a translation for the command-line option.
+#: ../utils/imsettings-switch.c:55
+msgid "Read xinputrc to determine the input method"
+msgstr "உள்ளீடு முறையை தீர்மானிக்க xinputrc ஐப் படி"
+
+#: ../utils/imsettings-switch.c:110
+msgid "No backend modules available"
+msgstr "பின்புலமுறைமை தொகுதிக்கூறுகள் இல்லை"
+
+#: ../utils/imsettings-switch.c:127
+#, c-format
+msgid "No Input Method running to be restarted.\n"
+msgstr "மறுதுவக்கம் செய்ய, உள்ளீடு முறை எதுவும் இயக்கத்தில் இல்லை.\n"
+
+#: ../utils/imsettings-switch.c:140
+#, c-format
+msgid "Restarted %s\n"
+msgstr "%s மறுதுவக்கம் செய்யப்பட்டது\n"
+
+#: ../utils/imsettings-switch.c:182
+#, c-format
+msgid "Switched input method to %s\n"
+msgstr "%s உள்ளீட்டு முறைக்கு மாறியது\n"

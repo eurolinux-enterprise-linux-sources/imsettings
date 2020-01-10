@@ -1,0 +1,68 @@
+<!-- ##### SECTION Title ##### -->
+imsettings-utils
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO IMSETTINGS_GERROR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### ENUM IMSettingsError ##### -->
+<para>
+
+</para>
+
+@IMSETTINGS_GERROR_UNKNOWN: 
+@IMSETTINGS_GERROR_CONFIGURATION_ERROR: 
+@IMSETTINGS_GERROR_IM_NOT_FOUND: 
+@IMSETTINGS_GERROR_UNABLE_TO_TRACK_IM: 
+@IMSETTINGS_GERROR_OOM: 
+@IMSETTINGS_GERROR_NOT_TARGETED_DESKTOP: 
+
+<!-- ##### FUNCTION imsettings_g_error_quark ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_get_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION imsettings_is_enabled ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

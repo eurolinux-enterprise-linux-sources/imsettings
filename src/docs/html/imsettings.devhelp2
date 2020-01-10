@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="imsettings Documentation" link="index.html" author="" name="imsettings" version="2" language="c">
+  <chapters>
+    <sub name="imsettings API References" link="ch01.html">
+      <sub name="IMSettingsClient" link="imsettings-IMSettingsClient.html"/>
+      <sub name="IMSettingsInfo" link="imsettings-IMSettingsInfo.html"/>
+      <sub name="Macros" link="imsettings-Macros.html"/>
+      <sub name="Utilities" link="imsettings-Utilities.html"/>
+    </sub>
+    <sub name="For packagers or Input Method developers" link="ch02.html">
+      <sub name="XInput configuration file" link="xinput.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="struct IMSettingsClientClass" link="imsettings-IMSettingsClient.html#IMSettingsClientClass"/>
+    <keyword type="function" name="imsettings_client_get_active_im_info ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-active-im-info"/>
+    <keyword type="function" name="imsettings_client_get_info_object ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-object"/>
+    <keyword type="function" name="imsettings_client_get_info_variant ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-variant"/>
+    <keyword type="function" name="imsettings_client_get_info_variant_finish ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-variant-finish"/>
+    <keyword type="function" name="imsettings_client_get_info_variant_start ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-variant-start"/>
+    <keyword type="function" name="imsettings_client_get_info_variants ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-variants"/>
+    <keyword type="function" name="imsettings_client_get_info_variants_finish ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-variants-finish"/>
+    <keyword type="function" name="imsettings_client_get_info_variants_start ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-info-variants-start"/>
+    <keyword type="function" name="imsettings_client_get_locale ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-locale"/>
+    <keyword type="function" name="imsettings_client_get_module_settings ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-module-settings"/>
+    <keyword type="function" name="imsettings_client_get_system_im ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-system-im"/>
+    <keyword type="function" name="imsettings_client_get_system_im_finish ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-system-im-finish"/>
+    <keyword type="function" name="imsettings_client_get_system_im_start ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-system-im-start"/>
+    <keyword type="function" name="imsettings_client_get_user_im ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-user-im"/>
+    <keyword type="function" name="imsettings_client_get_user_im_finish ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-user-im-finish"/>
+    <keyword type="function" name="imsettings_client_get_user_im_start ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-user-im-start"/>
+    <keyword type="function" name="imsettings_client_get_version ()" link="imsettings-IMSettingsClient.html#imsettings-client-get-version"/>
+    <keyword type="function" name="imsettings_client_im_is_system_default ()" link="imsettings-IMSettingsClient.html#imsettings-client-im-is-system-default"/>
+    <keyword type="function" name="imsettings_client_im_is_user_default ()" link="imsettings-IMSettingsClient.html#imsettings-client-im-is-user-default"/>
+    <keyword type="function" name="imsettings_client_im_is_xim ()" link="imsettings-IMSettingsClient.html#imsettings-client-im-is-xim"/>
+    <keyword type="function" name="imsettings_client_new ()" link="imsettings-IMSettingsClient.html#imsettings-client-new"/>
+    <keyword type="function" name="imsettings_client_ping ()" link="imsettings-IMSettingsClient.html#imsettings-client-ping"/>
+    <keyword type="function" name="imsettings_client_reload ()" link="imsettings-IMSettingsClient.html#imsettings-client-reload"/>
+    <keyword type="function" name="imsettings_client_set_locale ()" link="imsettings-IMSettingsClient.html#imsettings-client-set-locale"/>
+    <keyword type="function" name="imsettings_client_switch_im ()" link="imsettings-IMSettingsClient.html#imsettings-client-switch-im"/>
+    <keyword type="function" name="imsettings_client_switch_im_finish ()" link="imsettings-IMSettingsClient.html#imsettings-client-switch-im-finish"/>
+    <keyword type="function" name="imsettings_client_switch_im_start ()" link="imsettings-IMSettingsClient.html#imsettings-client-switch-im-start"/>
+    <keyword type="struct" name="struct IMSettingsInfoClass" link="imsettings-IMSettingsInfo.html#IMSettingsInfoClass"/>
+    <keyword type="function" name="imsettings_info_compare ()" link="imsettings-IMSettingsInfo.html#imsettings-info-compare"/>
+    <keyword type="function" name="imsettings_info_get_aux_args ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-aux-args"/>
+    <keyword type="function" name="imsettings_info_get_aux_program ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-aux-program"/>
+    <keyword type="function" name="imsettings_info_get_filename ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-filename"/>
+    <keyword type="function" name="imsettings_info_get_gtkimm ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-gtkimm"/>
+    <keyword type="function" name="imsettings_info_get_icon_file ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-icon-file"/>
+    <keyword type="function" name="imsettings_info_get_im_name ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-im-name"/>
+    <keyword type="function" name="imsettings_info_get_language ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-language"/>
+    <keyword type="function" name="imsettings_info_get_long_desc ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-long-desc"/>
+    <keyword type="function" name="imsettings_info_get_non_target ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-non-target"/>
+    <keyword type="function" name="imsettings_info_get_prefs_args ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-prefs-args"/>
+    <keyword type="function" name="imsettings_info_get_prefs_program ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-prefs-program"/>
+    <keyword type="function" name="imsettings_info_get_qtimm ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-qtimm"/>
+    <keyword type="function" name="imsettings_info_get_short_desc ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-short-desc"/>
+    <keyword type="function" name="imsettings_info_get_sub_im_name ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-sub-im-name"/>
+    <keyword type="function" name="imsettings_info_get_xim ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-xim"/>
+    <keyword type="function" name="imsettings_info_get_xim_args ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-xim-args"/>
+    <keyword type="function" name="imsettings_info_get_xim_program ()" link="imsettings-IMSettingsInfo.html#imsettings-info-get-xim-program"/>
+    <keyword type="function" name="imsettings_info_is_immodule_only ()" link="imsettings-IMSettingsInfo.html#imsettings-info-is-immodule-only"/>
+    <keyword type="function" name="imsettings_info_is_script ()" link="imsettings-IMSettingsInfo.html#imsettings-info-is-script"/>
+    <keyword type="function" name="imsettings_info_is_system_default ()" link="imsettings-IMSettingsInfo.html#imsettings-info-is-system-default"/>
+    <keyword type="function" name="imsettings_info_is_user_default ()" link="imsettings-IMSettingsInfo.html#imsettings-info-is-user-default"/>
+    <keyword type="function" name="imsettings_info_is_visible ()" link="imsettings-IMSettingsInfo.html#imsettings-info-is-visible"/>
+    <keyword type="function" name="imsettings_info_is_xim ()" link="imsettings-IMSettingsInfo.html#imsettings-info-is-xim"/>
+    <keyword type="function" name="imsettings_info_new ()" link="imsettings-IMSettingsInfo.html#imsettings-info-new"/>
+    <keyword type="function" name="imsettings_info_variant_new ()" link="imsettings-IMSettingsInfo.html#imsettings-info-variant-new"/>
+    <keyword type="macro" name="IMSETTINGS_GLOBAL_XINPUT_CONF" link="imsettings-Macros.html#IMSETTINGS-GLOBAL-XINPUT-CONF:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_INTERFACE_DBUS" link="imsettings-Macros.html#IMSETTINGS-INTERFACE-DBUS:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_NONE_CONF" link="imsettings-Macros.html#IMSETTINGS-NONE-CONF:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_PATH_DBUS" link="imsettings-Macros.html#IMSETTINGS-PATH-DBUS:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_SERVICE_DBUS" link="imsettings-Macros.html#IMSETTINGS-SERVICE-DBUS:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_SETTINGS_API_VERSION" link="imsettings-Macros.html#IMSETTINGS-SETTINGS-API-VERSION:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_USER_SPECIFIC_LONG_DESC" link="imsettings-Macros.html#IMSETTINGS-USER-SPECIFIC-LONG-DESC:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_USER_SPECIFIC_SHORT_DESC" link="imsettings-Macros.html#IMSETTINGS-USER-SPECIFIC-SHORT-DESC:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_USER_XINPUT_CONF" link="imsettings-Macros.html#IMSETTINGS-USER-XINPUT-CONF:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_XIM_CONF" link="imsettings-Macros.html#IMSETTINGS-XIM-CONF:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_XIM_INTERFACE_DBUS" link="imsettings-Macros.html#IMSETTINGS-XIM-INTERFACE-DBUS:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_XIM_PATH_DBUS" link="imsettings-Macros.html#IMSETTINGS-XIM-PATH-DBUS:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_XIM_SERVICE_DBUS" link="imsettings-Macros.html#IMSETTINGS-XIM-SERVICE-DBUS:CAPS"/>
+    <keyword type="macro" name="IMSETTINGS_GERROR" link="imsettings-Utilities.html#IMSETTINGS-GERROR:CAPS"/>
+    <keyword type="enum" name="enum IMSettingsError" link="imsettings-Utilities.html#IMSettingsError"/>
+    <keyword type="function" name="imsettings_g_error_quark ()" link="imsettings-Utilities.html#imsettings-g-error-quark"/>
+    <keyword type="function" name="imsettings_get_interface_info ()" link="imsettings-Utilities.html#imsettings-get-interface-info"/>
+    <keyword type="function" name="imsettings_is_enabled ()" link="imsettings-Utilities.html#imsettings-is-enabled"/>
+    <keyword type="" name="AUXILIARY_PROGRAM" link="xinput.html#AUXILIARY-PROGRAM:CAPS"/>
+    <keyword type="" name="AUXILIARY_ARGS" link="xinput.html#AUXILIARY-ARGS:CAPS"/>
+    <keyword type="" name="GTK_IM_MODULE" link="xinput.html#GTK-IM-MODULE:CAPS"/>
+    <keyword type="" name="ICON" link="xinput.html#ICON:CAPS"/>
+    <keyword type="" name="IMSETTINGS_IGNORE_ME" link="xinput.html#IMSETTINGS-IGNORE-ME:CAPS"/>
+    <keyword type="" name="LONG_DESC" link="xinput.html#LONG-DESC:CAPS"/>
+    <keyword type="" name="NOT_RUN" link="xinput.html#NOT-RUN:CAPS"/>
+    <keyword type="" name="PREFERENCE_PROGRAM" link="xinput.html#PREFERENCE-PROGRAM:CAPS"/>
+    <keyword type="" name="PREFERENCE_ARGS" link="xinput.html#PREFERENCE-ARGS:CAPS"/>
+    <keyword type="" name="QT_IM_MODULE" link="xinput.html#QT-IM-MODULE:CAPS"/>
+    <keyword type="" name="SHORT_DESC" link="xinput.html#SHORT-DESC:CAPS"/>
+    <keyword type="" name="XIM" link="xinput.html#XIM:CAPS"/>
+    <keyword type="" name="XIM_PROGRAM" link="xinput.html#XIM-PROGRAM:CAPS"/>
+    <keyword type="" name="XIM_ARGS" link="xinput.html#XIM-ARGS:CAPS"/>
+    <keyword type="constant" name="IMSETTINGS_GERROR_UNKNOWN" link="imsettings-Utilities.html#IMSETTINGS-GERROR-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="IMSETTINGS_GERROR_CONFIGURATION_ERROR" link="imsettings-Utilities.html#IMSETTINGS-GERROR-CONFIGURATION-ERROR:CAPS"/>
+    <keyword type="constant" name="IMSETTINGS_GERROR_IM_NOT_FOUND" link="imsettings-Utilities.html#IMSETTINGS-GERROR-IM-NOT-FOUND:CAPS"/>
+    <keyword type="constant" name="IMSETTINGS_GERROR_UNABLE_TO_TRACK_IM" link="imsettings-Utilities.html#IMSETTINGS-GERROR-UNABLE-TO-TRACK-IM:CAPS"/>
+    <keyword type="constant" name="IMSETTINGS_GERROR_OOM" link="imsettings-Utilities.html#IMSETTINGS-GERROR-OOM:CAPS"/>
+    <keyword type="constant" name="IMSETTINGS_GERROR_NOT_TARGETED_DESKTOP" link="imsettings-Utilities.html#IMSETTINGS-GERROR-NOT-TARGETED-DESKTOP:CAPS"/>
+  </functions>
+</book>
