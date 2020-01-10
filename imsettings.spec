@@ -1,6 +1,6 @@
 Name:		imsettings
 Version:	1.6.3
-Release:	10%{?dist}
+Release:	11%{?dist}
 License:	LGPLv2+
 URL:		https://tagoh.bitbucket.org/%{name}/
 BuildRequires:	desktop-file-utils
@@ -25,6 +25,7 @@ Patch5:		%{name}-imsettings-reload-locale.patch
 Patch6:		%{name}-fix-assertion-in-gio.patch
 Patch7:		%{name}-rebase-gnome.patch
 Patch8:		%{name}-fix-unbound-variable.patch
+Patch9:		%{name}-dont-set-envvar-on-unsupported-desktop.patch
 
 Summary:	Delivery framework for general Input Method configuration
 Group:		Applications/System
@@ -185,6 +186,7 @@ This package contains a module to get this working on MATE.
 %patch6 -p1 -b .6-gio
 %patch7 -p1 -b .7-rebase-gnome
 %patch8 -p1 -b .8-unbound-variable
+%patch9 -p1 -b .9-non-supported-desktop
 
 %build
 %configure	\
@@ -298,6 +300,10 @@ fi
 
 
 %changelog
+* Mon Feb 25 2019 Akira TAGOH <tagoh@redhat.com> - 1.6.3-11
+- Don't set environment variables on GNOME. (#1673284)
+- Fix another unbound variable issue (#1533050)
+
 * Thu Jun 21 2018 Akira TAGOH <tagoh@redhat.com> - 1.6.3-10
 - Fix a regression imsettings can't detect GNOME running caused by GNOME rebase. (#1533772)
 - Fix unbound variable issue (#1533050)

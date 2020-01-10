@@ -1,0 +1,367 @@
+diff -pruN imsettings-1.6.3.orig/data/imsettings-functions.in imsettings-1.6.3/data/imsettings-functions.in
+--- imsettings-1.6.3.orig/data/imsettings-functions.in	2019-02-22 08:34:48.223926116 +0000
++++ imsettings-1.6.3/data/imsettings-functions.in	2019-02-22 08:52:07.854839883 +0000
+@@ -169,6 +169,11 @@ function is_xim_supported() {
+     return 1
+ }
+ 
++function is_desktop_supported() {
++    @libexecdir[@]/imsettings-target-checker.sh >/dev/null
++    [ $? -eq 0 ]
++}
++
+ function setup_gtk_immodule() {
+     if is_imsettings_enabled && is_gtk_supported; then
+ 	# Ensure GTK_IM_MODULE is empty. otherwise GTK+ doesn't pick up immodule through XSETTINGS
+diff -pruN imsettings-1.6.3.orig/data/xinput.sh.in.in imsettings-1.6.3/data/xinput.sh.in.in
+--- imsettings-1.6.3.orig/data/xinput.sh.in.in	2019-02-22 08:34:48.236926116 +0000
++++ imsettings-1.6.3/data/xinput.sh.in.in	2019-02-22 08:49:06.690865058 +0000
+@@ -39,6 +39,11 @@ tmplang=${LC_CTYPE:-${LANG:-"en_US.UTF-8
+ unset AUXILIARY_PROGRAM AUXILIARY_ARGS GTK_IM_MODULE ICON IMSETTINGS_IGNORE_ME LONG_DESC NOT_RUN PREFERENCE_PROGRAM PREFERENCE_ARGS QT_IM_MODULE SHORT_DESC XIM XIM_PROGRAM XIM_ARGS XMODIFIERS
+ 
+ [ -z "${IMSETTINGS_DISABLE_USER_XINPUTRC-}" ] && IMSETTINGS_DISABLE_USER_XINPUTRC=no
++[ -z "${IMSETTINGS_DISABLE_SYS_XINPUTRC-}" ] && IMSETTINGS_DISABLE_SYS_XINPUTRC=no
++
++if ! is_desktop_supported; then
++    IMSETTINGS_DISABLE_SYS_XINPUTRC=yes
++fi
+ 
+ # migrate old configuration file
+ [ ! -d $CONFIGDIR ] && mkdir -p $CONFIGDIR || :
+@@ -51,7 +56,7 @@ if [ -r "$USER_XINPUTRC" -a "x$IMSETTING
+     if [ ! -h "$USER_XINPUTRC" ]; then
+ 	SHORT_DESC="User Specific"
+     fi
+-elif [ -r "$SYS_XINPUTRC" ]; then
++elif [ -r "$SYS_XINPUTRC" -a "x$IMSETTINGS_DISABLE_SYS_XINPUTRC" = "xno" ]; then
+     # FIXME: This hardcoded list has to be gone in the future.
+     # Locales that normally use input-method for native input
+     _im_language_list="as bn gu hi ja kn ko mai ml mr ne or pa si ta te th ur vi zh"
+@@ -87,7 +92,7 @@ fi
+ [ -z "${IMSETTINGS_INTEGRATE_DESKTOP-}" ] && IMSETTINGS_INTEGRATE_DESKTOP=yes
+ export IMSETTINGS_INTEGRATE_DESKTOP
+ 
+-[ -z "$XIM" ] && XIM=none
++[ -z "$XIM" -a "x$IMSETTINGS_DISABLE_SYS_XINPUTRC" = "xno" ] && XIM=none
+ 
+ # start IM via imsettings
+ IMSETTINGS_MODULE=${SHORT_DESC:-${XIM}}
+diff -pruN imsettings-1.6.3.orig/data/xinputinfo.sh.in imsettings-1.6.3/data/xinputinfo.sh.in
+--- imsettings-1.6.3.orig/data/xinputinfo.sh.in	2019-02-22 08:34:48.236926116 +0000
++++ imsettings-1.6.3/data/xinputinfo.sh.in	2019-02-22 08:53:17.758832692 +0000
+@@ -57,11 +57,12 @@ if [ $# -gt 0 ]; then
+     IMSETTINGS_FILENAME=$1
+ else
+     [ -z "${IMSETTINGS_DISABLE_USER_XINPUTRC-}" ] && IMSETTINGS_DISABLE_USER_XINPUTRC=no
++    [ -z "${IMSETTINGS_DISABLE_SYS_XINPUTRC-}" ] && IMSETTINGS_DISABLE_SYS_XINPUTRC=no
+ 
+     if [ -r "$USER_XINPUTRC" -a "x$IMSETTINGS_DISABLE_USER_XINPUTRC" = "xno" ]; then
+ 	source "$USER_XINPUTRC"
+ 	IMSETTINGS_FILENAME=$USER_XINPUTRC
+-    elif [ -r "$SYS_XINPUTRC" ]; then
++    elif [ -r "$SYS_XINPUTRC" -a "x$IMSETTINGS_DISABLE_SYS_XINPUTRC" = "xno" ]; then
+ 	source "$SYS_XINPUTRC"
+ 	IMSETTINGS_FILENAME=$SYS_XINPUTRC
+     fi
+diff -pruN imsettings-1.6.3.orig/imsettings/imsettings-client.c imsettings-1.6.3/imsettings/imsettings-client.c
+--- imsettings-1.6.3.orig/imsettings/imsettings-client.c	2013-01-18 03:25:38.000000000 +0000
++++ imsettings-1.6.3/imsettings/imsettings-client.c	2019-02-22 11:20:19.756465170 +0000
+@@ -1372,3 +1372,106 @@ imsettings_client_ping(IMSettingsClient
+ 
+ 	return FALSE;
+ }
++
++/**
++ * imsettings_client_is_supported_desktop:
++ * @client: a #IMSettingsClient.
++ * @cancellable: (allow-none): a #GCancellable or %NULL.
++ * @error: (allow-none): a #GError to store an error if any, or %NULL.
++ *
++ * Check if current desktop is supported by IMSettings or not.
++ *
++ * You could access through DBus API instead:
++ *
++ * |[
++ *   &lt;interface name='com.redhat.imsettings'&gt;
++ *     &lt;method name='IsSupportedDesktop'&gt;
++ *       &lt;arg type='s' name='desktop' direction='in' /&gt;
++ *       &lt;arg type='b' name='ret' direction'out' /&gt;
++ *     &lt;/method&gt;
++ *   &lt;/interface&gt;
++ * ]|
++ *
++ * Returns: if supported, returns %TRUE otherwise %FALSE.
++ */
++gboolean
++imsettings_client_is_supported_desktop(IMSettingsClient  *client,
++				       GCancellable      *cancellable,
++				       GError           **error)
++{
++	const gchar *desktop;
++	GDBusProxy *proxy;
++	GVariant *value;
++	gboolean retval = FALSE;
++
++	g_return_val_if_fail (IMSETTINGS_IS_CLIENT (client), FALSE);
++
++	desktop = NULL;
++	proxy = imsettings_client_get_proxy(client);
++	value = g_dbus_proxy_call_sync(proxy,
++				       "IsSupportedDesktop",
++				       g_variant_new("(s)",
++						     desktop ? desktop : ""),
++				       G_DBUS_CALL_FLAGS_NONE,
++				       -1,
++				       cancellable,
++				       error);
++	if (value) {
++		g_variant_get(value, "(b)", &retval);
++		g_variant_unref(value);
++	}
++
++	return retval;
++}
++
++/**
++ * imsettings_client_is_supported_desktop_start:
++ * @client: a #IMSettingsClient.
++ * @cancellable: (allow-none): a #GCancellable or %NULL.
++ * @callback: (scope async): a #GAsyncReadyCallback.
++ * @user_data: (closure): a pointer of the user data to give it to @callback.
++ *
++ * Request asking if current desktop is supported or not asynchronously
++ */
++void
++imsettings_client_is_supported_desktop_start(IMSettingsClient    *client,
++					     GCancellable        *cancellable,
++					     GAsyncReadyCallback  callback,
++					     gpointer             user_data)
++{
++	GDBusProxy *proxy;
++	const gchar *desktop;
++
++	g_return_if_fail (IMSETTINGS_IS_CLIENT (client));
++
++	desktop = NULL;
++	proxy = imsettings_client_get_proxy(client);
++	g_dbus_proxy_call(proxy,
++			  "IsSupportedDesktop",
++			  g_variant_new("(s)", desktop ? desktop : ""),
++			  G_DBUS_CALL_FLAGS_NONE,
++			  -1,
++			  cancellable,
++			  callback,
++			  user_data);
++}
++
++/**
++ * imsettings_client_is_supported_desktop_finish:
++ * @client: a #IMSettingsClient.
++ * @result: a #GAsyncResult pushed through #GAsyncReadyCallback.
++ * @error: (allow-none): a #GError to store an error if any, or %NULL.
++ *
++ * Obtains the result of the request from
++ * imsettings_client_is_supported_desktop_start().
++ *
++ * Returns: if the operation is successfully done, returns %TRUE
++ *          otherwise %FALSE
++ */
++gboolean
++imsettings_client_is_supported_desktop_finish(IMSettingsClient  *client,
++					      GAsyncResult      *result,
++					      GError           **error)
++{
++	return imsettings_client_async_result_boolean(client, result, error);
++}
+diff -pruN imsettings-1.6.3.orig/imsettings/imsettings-client.h imsettings-1.6.3/imsettings/imsettings-client.h
+--- imsettings-1.6.3.orig/imsettings/imsettings-client.h	2012-12-13 08:36:42.000000000 +0000
++++ imsettings-1.6.3/imsettings/imsettings-client.h	2019-02-22 11:16:30.576563361 +0000
+@@ -117,6 +117,9 @@ gboolean        imsettings_client_im_is_
+                                                        const gchar       *module,
+                                                        GCancellable      *cancellable,
+                                                        GError           **error);
++gboolean        imsettings_client_is_supported_desktop(IMSettingsClient  *client,
++						       GCancellable      *cancellable,
++						       GError           **error);
+ gboolean        imsettings_client_switch_im           (IMSettingsClient  *client,
+                                                        const gchar       *module,
+                                                        gboolean           update_xinputrc,
+@@ -161,6 +164,13 @@ void      imsettings_client_get_system_i
+ gchar    *imsettings_client_get_system_im_finish    (IMSettingsClient     *client,
+ 						     GAsyncResult         *result,
+ 						     GError              **error);
++void      imsettings_client_is_supported_desktop_start(IMSettingsClient    *client,
++						       GCancellable        *cancellable,
++						       GAsyncReadyCallback  callback,
++						       gpointer             user_data);
++gboolean  imsettings_client_is_supported_desktop_finish(IMSettingsClient  *client,
++							GAsyncResult      *result,
++							GError           **error);
+ void      imsettings_client_switch_im_start         (IMSettingsClient     *client,
+ 						     const gchar          *module,
+ 						     gboolean              update_xinputrc,
+diff -pruN imsettings-1.6.3.orig/imsettings/imsettings-utils.c imsettings-1.6.3/imsettings/imsettings-utils.c
+--- imsettings-1.6.3.orig/imsettings/imsettings-utils.c	2012-12-13 08:36:42.000000000 +0000
++++ imsettings-1.6.3/imsettings/imsettings-utils.c	2019-02-22 11:17:26.029541189 +0000
+@@ -85,6 +85,10 @@ static const gchar introspection_xml[] =
+ 	"    <method name='DumpModuleSettings'>"
+ 	"      <arg type='a{ss}' name='ret' direction='out' />"
+ 	"    </method>"
++	"    <method name='IsSupportedDesktop'>"
++	"      <arg type='s' name='desktop' direction='in' />"
++	"      <arg type='b' name='ret' direction='out' />"
++	"    </method>"
+ 	"    <!-- Operation APIs -->"
+ 	"    <method name='SwitchIM'>"
+ 	"      <arg type='s' name='lang' direction='in' />"
+diff -pruN imsettings-1.6.3.orig/imsettings/imsettings.h imsettings-1.6.3/imsettings/imsettings.h
+--- imsettings-1.6.3.orig/imsettings/imsettings.h	2012-12-13 08:36:42.000000000 +0000
++++ imsettings-1.6.3/imsettings/imsettings.h	2019-02-22 11:17:45.845532854 +0000
+@@ -78,7 +78,7 @@ G_BEGIN_DECLS
+  *
+  * A DBus API version in imsettings.
+  */
+-#define IMSETTINGS_SETTINGS_API_VERSION	5
++#define IMSETTINGS_SETTINGS_API_VERSION	6
+ 
+ /**
+  * IMSETTINGS_GLOBAL_XINPUT_CONF:
+diff -pruN imsettings-1.6.3.orig/imsettings-daemon/imsettings-server.c imsettings-1.6.3/imsettings-daemon/imsettings-server.c
+--- imsettings-1.6.3.orig/imsettings-daemon/imsettings-server.c	2019-02-22 08:34:48.233926116 +0000
++++ imsettings-1.6.3/imsettings-daemon/imsettings-server.c	2019-02-22 11:12:54.983660142 +0000
+@@ -685,6 +685,67 @@ imsettings_server_cb_get_info_variant(IM
+ 	return value;
+ }
+ 
++static gchar *
++_escape_desktop_name(const gchar *name)
++{
++	if (name) {
++		size_t l, len = strlen(name);
++		GString *ss = g_string_new(NULL);
++
++		for (l = 0; l < len; l++) {
++			if ((name[l] >= 'A' && name[l] <= 'Z') ||
++			    (name[l] >= 'a' && name[l] <= 'z') ||
++			    (name[l] >= '0' && name[l] <= '9') ||
++			    name[l] == '-' || name[l] == '+' || name[l] == '_' || name[l] == '.' || name[l] == ',')
++				g_string_append_c(ss, name[l]);
++			else
++				g_string_append_c(ss, '_');
++		}
++		return g_string_free(ss, FALSE);
++	}
++
++	return NULL;
++}
++
++static gboolean
++imsettings_server_cb_is_supported_desktop(IMSettingsServer  *server,
++					  const gchar       *desktop)
++{
++	const gchar *pp;
++	gchar *helper_path, *script, *quoted_desktop = NULL;
++	gchar *cmd;
++	gint ret;
++	gboolean match = FALSE;
++	GError *err = NULL;
++
++	quoted_desktop = _escape_desktop_name(desktop);
++	pp = g_getenv("IMSETTINGS_HELPER_PATH");
++	if (pp)
++		helper_path = g_strdup(pp);
++	else
++		helper_path = g_strdup(IMSETTINGS_HELPER_PATH);
++	script = g_build_filename(helper_path, "imsettings-target-checker.sh", NULL);
++	if (desktop)
++		cmd = g_strdup_printf("sh -c 'export XDG_CURRENT_DESKTOP=%s; sh %s'", quoted_desktop ? quoted_desktop : "", script);
++	else
++		cmd = g_strdup_printf("sh -c %s", script);
++	g_free(script);
++	g_free(helper_path);
++
++	if (g_spawn_command_line_sync(cmd, NULL, NULL, &ret, &err))
++		match = TRUE;
++	if (!g_spawn_check_exit_status(ret, &err))
++		match = FALSE;
++	if (err) {
++		g_warning("%s", err->message);
++		g_error_free(err);
++	}
++	g_free(cmd);
++	g_free(quoted_desktop);
++
++	return !match;
++}
++
+ static gboolean
+ imsettings_server_cb_switch_im(IMSettingsServer  *server,
+ 			       const gchar       *lang,
+@@ -699,11 +760,6 @@ imsettings_server_cb_switch_im(IMSetting
+ 	const gchar *homedir, *xinputfile;
+ 	struct stat st;
+ 	gint save_errno;
+-	const gchar *pp;
+-	gchar *helper_path, *script;
+-	gboolean match = FALSE;
+-	gchar *cmd;
+-	gint ret;
+ 
+ 	g_log(G_LOG_DOMAIN, G_LOG_LEVEL_INFO,
+ 	      "Attempting to switch IM to %s [lang=%s, update=%s]",
+@@ -737,24 +793,7 @@ imsettings_server_cb_switch_im(IMSetting
+ 		return FALSE;
+ 	}
+ 
+-	pp = g_getenv("IMSETTINGS_HELPER_PATH");
+-	if (pp)
+-		helper_path = g_strdup(pp);
+-	else
+-		helper_path = g_strdup(IMSETTINGS_HELPER_PATH);
+-	script = g_build_filename(helper_path, "imsettings-target-checker.sh", NULL);
+-	cmd = g_strdup_printf("sh %s", script);
+-	g_free(script);
+-	g_free(helper_path);
+-
+-	if (g_spawn_command_line_sync(cmd, NULL, NULL, &ret, error))
+-		match = TRUE;
+-	if (!g_spawn_check_exit_status(ret, error))
+-		match = FALSE;
+-	g_free(cmd);
+-	if (*error) {
+-		g_clear_error(error);
+-	} else if (match) {
++	if (!imsettings_server_cb_is_supported_desktop(server, NULL)) {
+ 		g_set_error(error, IMSETTINGS_GERROR, IMSETTINGS_GERROR_NOT_TARGETED_DESKTOP,
+ 			    _("Current desktop isn't targeted by IMSettings."));
+ 		g_warning("%s", (*error)->message);
+@@ -1208,6 +1247,14 @@ imsettings_server_bus_method_call(GDBusC
+ 				    IMSETTINGS_GERROR_CONFIGURATION_ERROR,
+ 				    "No modules loaded");
+ 		}
++	} else if (g_strcmp0(method_name, "IsSupportedDesktop") == 0) {
++		const gchar *desktop;
++		gboolean ret;
++
++		g_variant_get(parameters, "(&s)",
++			      &desktop);
++		ret = imsettings_server_cb_is_supported_desktop(server, desktop);
++		value = g_variant_new_boolean(ret);
+ 	}
+   finalize:
+ 	/* GVariant uses a floating reference count system.
+diff -pruN imsettings-1.6.3.orig/utils/imsettings-switch.c imsettings-1.6.3/utils/imsettings-switch.c
+--- imsettings-1.6.3.orig/utils/imsettings-switch.c	2013-05-27 03:39:15.000000000 +0000
++++ imsettings-1.6.3/utils/imsettings-switch.c	2019-02-22 11:18:25.882515247 +0000
+@@ -102,6 +102,11 @@ main(int    argc,
+ 		retval = 1;
+ 		goto end;
+ 	}
++	if (!imsettings_client_is_supported_desktop(client, NULL, &error)) {
++		g_printerr(_("Current desktop isn't supported by IMSettings. Please follow instructions on your desktop to enable Input Method.\n"));
++		retval = 1;
++		goto end;
++	}
+ 	v = imsettings_client_get_module_settings(client, NULL, &error);
+ 	if (error)
+ 		goto error;

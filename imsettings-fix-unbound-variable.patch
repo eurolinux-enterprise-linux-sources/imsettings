@@ -1,18 +1,7 @@
-From e8dab09d0f47c6030878c89e6db7168af9f7e009 Mon Sep 17 00:00:00 2001
-From: Akira TAGOH <akira@tagoh.org>
-Date: Wed, 10 Jan 2018 21:29:26 +0900
-Subject: [PATCH 52/52] Fix unbound variable issue
-
----
- data/xinput.sh.in.in  | 2 +-
- data/xinputinfo.sh.in | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/data/xinput.sh.in.in b/data/xinput.sh.in.in
-index e8e99ee..f56e57a 100755
---- a/data/xinput.sh.in.in
-+++ b/data/xinput.sh.in.in
-@@ -38,7 +38,7 @@ tmplang=${LC_CTYPE:-${LANG:-"en_US.UTF-8"}}
+diff -pruN imsettings-1.6.3.orig/data/xinput.sh.in.in imsettings-1.6.3/data/xinput.sh.in.in
+--- imsettings-1.6.3.orig/data/xinput.sh.in.in	2019-02-25 08:11:22.623162201 +0000
++++ imsettings-1.6.3/data/xinput.sh.in.in	2019-02-25 08:11:50.064154377 +0000
+@@ -38,7 +38,7 @@ tmplang=${LC_CTYPE:-${LANG:-"en_US.UTF-8
  # unset env vars to be safe
  unset AUXILIARY_PROGRAM AUXILIARY_ARGS GTK_IM_MODULE ICON IMSETTINGS_IGNORE_ME LONG_DESC NOT_RUN PREFERENCE_PROGRAM PREFERENCE_ARGS QT_IM_MODULE SHORT_DESC XIM XIM_PROGRAM XIM_ARGS XMODIFIERS
  
@@ -21,10 +10,18 @@ index e8e99ee..f56e57a 100755
  
  # migrate old configuration file
  [ ! -d $CONFIGDIR ] && mkdir -p $CONFIGDIR || :
-diff --git a/data/xinputinfo.sh.in b/data/xinputinfo.sh.in
-index 9802392..2ce5b20 100755
---- a/data/xinputinfo.sh.in
-+++ b/data/xinputinfo.sh.in
+@@ -84,7 +84,7 @@ elif [ -r "$SYS_XINPUTRC" ]; then
+     fi
+ fi
+ 
+-[ -z "$IMSETTINGS_INTEGRATE_DESKTOP" ] && IMSETTINGS_INTEGRATE_DESKTOP=yes
++[ -z "${IMSETTINGS_INTEGRATE_DESKTOP-}" ] && IMSETTINGS_INTEGRATE_DESKTOP=yes
+ export IMSETTINGS_INTEGRATE_DESKTOP
+ 
+ [ -z "$XIM" ] && XIM=none
+diff -pruN imsettings-1.6.3.orig/data/xinputinfo.sh.in imsettings-1.6.3/data/xinputinfo.sh.in
+--- imsettings-1.6.3.orig/data/xinputinfo.sh.in	2012-12-13 08:36:42.000000000 +0000
++++ imsettings-1.6.3/data/xinputinfo.sh.in	2019-02-25 08:11:36.839158001 +0000
 @@ -56,7 +56,7 @@ if [ $# -gt 0 ]; then
      source $1
      IMSETTINGS_FILENAME=$1
@@ -34,6 +31,3 @@ index 9802392..2ce5b20 100755
  
      if [ -r "$USER_XINPUTRC" -a "x$IMSETTINGS_DISABLE_USER_XINPUTRC" = "xno" ]; then
  	source "$USER_XINPUTRC"
--- 
-2.17.1
-
